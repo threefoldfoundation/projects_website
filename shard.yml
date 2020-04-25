@@ -1,0 +1,16 @@
+name: walker
+version: 0.1.0
+
+authors:
+  - hamdy <hamdy.a.farag@gmail.com>
+
+targets:
+  walker:
+    main: src/walker.cr
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: 0.34.0
+
+license: MIT
