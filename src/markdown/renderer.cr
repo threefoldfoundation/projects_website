@@ -1,5 +1,5 @@
 module Markdown::Renderer
-    abstract def begin_paragraph
+    abstract def begin_paragraph(prefix)
     abstract def end_paragraph
     abstract def begin_italic(one_underscore)
     abstract def end_italic(one_underscore)
@@ -13,9 +13,9 @@ module Markdown::Renderer
     abstract def end_code
     abstract def begin_quote
     abstract def end_quote
-    abstract def begin_unordered_list
+    abstract def begin_unordered_list(prefix)
     abstract def end_unordered_list
-    abstract def begin_ordered_list
+    abstract def begin_ordered_list(prefix)
     abstract def end_ordered_list
     abstract def begin_list_item(prefix)
     abstract def end_list_item

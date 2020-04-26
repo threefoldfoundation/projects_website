@@ -123,8 +123,11 @@ class Markdown::Parser
     end
   
     def render_paragraph
-      @renderer.begin_paragraph
-  
+      
+      c1 = @lines[@line].size
+      c2 = @lines[@line].lstrip.size
+      prefix =  " " *  (c1-c2)
+      @renderer.begin_paragraph prefix
       join_next_lines continue_on: nil
       process_line @lines[@line]
       @line += 1
@@ -214,7 +217,7 @@ class Markdown::Parser
     end
   
     def render_unordered_list(prefix = '*')
-      @renderer.begin_unordered_list
+      @renderer.begin_unordered_list ""
   
       while true
         break unless starts_with_bullet_list_marker?(@lines[@line], prefix)
@@ -231,12 +234,13 @@ class Markdown::Parser
   
           next
         end
-  
+        @renderer.begin_unordered_list line
         if line.starts_with?("  ") && previous_line_is_not_intended_and_starts_with_bullet_list_marker?(prefix)
-          @renderer.begin_unordered_list
+          puts ""
+          @renderer.begin_unordered_list line
         end
-  
-        @renderer.begin_list_item prefix
+      
+        @renderer.begin_list_item ""
         process_line line.byte_slice(line.index(prefix).not_nil! + 1)
         @renderer.end_list_item
   
@@ -257,7 +261,6 @@ class Markdown::Parser
     end
   
     def render_ordered_list
-      @renderer.begin_ordered_list
   
       while true
         break unless starts_with_digits_dot? @lines[@line]
@@ -274,8 +277,9 @@ class Markdown::Parser
   
           next
         end
-  
-        @renderer.begin_list_item line.byte_slice(line.index('.').not_nil! + 1)
+        
+        @renderer.begin_ordered_list line.byte_slice(0, line.index('.').not_nil!+2)
+        @renderer.begin_list_item @lines[@line]
         process_line line.byte_slice(line.index('.').not_nil! + 1)
         @renderer.end_list_item
         @line += 1

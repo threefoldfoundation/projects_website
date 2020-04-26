@@ -7,11 +7,14 @@ class Markdown::ThreefoldRender
 
   @URL = ""
   @NEXT_LINE = ""
+  @UNORDERED : Bool = false
 
   def initialize(@io : IO)
   end
 
-  def begin_paragraph; end
+  def begin_paragraph(prefix)
+    @io << prefix
+  end
   def end_paragraph; end
 
   def begin_italic(one_underscore)
@@ -89,19 +92,28 @@ class Markdown::ThreefoldRender
     
   end
 
-  def begin_unordered_list; end
-
-  def end_unordered_list;end
-
-  def begin_ordered_list; end
-
-  def end_ordered_list; end
-
-  def begin_list_item(prefix)
-    @io << "#{prefix} "
+  def begin_unordered_list(line)
+    @io << line
   end
 
-  def end_list_item; end
+  def end_unordered_list
+    
+  end
+
+  def begin_ordered_list(prefix)
+    @io << prefix
+  end
+
+  def end_ordered_list
+  end
+
+  def begin_list_item(line)
+      # @io << line
+  end
+
+  def end_list_item
+    @io << '\n'
+  end
 
   def begin_link(url)
     @io << "["
