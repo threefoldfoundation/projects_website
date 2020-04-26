@@ -10,6 +10,8 @@ targets:
 dependencies:
   kemal:
     github: kemalcr/kemal
+  spec-kemal:
+    github: kemalcr/spec-kemal
 
 crystal: 0.34.0
 

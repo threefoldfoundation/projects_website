@@ -32,7 +32,7 @@ def _walk(path : String = CURR_PATH)
         items.each do |item|
           if item.name == path_parts[1]
             path = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
-            page = Page.new name.gsub(".md", ""),  path, File.read(path)
+            page = MdPage.new name.gsub(".md", ""),  path, File.read(path)
             item.pages.push(page)
           end
         end

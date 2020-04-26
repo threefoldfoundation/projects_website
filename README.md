@@ -2,6 +2,7 @@
 
 Simple Api server which parses markedown docs and return it in structured way
 
+
 ## Usage (DEV)
 
 **Clone repo  https://github.com/threefoldfoundation/www_threefold_ecosystem into `public/threefold`
@@ -16,6 +17,7 @@ Simple Api server which parses markedown docs and return it in structured way
 - Backend
 
 	```
+	shards install
 	crystal run src/walker.cr
 	```
 
@@ -24,6 +26,10 @@ Simple Api server which parses markedown docs and return it in structured way
 ./build.sh
 ```
 
+## Testing
+```
+KEMAL_ENV=test crystal spec
+```
 ## Data structure
 
 For now simple call to `/data` returns all data

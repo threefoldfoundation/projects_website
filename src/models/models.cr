@@ -1,23 +1,31 @@
 require "json"
+require "../markdown"
 
-class Page
+class MdPage
     JSON.mapping(
         name: String,
         path: String,
-        content: String
+        content: String,
+        category: String
     )
 
-    def initialize (@name="", @path="", @content=""); end
-end
+    def initialize (@name="", @path="", @content="", @category="")
+    
+    end
 
+    def parse
+        return Markdown.to_tf_markdown @content
+    end
+
+end
 
 class Item
     JSON.mapping(
         name: String,
-        pages: Array(Page)
+        pages: Array(MdPage)
     )
 
-    def initialize (@name, @pages=Array(Page).new); end
+    def initialize (@name, @pages=Array(MdPage).new); end
 end
 
 class Websites
