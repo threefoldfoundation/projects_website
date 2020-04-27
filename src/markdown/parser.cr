@@ -236,7 +236,6 @@ class Markdown::Parser
         end
         @renderer.begin_unordered_list line
         if line.starts_with?("  ") && previous_line_is_not_intended_and_starts_with_bullet_list_marker?(prefix)
-          puts ""
           @renderer.begin_unordered_list line
         end
       
@@ -618,7 +617,6 @@ class Markdown::Parser
       if empty? @lines[@line+1]
         line_break += "\n"
       end
-      puts @lines[@line] + line_break
       @renderer.horizontal_rule "#{@lines[@line]}#{line_break}"
       @line += 1
     end

@@ -7,7 +7,14 @@ class Markdown::ThreefoldRender
 
   @URL = ""
   @NEXT_LINE = ""
-  @UNORDERED : Bool = false
+  @URL = false
+  @CODES = Array(String).new
+  @CODE=false
+  @CODE_BLOCK =  String::Builder.new
+
+  def codes
+    @CODES
+  end
 
   def initialize(@io : IO)
   end
@@ -73,6 +80,7 @@ class Markdown::ThreefoldRender
   end
 
   def begin_code(language)
+    @CODE=true
     if language.nil?
       @io << "```\n"
     else
@@ -81,6 +89,9 @@ class Markdown::ThreefoldRender
   end
 
   def end_code
+    @CODE=false
+    @CODES.push(@CODE_BLOCK.to_s)
+    @CODE_BLOCK = String::Builder.new
     @io << "\n```"
   end
 
@@ -130,6 +141,11 @@ class Markdown::ThreefoldRender
   end
 
   def text(text)
+    if @CODE
+      @CODE_BLOCK << text
+    else
+
+    end
     @io << text
   end
 

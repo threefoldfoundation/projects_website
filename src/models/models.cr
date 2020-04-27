@@ -14,7 +14,7 @@ class MdPage
     end
 
     def parse
-        return Markdown.to_tf_markdown @content
+        Markdown.to_tf_markdown @content
     end
 
 end

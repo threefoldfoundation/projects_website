@@ -18,14 +18,8 @@ class Markdown
       parser = Parser.new(text, renderer)
       parser.parse
     end
-  
-    def self.to_html(text) : String
-      String.build do |io|
-        parse text, Markdown::HTMLRenderer.new(io)
-      end
-    end
 
-    def self.to_tf_markdown(text) : String
+    def self.to_tf_markdown(text)
         String.build do |io|
           parse text, Markdown::ThreefoldRender.new(io)
         end

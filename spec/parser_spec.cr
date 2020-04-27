@@ -203,7 +203,7 @@ Or, in pure Markdown, but losing the image sizing and border:
 describe MdPage do
   it "parse_user_doc" do
     p = MdPage.new "", "", content=CONTENT
-    puts p.parse    
+    puts p.parse
   end
 end
 
