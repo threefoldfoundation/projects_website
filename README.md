@@ -26,6 +26,8 @@ Simple Api server which parses markedown docs and return it in structured way
 ./build.sh
 ```
 
+`then open 127.0.0.1:3000/`
+
 ## Testing
 ```
 KEMAL_ENV=test crystal spec

@@ -18,17 +18,24 @@ def _walk(path : String = CURR_PATH)
       next
     end
     if ! File.file? path + "/" + name
-      if level == 0
-        WEBSITES.items[name] =  Array(Item).new
-      elsif level == 1
-        items = WEBSITES.items[path_parts[0]]
-        item = Item.new name 
-        items.push item
+      if level == 1
+        if path_parts[0] == "projects"
+          item = Project.new name
+          WEBSITES.projects.push(item)
+        elsif path_parts[0] == "people"
+          item = User.new name
+          WEBSITES.people.push(item)
+        end
       end
       _walk( path + "/" + name)
     else
       if level == 2
-        items = WEBSITES.items[path_parts[0]]
+        items = Array(Project|User).new
+        if path_parts[0] == "projects"
+          items = WEBSITES.projects
+        elsif path_parts[1] == "people"
+          items = WEBSITES.people
+        end
         items.each do |item|
           if item.name == path_parts[1]
             path = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
@@ -45,6 +52,10 @@ get "/data" do |env|
   _walk 
   env.response.headers.add("Access-Control-Allow-Origin", "*")
   WEBSITES.to_json
+end
+
+get "/" do |env|
+  env.redirect "/index.html"
 end
 
 Kemal.run

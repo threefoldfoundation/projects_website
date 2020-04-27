@@ -8,8 +8,7 @@ import MiniArticles from "./components/MiniArticles.svelte"
         let text = await response.text();
         let data = text;
 		let obj = JSON.parse(data);
-		console.log(obj.items.people)
-		return {"projects": obj.items.projects, "users" : obj.items.people}
+		return {"projects": obj.projects, "users" : obj.people}
     }
 
 	let res = getResult();

@@ -19,7 +19,8 @@ class MdPage
 
 end
 
-class Item
+
+class Project
     JSON.mapping(
         name: String,
         pages: Array(MdPage)
@@ -28,10 +29,21 @@ class Item
     def initialize (@name, @pages=Array(MdPage).new); end
 end
 
+class User
+    JSON.mapping(
+        name: String,
+        pages: Array(MdPage)
+    )
+
+    def initialize (@name, @pages=Array(MdPage).new); end
+
+end
+
 class Websites
     JSON.mapping(
-        items: Hash(String, Array(Item))
+        projects: Array(Project),
+        people: Array(User) ,
     )
-    def initialize (@items=Hash(String, Array(Item)).new); end
+    def initialize (@projects=Array(Project).new, @people=Array(User).new); end
 
 end
