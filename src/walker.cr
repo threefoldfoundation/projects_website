@@ -14,7 +14,7 @@ def _walk(path : String = CURR_PATH)
   end
   level = path_parts.size
   Dir.children(path).each do |name|
-    if name == ".git"
+    if name == ".git" || name.starts_with?(".")
       next
     end
     if ! File.file? path + "/" + name
@@ -38,8 +38,8 @@ def _walk(path : String = CURR_PATH)
         end
         items.each do |item|
           if item.name == path_parts[1]
-            path = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
-            page = MdPage.new name.gsub(".md", ""),  path, File.read(path)
+            p = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
+            page = MdPage.new name.gsub(".md", ""),  p, File.read(p)
             item.pages.push(page)
           end
         end
