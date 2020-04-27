@@ -40,8 +40,7 @@ For now simple call to `/data` returns all data
 
 - Data format is like
 	```
-	{"items":
-		{"projects":
+	{"projects":
 			[
 				{"name":"ff_connect",
 				"pages":[
@@ -51,8 +50,8 @@ For now simple call to `/data` returns all data
 					}
 				]
 				}
-			]
-		}
+			],
+	"people":[..]
 	}
 	```
 
