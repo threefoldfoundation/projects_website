@@ -1,8 +1,7 @@
 <script>
   import MiniProject from "./MiniProject.svelte";
 
-  let miniProjects = [];
-
+  export let miniProjects = [];
 </script>
 
 <div class="miniProjectList">

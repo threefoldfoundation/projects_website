@@ -1,10 +1,14 @@
 <script>
-  import Articles from "../components/Articles.svelte";
+  import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
 
   //   import Home from "./routes/Projects.svelte";
   //   import Users from "./routes/Users.svelte";
   export let url = "";
+
+  let miniProjects = [1,2,3]
+  let users = [1,2,3]
+  let projects = [1,2,3]
 
   async function getResult() {
     let response = await fetch(`http://127.0.0.1:3000/data`);
@@ -27,19 +31,8 @@
     <!-- Main -->
     <div id="main">
 
-      {#if res === undefined}
-        <p />
-      {:else}
-        {#await res}
-
-          <p>Loading...</p>
-
-        {:then items}
-          <Articles projects={items.projects} />
-        {:catch error}
-          {error.message}
-        {/await}
-      {/if}
+      <ProjectList {projects} />
+     
 
       <!-- Pagination -->
       <ul class="actions pagination">
@@ -53,7 +46,6 @@
 
     </div>
 
-    <!--SideBar-->
-    <SideBar />
+    <SideBar {miniProjects}{users} />
   </div>
 </main>
