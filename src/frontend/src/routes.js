@@ -10,7 +10,7 @@ if (!urlParams.has('routemap')) {
 
     routes = {
         // Exact path
-        '/home': Home,
+        '/': Home,
         '/projects': Projects,
         '/users': Users,
 
@@ -28,7 +28,7 @@ if (!urlParams.has('routemap')) {
     routes = new Map()
 
     // Exact path
-    routes.set('/home', Home)
+    routes.set('/', Home)
     routes.set('/projects', Projects)
     routes.set('/users', Users)
 }

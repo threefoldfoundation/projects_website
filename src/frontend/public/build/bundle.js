@@ -4583,7 +4583,7 @@ var app = (function () {
     }
 
     function create_fragment$5(ctx) {
-    	let section3;
+    	let section2;
     	let section0;
     	let a0;
     	let img;
@@ -4604,53 +4604,9 @@ var app = (function () {
     	let t8;
     	let p1;
     	let t10;
-    	let ul0;
-    	let li0;
+    	let ul;
+    	let li;
     	let a2;
-    	let t12;
-    	let section2;
-    	let ul1;
-    	let li1;
-    	let a3;
-    	let span0;
-    	let t14;
-    	let li2;
-    	let a4;
-    	let span1;
-    	let t16;
-    	let li3;
-    	let a5;
-    	let span2;
-    	let t18;
-    	let li4;
-    	let a6;
-    	let span3;
-    	let t20;
-    	let li5;
-    	let a7;
-    	let span4;
-    	let t22;
-    	let p2;
-    	let t23;
-    	let a8;
-    	let t25;
-    	let a9;
-    	let t27;
-    	let t28;
-    	let script0;
-    	let script0_src_value;
-    	let t29;
-    	let script1;
-    	let script1_src_value;
-    	let t30;
-    	let script2;
-    	let script2_src_value;
-    	let t31;
-    	let script3;
-    	let script3_src_value;
-    	let t32;
-    	let script4;
-    	let script4_src_value;
     	let current;
     	const if_block_creators = [create_if_block$1, create_else_block$1];
     	const if_blocks = [];
@@ -4665,7 +4621,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			section3 = element("section");
+    			section2 = element("section");
     			section0 = element("section");
     			a0 = element("a");
     			img = element("img");
@@ -4688,56 +4644,10 @@ var app = (function () {
     			p1 = element("p");
     			p1.textContent = "Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed\n      mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim,\n      ac accumsan tortor cursus at phasellus sed ultricies.";
     			t10 = space();
-    			ul0 = element("ul");
-    			li0 = element("li");
+    			ul = element("ul");
+    			li = element("li");
     			a2 = element("a");
     			a2.textContent = "Learn More";
-    			t12 = space();
-    			section2 = element("section");
-    			ul1 = element("ul");
-    			li1 = element("li");
-    			a3 = element("a");
-    			span0 = element("span");
-    			span0.textContent = "Twitter";
-    			t14 = space();
-    			li2 = element("li");
-    			a4 = element("a");
-    			span1 = element("span");
-    			span1.textContent = "Facebook";
-    			t16 = space();
-    			li3 = element("li");
-    			a5 = element("a");
-    			span2 = element("span");
-    			span2.textContent = "Instagram";
-    			t18 = space();
-    			li4 = element("li");
-    			a6 = element("a");
-    			span3 = element("span");
-    			span3.textContent = "RSS";
-    			t20 = space();
-    			li5 = element("li");
-    			a7 = element("a");
-    			span4 = element("span");
-    			span4.textContent = "Email";
-    			t22 = space();
-    			p2 = element("p");
-    			t23 = text("© Untitled. Design:\n      ");
-    			a8 = element("a");
-    			a8.textContent = "HTML5 UP";
-    			t25 = text("\n      . Images:\n      ");
-    			a9 = element("a");
-    			a9.textContent = "Unsplash";
-    			t27 = text("\n      .");
-    			t28 = space();
-    			script0 = element("script");
-    			t29 = space();
-    			script1 = element("script");
-    			t30 = space();
-    			script2 = element("script");
-    			t31 = space();
-    			script3 = element("script");
-    			t32 = space();
-    			script4 = element("script");
     			if (img.src !== (img_src_value = "images/logo.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			add_location(img, file$4, 13, 6, 260);
@@ -4756,70 +4666,20 @@ var app = (function () {
     			attr_dev(a2, "href", "#");
     			attr_dev(a2, "class", "button");
     			add_location(a2, file$4, 51, 8, 1160);
-    			add_location(li0, file$4, 50, 6, 1147);
-    			attr_dev(ul0, "class", "actions");
-    			add_location(ul0, file$4, 49, 4, 1120);
+    			add_location(li, file$4, 50, 6, 1147);
+    			attr_dev(ul, "class", "actions");
+    			add_location(ul, file$4, 49, 4, 1120);
     			attr_dev(section1, "class", "blurb");
     			add_location(section1, file$4, 42, 2, 838);
-    			attr_dev(span0, "class", "label");
-    			add_location(span0, file$4, 61, 10, 1376);
-    			attr_dev(a3, "href", "#");
-    			attr_dev(a3, "class", "icon brands fa-twitter");
-    			add_location(a3, file$4, 60, 8, 1322);
-    			add_location(li1, file$4, 59, 6, 1309);
-    			attr_dev(span1, "class", "label");
-    			add_location(span1, file$4, 66, 10, 1512);
-    			attr_dev(a4, "href", "#");
-    			attr_dev(a4, "class", "icon brands fa-facebook-f");
-    			add_location(a4, file$4, 65, 8, 1455);
-    			add_location(li2, file$4, 64, 6, 1442);
-    			attr_dev(span2, "class", "label");
-    			add_location(span2, file$4, 71, 10, 1648);
-    			attr_dev(a5, "href", "#");
-    			attr_dev(a5, "class", "icon brands fa-instagram");
-    			add_location(a5, file$4, 70, 8, 1592);
-    			add_location(li3, file$4, 69, 6, 1579);
-    			attr_dev(span3, "class", "label");
-    			add_location(span3, file$4, 76, 10, 1778);
-    			attr_dev(a6, "href", "#");
-    			attr_dev(a6, "class", "icon solid fa-rss");
-    			add_location(a6, file$4, 75, 8, 1729);
-    			add_location(li4, file$4, 74, 6, 1716);
-    			attr_dev(span4, "class", "label");
-    			add_location(span4, file$4, 81, 10, 1907);
-    			attr_dev(a7, "href", "#");
-    			attr_dev(a7, "class", "icon solid fa-envelope");
-    			add_location(a7, file$4, 80, 8, 1853);
-    			add_location(li5, file$4, 79, 6, 1840);
-    			attr_dev(ul1, "class", "icons");
-    			add_location(ul1, file$4, 58, 4, 1284);
-    			attr_dev(a8, "href", "http://html5up.net");
-    			add_location(a8, file$4, 87, 6, 2038);
-    			attr_dev(a9, "href", "http://unsplash.com");
-    			add_location(a9, file$4, 89, 6, 2102);
-    			attr_dev(p2, "class", "copyright");
-    			add_location(p2, file$4, 85, 4, 1979);
-    			attr_dev(section2, "id", "footer");
-    			add_location(section2, file$4, 57, 2, 1258);
-    			if (script0.src !== (script0_src_value = "assets/js/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 95, 2, 2198);
-    			if (script1.src !== (script1_src_value = "assets/js/browser.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 98, 2, 2252);
-    			if (script2.src !== (script2_src_value = "assets/js/breakpoints.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 101, 2, 2307);
-    			if (script3.src !== (script3_src_value = "assets/js/util.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 104, 2, 2366);
-    			if (script4.src !== (script4_src_value = "assets/js/main.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$4, 107, 2, 2414);
-    			attr_dev(section3, "id", "sidebar");
-    			add_location(section3, file$4, 8, 0, 160);
+    			attr_dev(section2, "id", "sidebar");
+    			add_location(section2, file$4, 8, 0, 160);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, section3, anchor);
-    			append_dev(section3, section0);
+    			insert_dev(target, section2, anchor);
+    			append_dev(section2, section0);
     			append_dev(section0, a0);
     			append_dev(a0, img);
     			append_dev(section0, t0);
@@ -4829,56 +4689,17 @@ var app = (function () {
     			append_dev(header, p0);
     			append_dev(p0, t3);
     			append_dev(p0, a1);
-    			append_dev(section3, t5);
-    			if_blocks[current_block_type_index].m(section3, null);
-    			append_dev(section3, t6);
-    			append_dev(section3, section1);
+    			append_dev(section2, t5);
+    			if_blocks[current_block_type_index].m(section2, null);
+    			append_dev(section2, t6);
+    			append_dev(section2, section1);
     			append_dev(section1, h21);
     			append_dev(section1, t8);
     			append_dev(section1, p1);
     			append_dev(section1, t10);
-    			append_dev(section1, ul0);
-    			append_dev(ul0, li0);
-    			append_dev(li0, a2);
-    			append_dev(section3, t12);
-    			append_dev(section3, section2);
-    			append_dev(section2, ul1);
-    			append_dev(ul1, li1);
-    			append_dev(li1, a3);
-    			append_dev(a3, span0);
-    			append_dev(ul1, t14);
-    			append_dev(ul1, li2);
-    			append_dev(li2, a4);
-    			append_dev(a4, span1);
-    			append_dev(ul1, t16);
-    			append_dev(ul1, li3);
-    			append_dev(li3, a5);
-    			append_dev(a5, span2);
-    			append_dev(ul1, t18);
-    			append_dev(ul1, li4);
-    			append_dev(li4, a6);
-    			append_dev(a6, span3);
-    			append_dev(ul1, t20);
-    			append_dev(ul1, li5);
-    			append_dev(li5, a7);
-    			append_dev(a7, span4);
-    			append_dev(section2, t22);
-    			append_dev(section2, p2);
-    			append_dev(p2, t23);
-    			append_dev(p2, a8);
-    			append_dev(p2, t25);
-    			append_dev(p2, a9);
-    			append_dev(p2, t27);
-    			append_dev(section3, t28);
-    			append_dev(section3, script0);
-    			append_dev(section3, t29);
-    			append_dev(section3, script1);
-    			append_dev(section3, t30);
-    			append_dev(section3, script2);
-    			append_dev(section3, t31);
-    			append_dev(section3, script3);
-    			append_dev(section3, t32);
-    			append_dev(section3, script4);
+    			append_dev(section1, ul);
+    			append_dev(ul, li);
+    			append_dev(li, a2);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -4894,7 +4715,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section3);
+    			if (detaching) detach_dev(section2);
     			if_blocks[current_block_type_index].d();
     		}
     	};
@@ -5402,7 +5223,7 @@ var app = (function () {
 
         routes = {
             // Exact path
-            '/home': Home,
+            '/': Home,
             '/projects': Projects,
             '/users': Users$1,
 
@@ -5420,7 +5241,7 @@ var app = (function () {
         routes = new Map();
 
         // Exact path
-        routes.set('/home', Home);
+        routes.set('/', Home);
         routes.set('/projects', Projects);
         routes.set('/users', Users$1);
     }
@@ -5647,83 +5468,83 @@ var app = (function () {
     			attr_dev(a0, "href", "index.html");
     			add_location(a0, file$6, 8, 6, 123);
     			add_location(h1, file$6, 7, 4, 112);
-    			attr_dev(a1, "href", "/home");
+    			attr_dev(a1, "href", "/");
     			add_location(a1, file$6, 14, 12, 251);
     			add_location(li0, file$6, 13, 10, 234);
     			attr_dev(a2, "href", "/projects");
-    			add_location(a2, file$6, 17, 12, 328);
-    			add_location(li1, file$6, 16, 10, 311);
+    			add_location(a2, file$6, 17, 12, 324);
+    			add_location(li1, file$6, 16, 10, 307);
     			attr_dev(a3, "href", "/users");
-    			add_location(a3, file$6, 20, 12, 413);
-    			add_location(li2, file$6, 19, 10, 396);
+    			add_location(a3, file$6, 20, 12, 409);
+    			add_location(li2, file$6, 19, 10, 392);
     			add_location(nav0, file$6, 12, 8, 218);
     			add_location(ul0, file$6, 11, 6, 205);
     			attr_dev(nav1, "class", "links");
     			add_location(nav1, file$6, 10, 4, 179);
     			attr_dev(a4, "class", "fa-search");
     			attr_dev(a4, "href", "#search");
-    			add_location(a4, file$6, 28, 10, 575);
+    			add_location(a4, file$6, 28, 10, 571);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "name", "query");
     			attr_dev(input0, "placeholder", "Search");
-    			add_location(input0, file$6, 30, 12, 687);
+    			add_location(input0, file$6, 30, 12, 683);
     			attr_dev(form0, "id", "search");
     			attr_dev(form0, "method", "get");
     			attr_dev(form0, "action", "#");
-    			add_location(form0, file$6, 29, 10, 632);
+    			add_location(form0, file$6, 29, 10, 628);
     			attr_dev(li3, "class", "search");
-    			add_location(li3, file$6, 27, 8, 545);
+    			add_location(li3, file$6, 27, 8, 541);
     			attr_dev(a5, "class", "fa-bars");
     			attr_dev(a5, "href", "#menu");
-    			add_location(a5, file$6, 34, 10, 811);
+    			add_location(a5, file$6, 34, 10, 807);
     			attr_dev(li4, "class", "menu");
-    			add_location(li4, file$6, 33, 8, 783);
-    			add_location(ul1, file$6, 26, 6, 532);
+    			add_location(li4, file$6, 33, 8, 779);
+    			add_location(ul1, file$6, 26, 6, 528);
     			attr_dev(nav2, "class", "main");
-    			add_location(nav2, file$6, 25, 4, 507);
+    			add_location(nav2, file$6, 25, 4, 503);
     			attr_dev(header, "id", "header");
     			add_location(header, file$6, 6, 2, 87);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "name", "query");
     			attr_dev(input1, "placeholder", "Search");
-    			add_location(input1, file$6, 45, 8, 1034);
+    			add_location(input1, file$6, 45, 8, 1030);
     			attr_dev(form1, "class", "search");
     			attr_dev(form1, "method", "get");
     			attr_dev(form1, "action", "#");
-    			add_location(form1, file$6, 44, 6, 980);
-    			add_location(section0, file$6, 43, 4, 964);
-    			add_location(h30, file$6, 54, 12, 1226);
-    			add_location(p0, file$6, 55, 12, 1259);
+    			add_location(form1, file$6, 44, 6, 976);
+    			add_location(section0, file$6, 43, 4, 960);
+    			add_location(h30, file$6, 54, 12, 1222);
+    			add_location(p0, file$6, 55, 12, 1255);
     			attr_dev(a6, "href", "#");
-    			add_location(a6, file$6, 53, 10, 1201);
-    			add_location(li5, file$6, 52, 8, 1186);
-    			add_location(h31, file$6, 60, 12, 1373);
-    			add_location(p1, file$6, 61, 12, 1409);
+    			add_location(a6, file$6, 53, 10, 1197);
+    			add_location(li5, file$6, 52, 8, 1182);
+    			add_location(h31, file$6, 60, 12, 1369);
+    			add_location(p1, file$6, 61, 12, 1405);
     			attr_dev(a7, "href", "#");
-    			add_location(a7, file$6, 59, 10, 1348);
-    			add_location(li6, file$6, 58, 8, 1333);
-    			add_location(h32, file$6, 66, 12, 1521);
-    			add_location(p2, file$6, 67, 12, 1559);
+    			add_location(a7, file$6, 59, 10, 1344);
+    			add_location(li6, file$6, 58, 8, 1329);
+    			add_location(h32, file$6, 66, 12, 1517);
+    			add_location(p2, file$6, 67, 12, 1555);
     			attr_dev(a8, "href", "#");
-    			add_location(a8, file$6, 65, 10, 1496);
-    			add_location(li7, file$6, 64, 8, 1481);
-    			add_location(h33, file$6, 72, 12, 1677);
-    			add_location(p3, file$6, 73, 12, 1718);
+    			add_location(a8, file$6, 65, 10, 1492);
+    			add_location(li7, file$6, 64, 8, 1477);
+    			add_location(h33, file$6, 72, 12, 1673);
+    			add_location(p3, file$6, 73, 12, 1714);
     			attr_dev(a9, "href", "#");
-    			add_location(a9, file$6, 71, 10, 1652);
-    			add_location(li8, file$6, 70, 8, 1637);
+    			add_location(a9, file$6, 71, 10, 1648);
+    			add_location(li8, file$6, 70, 8, 1633);
     			attr_dev(ul2, "class", "links");
-    			add_location(ul2, file$6, 51, 6, 1159);
-    			add_location(section1, file$6, 50, 4, 1143);
+    			add_location(ul2, file$6, 51, 6, 1155);
+    			add_location(section1, file$6, 50, 4, 1139);
     			attr_dev(a10, "href", "#");
     			attr_dev(a10, "class", "button large fit");
-    			add_location(a10, file$6, 83, 10, 1903);
-    			add_location(li9, file$6, 82, 8, 1888);
+    			add_location(a10, file$6, 83, 10, 1899);
+    			add_location(li9, file$6, 82, 8, 1884);
     			attr_dev(ul3, "class", "actions stacked");
-    			add_location(ul3, file$6, 81, 6, 1851);
-    			add_location(section2, file$6, 80, 4, 1835);
+    			add_location(ul3, file$6, 81, 6, 1847);
+    			add_location(section2, file$6, 80, 4, 1831);
     			attr_dev(section3, "id", "menu");
-    			add_location(section3, file$6, 40, 2, 919);
+    			add_location(section3, file$6, 40, 2, 915);
     			add_location(div, file$6, 5, 0, 79);
     		},
     		l: function claim(nodes) {
@@ -5852,56 +5673,56 @@ var app = (function () {
     const file$7 = "src/App.svelte";
 
     function create_fragment$9(ctx) {
-    	let div2;
-    	let div0;
-    	let t0;
-    	let div1;
-    	let t1;
     	let meta0;
     	let meta1;
     	let link;
+    	let t0;
+    	let div2;
+    	let div0;
+    	let t1;
+    	let div1;
     	let current;
     	const navigation = new Navigation({ $$inline: true });
     	const router = new Router({ props: { routes: routes$1 }, $$inline: true });
 
     	const block = {
     		c: function create() {
-    			div2 = element("div");
-    			div0 = element("div");
-    			create_component(navigation.$$.fragment);
-    			t0 = space();
-    			div1 = element("div");
-    			create_component(router.$$.fragment);
-    			t1 = space();
     			meta0 = element("meta");
     			meta1 = element("meta");
     			link = element("link");
-    			add_location(div0, file$7, 11, 2, 301);
-    			add_location(div1, file$7, 14, 2, 337);
-    			add_location(div2, file$7, 10, 0, 293);
+    			t0 = space();
+    			div2 = element("div");
+    			div0 = element("div");
+    			create_component(navigation.$$.fragment);
+    			t1 = space();
+    			div1 = element("div");
+    			create_component(router.$$.fragment);
     			attr_dev(meta0, "charset", "utf-8");
-    			add_location(meta0, file$7, 20, 2, 400);
+    			add_location(meta0, file$7, 11, 2, 309);
     			attr_dev(meta1, "name", "viewport");
     			attr_dev(meta1, "content", "width=device-width, initial-scale=1, user-scalable=no");
-    			add_location(meta1, file$7, 21, 2, 427);
+    			add_location(meta1, file$7, 12, 2, 336);
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "./assets/css/main.css");
-    			add_location(link, file$7, 24, 2, 526);
+    			add_location(link, file$7, 15, 2, 435);
+    			add_location(div0, file$7, 19, 2, 514);
+    			add_location(div1, file$7, 22, 2, 550);
+    			add_location(div2, file$7, 18, 0, 506);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, div0);
-    			mount_component(navigation, div0, null);
-    			append_dev(div2, t0);
-    			append_dev(div2, div1);
-    			mount_component(router, div1, null);
-    			insert_dev(target, t1, anchor);
     			append_dev(document.head, meta0);
     			append_dev(document.head, meta1);
     			append_dev(document.head, link);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			mount_component(navigation, div0, null);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			mount_component(router, div1, null);
     			current = true;
     		},
     		p: noop,
@@ -5917,13 +5738,13 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
-    			destroy_component(navigation);
-    			destroy_component(router);
-    			if (detaching) detach_dev(t1);
     			detach_dev(meta0);
     			detach_dev(meta1);
     			detach_dev(link);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div2);
+    			destroy_component(navigation);
+    			destroy_component(router);
     		}
     	};
 
@@ -5966,7 +5787,7 @@ var app = (function () {
     }
 
     const app = new App({
-    	target: document.body,
+    	target: document.getElementById("main_app"),
     	props: {
     		// name: 'world'
     	}

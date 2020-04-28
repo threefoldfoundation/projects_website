@@ -12,7 +12,7 @@
       <ul>
         <nav>
           <li>
-            <a href="/home" use:link>Home</a>
+            <a href="/" use:link>Home</a>
           </li>
           <li>
             <a href="/projects" use:link>Projects</a>
