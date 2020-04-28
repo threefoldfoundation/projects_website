@@ -39,6 +39,9 @@ def _walk(path : String = CURR_PATH)
         items.each do |item|
           if item.name == path_parts[1]
             p = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
+            if ! name.ends_with?(".md")
+              next
+            end
             page = MdPage.new name.gsub(".md", ""),  p, File.read(p)
             item.pages.push(page)
             x, parsed_codes = page.parse
