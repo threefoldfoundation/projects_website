@@ -11,10 +11,12 @@ export let miniarticles
 										<article class="mini-post">
 											<header>
 												<h3><a href="single.html">{miniarticles[i].name}</a></h3>
-												<!-- <time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a> -->
+												<!-- <time class="published" datetime="2015-10-20">October 20, 2015</time> -->
+												<!-- <a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a> -->
 											</header>
-											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<a href="single.html" class="image">
+   										<iframe width="100%" src="{miniarticles[i].links.video}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</a>
 										</article>
 										</div>
 										{/each}

@@ -2678,18 +2678,22 @@ var app = (function () {
     	let t0_value = /*projects*/ ctx[0][/*i*/ ctx[4]].name + "";
     	let t0;
     	let t1;
+    	let a1;
+    	let iframe;
+    	let iframe_src_value;
+    	let t2;
     	let p;
     	let raw_value = marked_1(/*projects*/ ctx[0][/*i*/ ctx[4]].pages[0].content.slice(0, 120) + ".......") + "";
-    	let t2;
+    	let t3;
     	let footer;
     	let ul0;
     	let li0;
-    	let a1;
-    	let t4;
+    	let a2;
+    	let t5;
     	let ul1;
     	let li1;
-    	let a2;
-    	let t6;
+    	let a3;
+    	let t7;
 
     	const block = {
     		c: function create() {
@@ -2700,38 +2704,51 @@ var app = (function () {
     			a0 = element("a");
     			t0 = text(t0_value);
     			t1 = space();
-    			p = element("p");
+    			a1 = element("a");
+    			iframe = element("iframe");
     			t2 = space();
+    			p = element("p");
+    			t3 = space();
     			footer = element("footer");
     			ul0 = element("ul");
     			li0 = element("li");
-    			a1 = element("a");
-    			a1.textContent = "Continue Reading";
-    			t4 = space();
+    			a2 = element("a");
+    			a2.textContent = "Continue Reading";
+    			t5 = space();
     			ul1 = element("ul");
     			li1 = element("li");
-    			a2 = element("a");
-    			a2.textContent = "General";
-    			t6 = space();
+    			a3 = element("a");
+    			a3.textContent = "General";
+    			t7 = space();
     			attr_dev(a0, "href", "single.html");
     			add_location(a0, file, 12, 16, 217);
     			add_location(h2, file, 12, 12, 213);
     			attr_dev(div, "class", "title");
     			add_location(div, file, 11, 8, 181);
     			add_location(header, file, 10, 4, 164);
-    			add_location(p, file, 21, 4, 736);
+    			attr_dev(iframe, "width", "800");
+    			attr_dev(iframe, "height", "315");
+    			if (iframe.src !== (iframe_src_value = /*projects*/ ctx[0][/*i*/ ctx[4]].links.video)) attr_dev(iframe, "src", iframe_src_value);
+    			attr_dev(iframe, "frameborder", "0");
+    			attr_dev(iframe, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			iframe.allowFullscreen = true;
+    			add_location(iframe, file, 21, 3, 685);
     			attr_dev(a1, "href", "single.html");
-    			attr_dev(a1, "class", "button large");
-    			add_location(a1, file, 24, 16, 872);
-    			add_location(li0, file, 24, 12, 868);
+    			attr_dev(a1, "class", "image featured");
+    			add_location(a1, file, 20, 4, 636);
+    			add_location(p, file, 24, 4, 890);
+    			attr_dev(a2, "href", "single.html");
+    			attr_dev(a2, "class", "button large");
+    			add_location(a2, file, 27, 16, 1026);
+    			add_location(li0, file, 27, 12, 1022);
     			attr_dev(ul0, "class", "actions");
-    			add_location(ul0, file, 23, 8, 835);
-    			attr_dev(a2, "href", "#");
-    			add_location(a2, file, 27, 16, 998);
-    			add_location(li1, file, 27, 12, 994);
+    			add_location(ul0, file, 26, 8, 989);
+    			attr_dev(a3, "href", "#");
+    			add_location(a3, file, 30, 16, 1152);
+    			add_location(li1, file, 30, 12, 1148);
     			attr_dev(ul1, "class", "stats");
-    			add_location(ul1, file, 26, 8, 963);
-    			add_location(footer, file, 22, 4, 818);
+    			add_location(ul1, file, 29, 8, 1117);
+    			add_location(footer, file, 25, 4, 972);
     			attr_dev(article, "class", "post");
     			add_location(article, file, 9, 4, 137);
     		},
@@ -2743,21 +2760,29 @@ var app = (function () {
     			append_dev(h2, a0);
     			append_dev(a0, t0);
     			append_dev(article, t1);
+    			append_dev(article, a1);
+    			append_dev(a1, iframe);
+    			append_dev(article, t2);
     			append_dev(article, p);
     			p.innerHTML = raw_value;
-    			append_dev(article, t2);
+    			append_dev(article, t3);
     			append_dev(article, footer);
     			append_dev(footer, ul0);
     			append_dev(ul0, li0);
-    			append_dev(li0, a1);
-    			append_dev(footer, t4);
+    			append_dev(li0, a2);
+    			append_dev(footer, t5);
     			append_dev(footer, ul1);
     			append_dev(ul1, li1);
-    			append_dev(li1, a2);
-    			append_dev(article, t6);
+    			append_dev(li1, a3);
+    			append_dev(article, t7);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*projects*/ 1 && t0_value !== (t0_value = /*projects*/ ctx[0][/*i*/ ctx[4]].name + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*projects*/ 1 && iframe.src !== (iframe_src_value = /*projects*/ ctx[0][/*i*/ ctx[4]].links.video)) {
+    				attr_dev(iframe, "src", iframe_src_value);
+    			}
+
     			if (dirty & /*projects*/ 1 && raw_value !== (raw_value = marked_1(/*projects*/ ctx[0][/*i*/ ctx[4]].pages[0].content.slice(0, 120) + ".......") + "")) p.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(article);
@@ -3174,8 +3199,8 @@ var app = (function () {
     	let t0;
     	let t1;
     	let a1;
-    	let img;
-    	let img_src_value;
+    	let iframe;
+    	let iframe_src_value;
     	let t2;
 
     	const block = {
@@ -3188,18 +3213,21 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			a1 = element("a");
-    			img = element("img");
+    			iframe = element("iframe");
     			t2 = space();
     			attr_dev(a0, "href", "single.html");
     			add_location(a0, file$2, 12, 16, 256);
     			add_location(h3, file$2, 12, 12, 252);
     			add_location(header, file$2, 11, 11, 231);
-    			if (img.src !== (img_src_value = "images/pic04.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "");
-    			add_location(img, file$2, 16, 47, 551);
+    			attr_dev(iframe, "width", "100%");
+    			if (iframe.src !== (iframe_src_value = /*miniarticles*/ ctx[0][/*i*/ ctx[4]].links.video)) attr_dev(iframe, "src", iframe_src_value);
+    			attr_dev(iframe, "frameborder", "0");
+    			attr_dev(iframe, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			iframe.allowFullscreen = true;
+    			add_location(iframe, file$2, 17, 13, 574);
     			attr_dev(a1, "href", "single.html");
     			attr_dev(a1, "class", "image");
-    			add_location(a1, file$2, 16, 11, 515);
+    			add_location(a1, file$2, 16, 11, 524);
     			attr_dev(article, "class", "mini-post");
     			add_location(article, file$2, 10, 10, 192);
     			attr_dev(div, "class", "mini-posts");
@@ -3214,11 +3242,15 @@ var app = (function () {
     			append_dev(a0, t0);
     			append_dev(article, t1);
     			append_dev(article, a1);
-    			append_dev(a1, img);
+    			append_dev(a1, iframe);
     			append_dev(div, t2);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*miniarticles*/ 1 && t0_value !== (t0_value = /*miniarticles*/ ctx[0][/*i*/ ctx[4]].name + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*miniarticles*/ 1 && iframe.src !== (iframe_src_value = /*miniarticles*/ ctx[0][/*i*/ ctx[4]].links.video)) {
+    				attr_dev(iframe, "src", iframe_src_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);

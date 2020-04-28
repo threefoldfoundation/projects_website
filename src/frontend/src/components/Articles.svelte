@@ -18,7 +18,10 @@
             <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
         </div>  -->
     </header>
-    <!-- <a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a> -->
+    <a href="single.html" class="image featured">
+   <iframe width="800" height="315" src="{projects[i].links.video}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    </a>
     <p>{@html marked(projects[i].pages[0].content.slice(0, 120) + ".......")}</p>
     <footer>
         <ul class="actions">
