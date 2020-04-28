@@ -7,11 +7,22 @@
   //   import Users from "./routes/Users.svelte";
   export let url = "";
 
-  let res = {};
+  let res = {projects: [], users:[]};
   let miniProjects = [];
   let users = [];
   let projects = [];
-  
+  let page = 0;
+
+  function onNext() {
+    page += 5;
+    projects  = res.projects.slice(page, page+5)
+  }
+
+  function onPrevious() {
+    page -= 5;
+    projects  = res.projects.slice(page, page+5)
+  }
+
   onMount(async () => {
 		let response = await fetch(`http://127.0.0.1:3000/data`);
     let text = await response.text();
@@ -25,7 +36,7 @@
     let selected_users = shuffled_users.slice(0, 5); 
 
     miniProjects = selected_projects;
-    projects = selected_projects;
+    projects = res.projects.slice(0,5);
     users = selected_users;
   });
 
@@ -55,10 +66,10 @@
       <!-- Pagination -->
       <ul class="actions pagination">
         <li>
-          <a href="" class="disabled button large previous">Previous Page</a>
+          <button class="disabled button large previous" on:click={onPrevious}>Previous Page</button>
         </li>
         <li>
-          <a href="#" class="button large next">Next Page</a>
+          <button class="button large next" on:click={onNext}>Next Page</button>
         </li>
       </ul>
 
