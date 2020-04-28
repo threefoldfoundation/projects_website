@@ -6,7 +6,7 @@
 <div>
   <header id="header">
     <h1>
-      <a href="index.html">Future Imperfect</a>
+      <a href="index.html">Planet First</a>
     </h1>
     <nav class="links">
       <ul>

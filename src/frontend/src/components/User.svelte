@@ -2,14 +2,11 @@
     export let user
 </script>
 
-<article class="user">
+<div class="user">
   <header>
-    <h3>
-      <a href="#">Lorem ipsum fermentum ut nisl vitae</a>
-    </h3>
-    <time class="published" datetime="2015-10-20">October 20, 2015</time>
+    <div class="title">
+      <h2><a href="#/users/{user.name}">{user.name}</a></h2>
+    </div>
   </header>
-  <a href="#" class="image">
-    <img src="" alt="" />
-  </a>
-</article>
+      <a href="#/users/{user.name}" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+</div>

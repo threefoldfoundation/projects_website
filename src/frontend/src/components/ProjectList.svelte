@@ -2,12 +2,11 @@
   import Project from "./Project.svelte"
 
   export let projects = [];
+
 </script>
 
-<ul>
+<div>
 	{#each projects as project}
-		<li>
 			<Project {project} />
-		</li>
 	{/each}
-</ul>
+</div>

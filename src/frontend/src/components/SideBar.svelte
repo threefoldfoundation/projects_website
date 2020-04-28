@@ -1,6 +1,6 @@
 <script>
     import MiniProjectList from './MiniProjectList.svelte'
-    import UserList from './UserList.svelte'
+    import MiniUserList from './MiniUserList.svelte'
 
     export let miniProjects = []
     export let users = []
@@ -9,9 +9,9 @@
 
     <!-- Intro -->
         <section id="intro">
-            <a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+            <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
             <header>
-                <h2>Future Imperfect</h2>
+                <h2>Planet First</h2>
                 <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
             </header>
         </section>
@@ -20,7 +20,7 @@
         <MiniProjectList {miniProjects}/>
 
     <!-- Users -->
-        <UserList {users} />
+        <MiniUserList {users} />
 
     <!-- About -->
         <section class="blurb">
