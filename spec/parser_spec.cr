@@ -11,7 +11,7 @@ require "../src/models"
 # [links]
 # linkedin = ""
 # websites = ""
-# vimeo_video = ""
+# video = ""
     
 # [info]
 # full name =
@@ -207,7 +207,7 @@ toml_st = %(
 [links]
 linkedin = "https://www.linkedin.com/in/ahmed-te-youssef/"
 websites = ["github.com/xmonader"]
-vimeo_video = ""
+video = ""
 
 [info]
 full_name = "Ahmed Thabet"

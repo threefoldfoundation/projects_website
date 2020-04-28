@@ -1,5 +1,5 @@
 <script>
-export let Users
+export let UsersComponent
 export let users
 </script>
 

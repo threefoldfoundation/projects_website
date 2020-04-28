@@ -24,10 +24,10 @@ class MdPage
                 toml = TOML.parse(x[idx])
                 res.push(toml)
             rescue exception
-                # puts "*******************\n"
-                # puts "failed to parse code as toml\n" 
-                # puts "*******************\n" 
-                # puts x[idx] 
+                puts "*******************\n"
+                puts "failed to parse code as toml\n" 
+                puts "*******************\n" 
+                puts x[idx] 
             end
             
         end
@@ -60,12 +60,12 @@ end
 
 class ProjectInfo
     JSON.mapping(
-        team: String,
+        team: Array(String),
         countries: Array(Country),
         cities: Array(City)
     )
 
-    def initialize(@team="", @cities=Array(City).new, @countries=Array(Country).new);end
+    def initialize(@team=Array(String).new, @cities=Array(City).new, @countries=Array(Country).new);end
 
 end
 
@@ -130,10 +130,11 @@ class Links
     JSON.mapping(
         linkedin: String,
         websites: Array(String),
+        wiki: String,
         video: String
     )
 
-    def initialize(@linkedin="", @websites=Array(String).new, @video="");end
+    def initialize(@linkedin="", @websites=Array(String).new, @wiki="", @video="");end
 
 end
 

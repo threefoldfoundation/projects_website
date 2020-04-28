@@ -1,14 +1,20 @@
 <script>
+import { Router, Link, Route } from "svelte-routing";
 import Articles from "./components/Articles.svelte"
-import Users from "./components/Users.svelte"
+import UsersComponent from "./components/Users.svelte"
 import MiniArticles from "./components/MiniArticles.svelte"
+
+import Home from './routes/Projects.svelte'
+import Users from './routes/Users.svelte'
+export let url = ""
+
  async function getResult() {
 
-        let response = await fetch(`http://127.0.0.1:3000/data`);
-        let text = await response.text();
-        let data = text;
-		let obj = JSON.parse(data);
-		return {"projects": obj.projects, "users" : obj.people}
+	let response = await fetch(`http://127.0.0.1:3000/data`);
+	let text = await response.text();
+	let data = text;
+	let obj = JSON.parse(data);
+	return {"projects": obj.projects, "users" : obj.people}
     }
 
 	let res = getResult();
@@ -23,11 +29,15 @@ import MiniArticles from "./components/MiniArticles.svelte"
 						<h1><a href="index.html">Future Imperfect</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+							<nav>
+								<li><a href="/">Home</a></li>
+								<li><a href="projects.html">Projects</a></li>
+								<li><a href="users.html">Users</a></li>
+							</nav>
+							<Router>
+								
+								<Route path="users.html" component="{Articles}" />
+								</Router>
 							</ul>
 						</nav>
 						<nav class="main">
@@ -154,7 +164,7 @@ import MiniArticles from "./components/MiniArticles.svelte"
 						<!-- Mini Posts -->
 						<MiniArticles miniarticles={items.projects}/>
 						<!-- users List -->
-							<Users users={items.users}/>
+							<UsersComponent users={items.users}/>
 						{:catch error}
             
 						{error.message}

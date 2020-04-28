@@ -43,87 +43,97 @@ def _walk(path : String = CURR_PATH)
             item.pages.push(page)
             x, parsed_codes = page.parse
             
-            
-            if path_parts[0] == "projects"
-              if parsed_codes.size > 0
-                parsed_codes.each do |code|
-                  data = code.as(Hash)
-                  if data.has_key?("info")
-                    info = data["info"].as(Hash)
-                    links = data["links"].as(Hash)
-                    ecosystem = data["ecosystem"].as(Hash)
-                    
-                    item.as(Project).info.team =  info["team"].as(String)
-                    
-                    item.as(Project).info.countries =  Array(Country).new
-                    info["countries"].as(Array).each do |country|
-                      item.as(Project).info.countries.push Country.new country.as(String)
-                    end
+            begin
+              if path_parts[0] == "projects"
+                if parsed_codes.size > 0
+                  parsed_codes.each do |code|
+                    data = code.as(Hash)
+                    if data.has_key?("info")
+                      info = data["info"].as(Hash)
+                      links = data["links"].as(Hash)
+                      ecosystem = data["ecosystem"].as(Hash)
+                      
+                      info["team"].as(Array).each do |user|
+                        item.as(Project).info.team.push user.as(String)
+                      end
 
-                    item.as(Project).info.cities =  Array(City).new
-                    info["cities"].as(Array).each do |city|
-                      item.as(Project).info.cities.push City.new city.as(String)
-                    end
+                      item.as(Project).info.countries =  Array(Country).new
+                      info["countries"].as(Array).each do |country|
+                        item.as(Project).info.countries.push Country.new country.as(String)
+                      end
 
-                    ecosystem["categories"].as(Array).each do |category|
-                      item.as(Project).ecosystem.categories.push category.as(String)
-                    end
+                      item.as(Project).info.cities =  Array(City).new
+                      info["cities"].as(Array).each do |city|
+                        item.as(Project).info.cities.push City.new city.as(String)
+                      end
 
-                    ecosystem["badges"].as(Array).each do |badge|
-                      item.as(Project).ecosystem.badges.push badge.as(String)
-                    end
+                      ecosystem["categories"].as(Array).each do |category|
+                        item.as(Project).ecosystem.categories.push category.as(String)
+                      end
 
-                    item.as(Project).links.linkedin =  links["linkedin"].as(String)
-                    item.as(Project).links.video =  links["video"].as(String)
-                    links["websites"].as(Array).each do |website|
-                      item.as(Project).links.websites.push website.as(String)
+                      ecosystem["badges"].as(Array).each do |badge|
+                        item.as(Project).ecosystem.badges.push badge.as(String)
+                      end
+
+                      item.as(Project).links.linkedin =  links["linkedin"].as(String)
+                      item.as(Project).links.wiki =  links["wiki"].as(String)
+                      item.as(Project).links.video =  links["video"].as(String)
+                      links["websites"].as(Array).each do |website|
+                        item.as(Project).links.websites.push website.as(String)
+                      end
+                      
+                    elsif data.has_key?("milestone")
+                      milestone = data["milestone"].as(Hash)
+                      ms = MileStone.new milestone["name"].as(String), milestone["date"].as(String), milestone["funding_required_tft"].as(String), milestone["funding_required_usd"].as(String),  milestone["description"].as(String)
+                      item.as(Project).milestones.push ms
                     end
-                  elsif data.has_key?("milestone")
-                    milestone = data["milestone"].as(Hash)
-                    ms = MileStone.new milestone["name"].as(String), milestone["date"].as(String), milestone["funding_required_tft"].as(String), milestone["funding_required_usd"].as(String),  milestone["description"].as(String)
-                    item.as(Project).milestones.push ms
+                  end
+                end
+                  
+              elsif path_parts[0] == "people"
+                if parsed_codes.size > 0 && parsed_codes[0].has_key?("info")
+                  data = parsed_codes[0].as(Hash)
+                  info = data["info"].as(Hash)
+                  links = data["links"].as(Hash)
+                  ecosystem = data["ecosystem"].as(Hash)
+                  
+                  item.as(User).info.name =  info["full_name"].as(String)
+                  item.as(User).info.bio =  info["bio"].as(String)
+                  
+                  item.as(User).info.countries =  Array(Country).new
+                  info["countries"].as(Array).each do |country|
+                    item.as(User).info.countries.push Country.new country.as(String)
+                  end
+
+                  item.as(User).info.cities =  Array(City).new
+                  info["cities"].as(Array).each do |city|
+                    item.as(User).info.cities.push City.new city.as(String)
+                  end
+
+                  item.as(User).info.companies =  Array(Company).new
+                  info["companies"].as(Array).each do |company|
+                    item.as(User).info.companies.push Company.new company.as(String)
+                  end
+                  
+                  item.as(User).links.linkedin =  links["linkedin"].as(String)
+                  item.as(User).links.video =  links["video"].as(String)
+                  links["websites"].as(Array).each do |website|
+                    item.as(User).links.websites.push website.as(String)
+                  end
+
+                  ecosystem["memberships"].as(Array).each do |membership|
+                    item.as(User).ecosystem.memberships.push membership.as(String)
                   end
                 end
               end
-                
-            elsif path_parts[0] == "people"
-              if parsed_codes.size > 0 && parsed_codes[0].has_key?("info")
-                data = parsed_codes[0].as(Hash)
-                info = data["info"].as(Hash)
-                links = data["links"].as(Hash)
-                ecosystem = data["ecosystem"].as(Hash)
-                
-                item.as(User).info.name =  info["full_name"].as(String)
-                item.as(User).info.bio =  info["bio"].as(String)
-                
-                item.as(User).info.countries =  Array(Country).new
-                info["countries"].as(Array).each do |country|
-                  item.as(User).info.countries.push Country.new country.as(String)
-                end
-
-                item.as(User).info.cities =  Array(City).new
-                info["cities"].as(Array).each do |city|
-                  item.as(User).info.cities.push City.new city.as(String)
-                end
-
-                item.as(User).info.companies =  Array(Company).new
-                info["companies"].as(Array).each do |company|
-                  item.as(User).info.companies.push Company.new company.as(String)
-                end
-                
-                item.as(User).links.linkedin =  links["linkedin"].as(String)
-                item.as(User).links.video =  links["vimeo_video"].as(String)
-                links["websites"].as(Array).each do |website|
-                  item.as(User).links.websites.push website.as(String)
-                end
-
-                ecosystem["memberships"].as(Array).each do |membership|
-                  item.as(User).ecosystem.memberships.push membership.as(String)
-                end
-              end
+    
+            rescue exception
+              puts "error parsing file "  + p
+              puts exception
             end
-  
-          end
+
+        end
+
         end
       end
     end
