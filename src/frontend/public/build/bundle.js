@@ -4636,6 +4636,21 @@ var app = (function () {
     	let t25;
     	let a9;
     	let t27;
+    	let t28;
+    	let script0;
+    	let script0_src_value;
+    	let t29;
+    	let script1;
+    	let script1_src_value;
+    	let t30;
+    	let script2;
+    	let script2_src_value;
+    	let t31;
+    	let script3;
+    	let script3_src_value;
+    	let t32;
+    	let script4;
+    	let script4_src_value;
     	let current;
     	const if_block_creators = [create_if_block$1, create_else_block$1];
     	const if_blocks = [];
@@ -4713,6 +4728,16 @@ var app = (function () {
     			a9 = element("a");
     			a9.textContent = "Unsplash";
     			t27 = text("\n      .");
+    			t28 = space();
+    			script0 = element("script");
+    			t29 = space();
+    			script1 = element("script");
+    			t30 = space();
+    			script2 = element("script");
+    			t31 = space();
+    			script3 = element("script");
+    			t32 = space();
+    			script4 = element("script");
     			if (img.src !== (img_src_value = "images/logo.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			add_location(img, file$4, 13, 6, 260);
@@ -4776,6 +4801,16 @@ var app = (function () {
     			add_location(p2, file$4, 85, 4, 1979);
     			attr_dev(section2, "id", "footer");
     			add_location(section2, file$4, 57, 2, 1258);
+    			if (script0.src !== (script0_src_value = "assets/js/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
+    			add_location(script0, file$4, 95, 2, 2198);
+    			if (script1.src !== (script1_src_value = "assets/js/browser.min.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$4, 98, 2, 2252);
+    			if (script2.src !== (script2_src_value = "assets/js/breakpoints.min.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$4, 101, 2, 2307);
+    			if (script3.src !== (script3_src_value = "assets/js/util.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$4, 104, 2, 2366);
+    			if (script4.src !== (script4_src_value = "assets/js/main.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$4, 107, 2, 2414);
     			attr_dev(section3, "id", "sidebar");
     			add_location(section3, file$4, 8, 0, 160);
     		},
@@ -4834,6 +4869,16 @@ var app = (function () {
     			append_dev(p2, t25);
     			append_dev(p2, a9);
     			append_dev(p2, t27);
+    			append_dev(section3, t28);
+    			append_dev(section3, script0);
+    			append_dev(section3, t29);
+    			append_dev(section3, script1);
+    			append_dev(section3, t30);
+    			append_dev(section3, script2);
+    			append_dev(section3, t31);
+    			append_dev(section3, script3);
+    			append_dev(section3, t32);
+    			append_dev(section3, script4);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -5129,21 +5174,6 @@ var app = (function () {
     	let li1;
     	let a1;
     	let t4;
-    	let t5;
-    	let script0;
-    	let script0_src_value;
-    	let t6;
-    	let script1;
-    	let script1_src_value;
-    	let t7;
-    	let script2;
-    	let script2_src_value;
-    	let t8;
-    	let script3;
-    	let script3_src_value;
-    	let t9;
-    	let script4;
-    	let script4_src_value;
     	let current;
     	const if_block_creators = [create_if_block$2, create_else_block$2];
     	const if_blocks = [];
@@ -5174,16 +5204,6 @@ var app = (function () {
     			a1.textContent = "Next Page";
     			t4 = space();
     			create_component(sidebar.$$.fragment);
-    			t5 = space();
-    			script0 = element("script");
-    			t6 = space();
-    			script1 = element("script");
-    			t7 = space();
-    			script2 = element("script");
-    			t8 = space();
-    			script3 = element("script");
-    			t9 = space();
-    			script4 = element("script");
     			attr_dev(a0, "href", "");
     			attr_dev(a0, "class", "disabled button large previous");
     			add_location(a0, file$5, 44, 10, 963);
@@ -5198,16 +5218,6 @@ var app = (function () {
     			add_location(div0, file$5, 25, 4, 600);
     			attr_dev(div1, "id", "wrapper");
     			add_location(div1, file$5, 22, 2, 558);
-    			if (script0.src !== (script0_src_value = "assets/js/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 58, 2, 1225);
-    			if (script1.src !== (script1_src_value = "assets/js/browser.min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 61, 2, 1279);
-    			if (script2.src !== (script2_src_value = "assets/js/breakpoints.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 64, 2, 1334);
-    			if (script3.src !== (script3_src_value = "assets/js/util.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 67, 2, 1393);
-    			if (script4.src !== (script4_src_value = "assets/js/main.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 70, 2, 1441);
     			add_location(main, file$5, 19, 0, 529);
     		},
     		l: function claim(nodes) {
@@ -5227,16 +5237,6 @@ var app = (function () {
     			append_dev(li1, a1);
     			append_dev(div1, t4);
     			mount_component(sidebar, div1, null);
-    			append_dev(main, t5);
-    			append_dev(main, script0);
-    			append_dev(main, t6);
-    			append_dev(main, script1);
-    			append_dev(main, t7);
-    			append_dev(main, script2);
-    			append_dev(main, t8);
-    			append_dev(main, script3);
-    			append_dev(main, t9);
-    			append_dev(main, script4);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
