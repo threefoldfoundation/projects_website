@@ -21,7 +21,9 @@ class Markdown
 
     def self.to_tf_markdown(text)
         String.build do |io|
-          parse text, Markdown::ThreefoldRender.new(io)
+          renderer = Markdown::ThreefoldRender.new(io)
+          parse text, renderer
+          return renderer.st, renderer.codes
         end
       end
   end

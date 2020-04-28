@@ -110,6 +110,7 @@ No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
 ```
 
+
 # Tables
 
 Colons can be used to align columns.
@@ -200,10 +201,60 @@ Or, in pure Markdown, but losing the image sizing and border:
 
 )
 
+
+toml_st = %(
+```python
+[links]
+linkedin = "https://www.linkedin.com/in/ahmed-te-youssef/"
+websites = ["github.com/xmonader"]
+vimeo_video = ""
+
+[info]
+full_name = "Ahmed Thabet"
+countries = ["Egypt"]
+cities = ["Cairo"]
+companies = ["CodeScalers"]
+bio = ""
+
+[ecosystem]
+# can be chosen from: freeflowcitizen, matchmaker, tfambassador, tffarmer, wisdomcouncil
+memberships = []
+```
+)
+
+toml_milestones = %(
+```python
+[milestone]
+name = "v2.0 Social"
+
+[milestone]
+name = "v1.0 Social"
+
+[milestone]
+name = "v3.0 Social"
+
+```)
+
 describe MdPage do
-  it "parse_user_doc" do
-    p = MdPage.new "", "", content=CONTENT
-    puts p.parse
+  # it "parse_user_doc" do
+  #   p = MdPage.new "", "", content=CONTENT
+  #   st, codes = p.parse
+  #   puts st
+  # end
+
+  # it "parse_toml" do
+  #   p = MdPage.new "", "", content=toml_st
+  #   s, tomls = p.parse
+  #   puts "Now only tomls\n*********"
+  #   puts tomls
+  # end
+
+  it "parse_toml_milestones" do
+    p = MdPage.new "", "", content=toml_milestones
+    s, tomls = p.parse
+    puts "Now only tomls\n*********"
+    puts s, tomls
   end
+
 end
 

@@ -1,5 +1,5 @@
 require "./renderer"
-
+require "toml"
 
 
 class Markdown::ThreefoldRender
@@ -12,10 +12,47 @@ class Markdown::ThreefoldRender
   @CODE=false
   @CODE_BLOCK =  String::Builder.new
 
-  def codes
+  # parse codes, return objects
+  def codes: Array(String)
     @CODES
+    res = Array(String).new
+    @CODES.each do |item|
+      if ! item.includes?("[milestone]")
+          res.push(item)
+          next
+      end
+
+      offsets = Array(Int32).new
+      current_offset = 0
+      while true
+        offset = item.index("[milestone]", current_offset)
+        if offset == nil
+          break
+        end
+        offsets.push(offset.not_nil!)
+        current_offset = offset.not_nil! + "[milestone]".size
+      end
+
+      start_end = []of Tuple(Int32, Int32)
+      offsets.each_with_index do |off, i|
+        if i+1 == offsets.size
+          start_end.push ({offsets[i], item.size-1})
+          next
+        end
+        start_end.push ({offsets[i], offsets[i+1]-1})
+      end
+
+      start_end.each do |se|
+        s, e = se
+        res.push(item[s..e])
+      end
+    end
+    res
   end
 
+  def st
+    return @io.to_s
+  end
   def initialize(@io : IO)
   end
 

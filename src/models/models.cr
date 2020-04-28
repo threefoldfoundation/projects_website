@@ -13,8 +13,25 @@ class MdPage
     
     end
 
+   
     def parse
-        Markdown.to_tf_markdown @content
+        st, codes = Markdown.to_tf_markdown @content
+        x = codes.as(Array(String))
+        res = Array(Hash(String, TOML::Type)).new
+        s = x.size
+        (0..s-1).each do |idx|
+            begin
+                toml = TOML.parse(x[idx])
+                res.push(toml)
+            rescue exception
+                # puts "*******************\n"
+                # puts "failed to parse code as toml\n" 
+                # puts "*******************\n" 
+                # puts x[idx] 
+            end
+            
+        end
+        return st, res
     end
 
 end
@@ -23,15 +40,15 @@ class MileStone
     JSON.mapping(
         name: String,
         date: String,
-        funding_required_tft: Int32,
-        funding_required_usd: Int32,
+        funding_required_tft: String,
+        funding_required_usd: String,
         description: String
     )
 
-    def initialize(@name="", @date="", @funding_required_tft=0, @funding_required_usd=0, @description="");end
+    def initialize(@name="", @date="", @funding_required_tft="", @funding_required_usd="", @description="");end
 end
 
-class ProjectEchosystem
+class ProjectEcoSystem
     JSON.mapping(
         categories: Array(String),
         badges: Array(String)
@@ -57,13 +74,13 @@ class Project
     JSON.mapping(
         name: String,
         links: Links,
-        echosystem: ProjectEchosystem,
+        ecosystem: ProjectEcoSystem,
         pages: Array(MdPage),
         info: ProjectInfo,
         milestones: Array(MileStone)
     )
 
-    def initialize (@name, @pages=Array(MdPage).new, @links=Links.new, @echosystem=ProjectEchosystem.new, @info=ProjectInfo.new, @milestones=Array(MileStone).new); end
+    def initialize (@name, @pages=Array(MdPage).new, @links=Links.new, @ecosystem=ProjectEcoSystem.new, @info=ProjectInfo.new, @milestones=Array(MileStone).new); end
 end
 
 
@@ -120,7 +137,7 @@ class Links
 
 end
 
-class UserEchosystem
+class UserEcoSystem
     JSON.mapping(
         memberships: Array(String)
     )
@@ -134,10 +151,10 @@ class User
         pages: Array(MdPage),
         info: UserInfo,
         links: Links,
-        echosystem: UserEchosystem
+        ecosystem: UserEcoSystem
     )
 
-    def initialize (@name, @pages=Array(MdPage).new, @info=UserInfo.new, @links=Links.new, @echosystem=UserEchosystem.new); end
+    def initialize (@name, @pages=Array(MdPage).new, @info=UserInfo.new, @links=Links.new, @ecosystem=UserEcoSystem.new); end
 end
 
 class Websites
