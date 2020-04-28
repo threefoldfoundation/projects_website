@@ -3,6 +3,7 @@
 // } from '../../Router.svelte'
 import Home from './routes/Home.svelte'
 import Projects from './routes/Projects.svelte'
+import Users from './routes/Users.svelte'
 let routes
 const urlParams = new URLSearchParams(window.location.search)
 if (!urlParams.has('routemap')) {
@@ -11,6 +12,7 @@ if (!urlParams.has('routemap')) {
         // Exact path
         '/home': Home,
         '/projects': Projects,
+        '/users': Users,
 
         // // Using named parameters, with last being optional
         // '/author/:first/:last?': Author,
@@ -28,5 +30,6 @@ if (!urlParams.has('routemap')) {
     // Exact path
     routes.set('/home', Home)
     routes.set('/projects', Projects)
+    routes.set('/users', Users)
 }
 export default routes
