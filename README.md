@@ -32,6 +32,12 @@ Simple Api server which parses markedown docs and return it in structured way
 ```
 KEMAL_ENV=test crystal spec
 ```
+
+## Run behind caddy
+```
+sudo caddy run
+```
+
 ## Data structure
 
 For now simple call to `/data` returns all data
