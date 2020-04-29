@@ -169,4 +169,9 @@ get "/" do |env|
   env.redirect "/index.html"
 end
 
+error 404 do |env|
+  env.redirect "/index.html#/error"
+end
+
 Kemal.run
+

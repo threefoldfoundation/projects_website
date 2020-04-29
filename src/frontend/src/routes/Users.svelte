@@ -24,7 +24,7 @@
 
   
   onMount(async () => {
-		let response = await fetch(`http://127.0.0.1:3000/data`);
+		let response = await fetch(`${window.location.origin}/data`);
     let text = await response.text();
     let data = text;
     let obj = JSON.parse(data);
