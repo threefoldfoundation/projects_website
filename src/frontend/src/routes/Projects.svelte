@@ -16,15 +16,18 @@
   function onNext() {
     page += 5;
     projects  = res.projects.slice(page, page+5)
+    updatePage()
   }
 
   function onPrevious() {
     page -= 5;
     projects  = res.projects.slice(page, page+5)
+    updatePage()
   }
 
+
   onMount(async () => {
-		let response = await fetch(`http://127.0.0.1:3000/data`);
+    let response = await fetch(`http://127.0.0.1:3000/data`);
     let text = await response.text();
     let data = text;
     let obj = JSON.parse(data);
@@ -40,6 +43,22 @@
     users = selected_users;
   });
 
+  function updatePage(){
+    let btn_prev = document.getElementById('btn_prev')
+    let btn_next = document.getElementById("btn_next")
+    if(page > 0){
+      btn_prev.classList.remove('disabled')
+    }
+    if (page > res.projects.length - 5){
+      btn_next.classList.add("disabled")
+    }
+    if(page <= 0){
+      btn_prev.classList.add('disabled')
+    }
+    if (page < res.projects.length - 5){
+      btn_next.classList.remove("disabled")
+    }
+  }
 </script>
 
 <main>
@@ -66,10 +85,10 @@
       <!-- Pagination -->
       <ul class="actions pagination">
         <li>
-          <button class="disabled button large previous" on:click={onPrevious}>Previous Page</button>
+          <button id="btn_prev" class="disabled button large previous" on:click={onPrevious}>Previous Page</button>
         </li>
         <li>
-          <button class="button large next" on:click={onNext}>Next Page</button>
+          <button id="btn_next" class="button large next" on:click={onNext}>Next Page</button>
         </li>
       </ul>
 

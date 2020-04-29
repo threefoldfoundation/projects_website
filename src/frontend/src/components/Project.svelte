@@ -12,7 +12,7 @@
    {#if project.links.image_path != ""}
       <a href="#/projects/{project.name}" class="image featured"><img src={project.links.image_path} alt="" /></a>
     {:else if project.links.video != ""}
-      <iframe width="800" height="315" src="{project.links.video}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="800" height="415" src={project.links.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     {:else}
       <a href="#/projects/{project.name}" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
     {/if}
