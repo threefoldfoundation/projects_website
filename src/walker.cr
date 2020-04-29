@@ -104,6 +104,7 @@ def _walk(path : String = CURR_PATH)
                     end
                   end
                 end
+                item.name = item.name.gsub("_", " ")
                   
               elsif path_parts[0] == "people"
                 item.as(User).links.image_path = image_path
