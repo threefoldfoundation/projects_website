@@ -6,5 +6,12 @@
   <header>
     <h3><a href="">{miniProject.name}</a></h3>
   </header>
-  <a href="" class="image"><img src="images/pic04.jpg" alt="" /></a>
+  {#if miniProject.links.image_path != ""}
+      <a href="#/projects/{miniProject.name}" class="image"><img width="351" height="176" src={miniProject.links.image_path} alt="" /></a>
+    {:else if miniProject.links.video != ""}
+      <iframe width="351" height="176" src={miniProject.links.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {:else}
+      <a href="#/projects/{miniProject.name}" class="image "><img width="351" height="176" src="images/pic01.jpg" alt="" /></a>
+    {/if}
+  <!-- <a href="" class="image"><img src="images/pic04.jpg" alt="" /></a> -->
 </article>
