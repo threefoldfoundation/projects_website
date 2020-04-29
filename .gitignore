@@ -6,3 +6,6 @@
 node_modules
 shard.lock
 /public/*
+src/frontend/public/build/bundle.js
+src/frontend/public/build/bundle.js.map
+walker
