@@ -21,19 +21,107 @@
                                 <p><strong>A collective and open ecosystem of planet- and human- centric projects</strong></p>
                             </div>
                         </header>
-                        <span class="image featured"><img src="images/pic01.png" alt="" /></span>
-                        <p>We are the Threefold Network, and have built a new peer-to-peer internet that empowers equality, freedom and sustainability. As we launch the ThreeFold Grid and many other experiences on top, the time has come for us to make our world peer-to-peer.</p>
-                        <p>As of the 29th of April 2020, the ThreeFold Network will enter a rolling launch with many exciting announcements for the world. This will start with the announcement of our Grid 2.0 upgrade and the availability of the ThreeFold Token on Stellar Exchange.</p>
-        <p>The time has come to start building our peer-to-peer world together, and it goes without saying that a collective and equal approach is needed. Many beautiful projects have joined the Planet First Ecosystem, and together we aim to empower a better future for humanity and our planet.</p>
-        <p>If not us, who? If not now, when?</p>
-                        <p>Interested to learn more? Explore the first projects living on the ThreeFold Network</p>
-                        <!-- <footer>
-                            <ul class="stats">
-                                <li><a href="#">General</a></li>
-                                <li><a href="#" class="icon solid fa-heart">28</a></li>
-                                <li><a href="#" class="icon solid fa-comment">128</a></li>
-                            </ul>
-                        </footer> -->
+                        {#if project_data.links.image_path != ""}
+      <a href="#/project_data/{project_data.name}" class="image featured"><img height="250" src={project_data.links.image_path} alt="" /></a>
+    {:else if project_data.links.video != ""}
+      <iframe width="800" height="415" src={project_data.links.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {:else}
+      <a href="#/project_data/{project_data.name}" class="image featured"><img height="250" src="images/pic01.jpg" alt="" /></a>
+    {/if}
+  
+                       
+                        {#if project_data.info.mission }
+                        mission : 
+                            <div>{project_data.info.mission}</div>
+                       {/if}
+
+                       {#if project_data.info.description }
+                        description : 
+                            <div>{project_data.info.description}</div>
+                       {/if}
+
+                        {#if project_data.info.team.length>0 }
+                        team : 
+
+                         {#each project_data.info.team as person }
+                            <li>{person}</li>
+                       {/each}
+                       {/if}
+
+
+                       
+                        {#if project_data.milestones.length>0 }
+                        milestons : 
+
+                         {#each project_data.milestones as milestone }
+                            name:<li>{milestone.name}</li>
+                            date: <li>{milestone.date}</li>
+                              description: <li>{milestone.description}</li>
+                             funding require in tft  <li>{milestone.funding_required_tft}</li>
+                             funding required in usd  <li>{milestone.funding_required_usd}</li>
+                       {/each}
+
+                       {/if}
+
+                       {#if project_data.info.countries .length > 0}
+                        countries : 
+
+                         {#each project_data.info.countries as country }
+                            <li>{country.name}</li>
+                       {/each}
+
+                       {/if}
+
+                       {#if project_data.info.cities.length > 0 }
+                        cities : 
+
+                         {#each project_data.info.cities as city }
+                            <li>{city.name}</li>
+                       {/each}
+
+                       {/if}
+
+
+                         {#if project_data.links.websites.length > 0 }
+                       websites:
+                       {#each project_data.links.websites as link }
+                            <a href="{link}">{link}</a>
+                       {/each}
+
+                       {/if}
+
+                       {#if project_data.links.linkedin }
+                        <div>
+                        linkedin :<a href="{project_data.links.linkedin}">{project_data.links.linkedin}</a> 
+                        </div>
+                        {/if}
+                    
+                         {#if project_data.links.wiki }
+                        <div>
+                        wiki :<a href="{project_data.links.wiki}">{project_data.links.wiki}</a> 
+                        </div>
+                       {/if}
+
+
+                    {#if project_data.ecosystem.badges.length > 0 }
+                        badges
+
+                         {#each project_data.ecosystem.badges as badge }
+                            <li>{badge}</li>
+                       {/each}
+
+                       {/if}
+
+
+                       {#if project_data.ecosystem.categories.length > 0 }
+                        categories
+
+                         {#each project_data.ecosystem.categories as category }
+                            <li>{category}</li>
+                       {/each}
+
+                       {/if}
+                       
                     </article>
 
             </div>

@@ -62,10 +62,12 @@ class ProjectInfo
     JSON.mapping(
         team: Array(String),
         countries: Array(Country),
-        cities: Array(City)
+        cities: Array(City),
+        mission: String,
+        description: String
     )
 
-    def initialize(@team=Array(String).new, @cities=Array(City).new, @countries=Array(Country).new);end
+    def initialize(@team=Array(String).new, @cities=Array(City).new, @countries=Array(Country).new, @mission="", @description="");end
 
 end
 
