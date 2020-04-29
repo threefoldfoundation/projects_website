@@ -4415,38 +4415,171 @@ var app = (function () {
 
     const file$3 = "src/components/MiniProject.svelte";
 
+    // (13:4) {:else}
+    function create_else_block$2(ctx) {
+    	let a;
+    	let img;
+    	let img_src_value;
+    	let a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			img = element("img");
+    			attr_dev(img, "width", "351");
+    			attr_dev(img, "height", "176");
+    			if (img.src !== (img_src_value = "images/pic01.jpg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			add_location(img, file$3, 13, 61, 637);
+    			attr_dev(a, "href", a_href_value = "#/projects/" + /*miniProject*/ ctx[0].name);
+    			attr_dev(a, "class", "image ");
+    			add_location(a, file$3, 13, 6, 582);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, img);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*miniProject*/ 1 && a_href_value !== (a_href_value = "#/projects/" + /*miniProject*/ ctx[0].name)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(a);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$2.name,
+    		type: "else",
+    		source: "(13:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (11:44) 
+    function create_if_block_1$1(ctx) {
+    	let iframe;
+    	let iframe_src_value;
+
+    	const block = {
+    		c: function create() {
+    			iframe = element("iframe");
+    			attr_dev(iframe, "width", "351");
+    			attr_dev(iframe, "height", "176");
+    			if (iframe.src !== (iframe_src_value = /*miniProject*/ ctx[0].links.video)) attr_dev(iframe, "src", iframe_src_value);
+    			attr_dev(iframe, "frameborder", "0");
+    			attr_dev(iframe, "allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+    			iframe.allowFullscreen = true;
+    			add_location(iframe, file$3, 11, 6, 379);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, iframe, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*miniProject*/ 1 && iframe.src !== (iframe_src_value = /*miniProject*/ ctx[0].links.video)) {
+    				attr_dev(iframe, "src", iframe_src_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(iframe);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(11:44) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (9:2) {#if miniProject.links.image_path != ""}
+    function create_if_block$2(ctx) {
+    	let a;
+    	let img;
+    	let img_src_value;
+    	let a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			img = element("img");
+    			attr_dev(img, "width", "351");
+    			attr_dev(img, "height", "176");
+    			if (img.src !== (img_src_value = /*miniProject*/ ctx[0].links.image_path)) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			add_location(img, file$3, 9, 60, 249);
+    			attr_dev(a, "href", a_href_value = "#/projects/" + /*miniProject*/ ctx[0].name);
+    			attr_dev(a, "class", "image");
+    			add_location(a, file$3, 9, 6, 195);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, img);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*miniProject*/ 1 && img.src !== (img_src_value = /*miniProject*/ ctx[0].links.image_path)) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*miniProject*/ 1 && a_href_value !== (a_href_value = "#/projects/" + /*miniProject*/ ctx[0].name)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(a);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(9:2) {#if miniProject.links.image_path != \\\"\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$4(ctx) {
     	let article;
     	let header;
     	let h3;
-    	let a0;
+    	let a;
     	let t0_value = /*miniProject*/ ctx[0].name + "";
     	let t0;
     	let t1;
-    	let a1;
-    	let img;
-    	let img_src_value;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*miniProject*/ ctx[0].links.image_path != "") return create_if_block$2;
+    		if (/*miniProject*/ ctx[0].links.video != "") return create_if_block_1$1;
+    		return create_else_block$2;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
 
     	const block = {
     		c: function create() {
     			article = element("article");
     			header = element("header");
     			h3 = element("h3");
-    			a0 = element("a");
+    			a = element("a");
     			t0 = text(t0_value);
     			t1 = space();
-    			a1 = element("a");
-    			img = element("img");
-    			attr_dev(a0, "href", "");
-    			add_location(a0, file$3, 6, 8, 95);
+    			if_block.c();
+    			attr_dev(a, "href", "");
+    			add_location(a, file$3, 6, 8, 95);
     			add_location(h3, file$3, 6, 4, 91);
     			add_location(header, file$3, 5, 2, 78);
-    			if (img.src !== (img_src_value = "images/pic04.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "");
-    			add_location(img, file$3, 8, 27, 173);
-    			attr_dev(a1, "href", "");
-    			attr_dev(a1, "class", "image");
-    			add_location(a1, file$3, 8, 2, 148);
     			attr_dev(article, "class", "miniProject");
     			add_location(article, file$3, 4, 0, 46);
     		},
@@ -4457,19 +4590,31 @@ var app = (function () {
     			insert_dev(target, article, anchor);
     			append_dev(article, header);
     			append_dev(header, h3);
-    			append_dev(h3, a0);
-    			append_dev(a0, t0);
+    			append_dev(h3, a);
+    			append_dev(a, t0);
     			append_dev(article, t1);
-    			append_dev(article, a1);
-    			append_dev(a1, img);
+    			if_block.m(article, null);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*miniProject*/ 1 && t0_value !== (t0_value = /*miniProject*/ ctx[0].name + "")) set_data_dev(t0, t0_value);
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(article, null);
+    				}
+    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(article);
+    			if_block.d();
     		}
     	};
 
@@ -5420,7 +5565,7 @@ var app = (function () {
     }
 
     // (71:6) {#if res === undefined}
-    function create_if_block_1$1(ctx) {
+    function create_if_block_1$2(ctx) {
     	let p;
 
     	const block = {
@@ -5441,7 +5586,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$1.name,
+    		id: create_if_block_1$2.name,
     		type: "if",
     		source: "(71:6) {#if res === undefined}",
     		ctx
@@ -5563,7 +5708,7 @@ var app = (function () {
     }
 
     // (98:6) {:else}
-    function create_else_block$2(ctx) {
+    function create_else_block$3(ctx) {
     	let await_block_anchor;
     	let promise;
     	let current;
@@ -5627,7 +5772,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$2.name,
+    		id: create_else_block$3.name,
     		type: "else",
     		source: "(98:6) {:else}",
     		ctx
@@ -5637,7 +5782,7 @@ var app = (function () {
     }
 
     // (96:4) {#if res === undefined}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let p;
 
     	const block = {
@@ -5658,7 +5803,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(96:4) {#if res === undefined}",
     		ctx
@@ -5801,7 +5946,7 @@ var app = (function () {
     	let if_block1;
     	let current;
     	let dispose;
-    	const if_block_creators = [create_if_block_1$1, create_else_block_1];
+    	const if_block_creators = [create_if_block_1$2, create_else_block_1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -5811,7 +5956,7 @@ var app = (function () {
 
     	current_block_type_index = select_block_type(ctx);
     	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	const if_block_creators_1 = [create_if_block$2, create_else_block$2];
+    	const if_block_creators_1 = [create_if_block$3, create_else_block$3];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -6454,7 +6599,7 @@ var app = (function () {
     /* src/routes/Users.svelte generated by Svelte v3.21.0 */
     const file$b = "src/routes/Users.svelte";
 
-    // (40:6) {:else}
+    // (70:6) {:else}
     function create_else_block_1$1(ctx) {
     	let await_block_anchor;
     	let promise;
@@ -6467,8 +6612,8 @@ var app = (function () {
     		pending: create_pending_block_1$1,
     		then: create_then_block_1$1,
     		catch: create_catch_block_1$1,
-    		value: 5,
-    		error: 6,
+    		value: 9,
+    		error: 10,
     		blocks: [,,,]
     	};
 
@@ -6492,7 +6637,7 @@ var app = (function () {
 
     			if (dirty & /*res*/ 1 && promise !== (promise = /*res*/ ctx[0]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[5] = info.resolved;
+    				child_ctx[9] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -6521,21 +6666,21 @@ var app = (function () {
     		block,
     		id: create_else_block_1$1.name,
     		type: "else",
-    		source: "(40:6) {:else}",
+    		source: "(70:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:6) {#if res === undefined}
-    function create_if_block_1$2(ctx) {
+    // (68:6) {#if res === undefined}
+    function create_if_block_1$3(ctx) {
     	let p;
 
     	const block = {
     		c: function create() {
     			p = element("p");
-    			add_location(p, file$b, 38, 8, 1003);
+    			add_location(p, file$b, 68, 8, 1680);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6550,18 +6695,18 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$2.name,
+    		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(38:6) {#if res === undefined}",
+    		source: "(68:6) {#if res === undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:8) {:catch error}
+    // (77:8) {:catch error}
     function create_catch_block_1$1(ctx) {
-    	let t_value = /*error*/ ctx[6].message + "";
+    	let t_value = /*error*/ ctx[10].message + "";
     	let t;
 
     	const block = {
@@ -6572,7 +6717,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*res*/ 1 && t_value !== (t_value = /*error*/ ctx[6].message + "")) set_data_dev(t, t_value);
+    			if (dirty & /*res*/ 1 && t_value !== (t_value = /*error*/ ctx[10].message + "")) set_data_dev(t, t_value);
     		},
     		i: noop,
     		o: noop,
@@ -6585,14 +6730,14 @@ var app = (function () {
     		block,
     		id: create_catch_block_1$1.name,
     		type: "catch",
-    		source: "(47:8) {:catch error}",
+    		source: "(77:8) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (45:8) {:then items}
+    // (75:8) {:then items}
     function create_then_block_1$1(ctx) {
     	let current;
 
@@ -6632,14 +6777,14 @@ var app = (function () {
     		block,
     		id: create_then_block_1$1.name,
     		type: "then",
-    		source: "(45:8) {:then items}",
+    		source: "(75:8) {:then items}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:20)             <p>Loading...</p>          {:then items}
+    // (71:20)             <p>Loading...</p>          {:then items}
     function create_pending_block_1$1(ctx) {
     	let p;
 
@@ -6647,7 +6792,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$b, 42, 10, 1055);
+    			add_location(p, file$b, 72, 10, 1732);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6664,15 +6809,15 @@ var app = (function () {
     		block,
     		id: create_pending_block_1$1.name,
     		type: "pending",
-    		source: "(41:20)             <p>Loading...</p>          {:then items}",
+    		source: "(71:20)             <p>Loading...</p>          {:then items}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:6) {:else}
-    function create_else_block$3(ctx) {
+    // (96:6) {:else}
+    function create_else_block$4(ctx) {
     	let await_block_anchor;
     	let promise;
     	let current;
@@ -6684,8 +6829,8 @@ var app = (function () {
     		pending: create_pending_block$1,
     		then: create_then_block$1,
     		catch: create_catch_block$1,
-    		value: 5,
-    		error: 6,
+    		value: 9,
+    		error: 10,
     		blocks: [,,,]
     	};
 
@@ -6709,7 +6854,7 @@ var app = (function () {
 
     			if (dirty & /*res*/ 1 && promise !== (promise = /*res*/ ctx[0]) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[5] = info.resolved;
+    				child_ctx[9] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
@@ -6736,23 +6881,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$3.name,
+    		id: create_else_block$4.name,
     		type: "else",
-    		source: "(66:6) {:else}",
+    		source: "(96:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:4) {#if res === undefined}
-    function create_if_block$3(ctx) {
+    // (94:4) {#if res === undefined}
+    function create_if_block$4(ctx) {
     	let p;
 
     	const block = {
     		c: function create() {
     			p = element("p");
-    			add_location(p, file$b, 64, 8, 1529);
+    			add_location(p, file$b, 94, 8, 2277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6767,18 +6912,18 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
-    		source: "(64:4) {#if res === undefined}",
+    		source: "(94:4) {#if res === undefined}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:8) {:catch error}
+    // (103:8) {:catch error}
     function create_catch_block$1(ctx) {
-    	let t_value = /*error*/ ctx[6].message + "";
+    	let t_value = /*error*/ ctx[10].message + "";
     	let t;
 
     	const block = {
@@ -6789,7 +6934,7 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*res*/ 1 && t_value !== (t_value = /*error*/ ctx[6].message + "")) set_data_dev(t, t_value);
+    			if (dirty & /*res*/ 1 && t_value !== (t_value = /*error*/ ctx[10].message + "")) set_data_dev(t, t_value);
     		},
     		i: noop,
     		o: noop,
@@ -6802,14 +6947,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(73:8) {:catch error}",
+    		source: "(103:8) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:8) {:then items}
+    // (101:8) {:then items}
     function create_then_block$1(ctx) {
     	let current;
 
@@ -6853,14 +6998,14 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(71:8) {:then items}",
+    		source: "(101:8) {:then items}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:20)             <p>Loading...</p>          {:then items}
+    // (97:20)             <p>Loading...</p>          {:then items}
     function create_pending_block$1(ctx) {
     	let p;
 
@@ -6868,7 +7013,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$b, 68, 10, 1581);
+    			add_location(p, file$b, 98, 10, 2329);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6885,7 +7030,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(67:20)             <p>Loading...</p>          {:then items}",
+    		source: "(97:20)             <p>Loading...</p>          {:then items}",
     		ctx
     	});
 
@@ -6901,15 +7046,16 @@ var app = (function () {
     	let t0;
     	let ul;
     	let li0;
-    	let a0;
+    	let button0;
     	let t2;
     	let li1;
-    	let a1;
+    	let button1;
     	let t4;
     	let current_block_type_index_1;
     	let if_block1;
     	let current;
-    	const if_block_creators = [create_if_block_1$2, create_else_block_1$1];
+    	let dispose;
+    	const if_block_creators = [create_if_block_1$3, create_else_block_1$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -6919,7 +7065,7 @@ var app = (function () {
 
     	current_block_type_index = select_block_type(ctx);
     	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	const if_block_creators_1 = [create_if_block$3, create_else_block$3];
+    	const if_block_creators_1 = [create_if_block$4, create_else_block$4];
     	const if_blocks_1 = [];
 
     	function select_block_type_1(ctx, dirty) {
@@ -6939,34 +7085,34 @@ var app = (function () {
     			t0 = space();
     			ul = element("ul");
     			li0 = element("li");
-    			a0 = element("a");
-    			a0.textContent = "Previous Page";
+    			button0 = element("button");
+    			button0.textContent = "Previous Page";
     			t2 = space();
     			li1 = element("li");
-    			a1 = element("a");
-    			a1.textContent = "Next Page";
+    			button1 = element("button");
+    			button1.textContent = "Next Page";
     			t4 = space();
     			if_block1.c();
-    			attr_dev(a0, "href", "");
-    			attr_dev(a0, "class", "disabled button large previous");
-    			add_location(a0, file$b, 55, 10, 1298);
-    			add_location(li0, file$b, 54, 8, 1283);
-    			attr_dev(a1, "href", "#");
-    			attr_dev(a1, "class", "button large next");
-    			add_location(a1, file$b, 58, 10, 1403);
-    			add_location(li1, file$b, 57, 8, 1388);
+    			attr_dev(button0, "id", "btn_prev");
+    			attr_dev(button0, "class", "disabled button large previous");
+    			add_location(button0, file$b, 85, 10, 1975);
+    			add_location(li0, file$b, 84, 8, 1960);
+    			attr_dev(button1, "id", "btn_next");
+    			attr_dev(button1, "class", "button large next");
+    			add_location(button1, file$b, 88, 10, 2118);
+    			add_location(li1, file$b, 87, 8, 2103);
     			attr_dev(ul, "class", "actions pagination");
-    			add_location(ul, file$b, 53, 6, 1243);
+    			add_location(ul, file$b, 83, 6, 1920);
     			attr_dev(div0, "id", "main");
-    			add_location(div0, file$b, 36, 4, 949);
+    			add_location(div0, file$b, 66, 4, 1626);
     			attr_dev(div1, "id", "wrapper");
-    			add_location(div1, file$b, 33, 2, 907);
-    			add_location(main, file$b, 30, 0, 878);
+    			add_location(div1, file$b, 63, 2, 1584);
+    			add_location(main, file$b, 60, 0, 1555);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
-    		m: function mount(target, anchor) {
+    		m: function mount(target, anchor, remount) {
     			insert_dev(target, main, anchor);
     			append_dev(main, div1);
     			append_dev(div1, div0);
@@ -6974,13 +7120,19 @@ var app = (function () {
     			append_dev(div0, t0);
     			append_dev(div0, ul);
     			append_dev(ul, li0);
-    			append_dev(li0, a0);
+    			append_dev(li0, button0);
     			append_dev(ul, t2);
     			append_dev(ul, li1);
-    			append_dev(li1, a1);
+    			append_dev(li1, button1);
     			append_dev(div1, t4);
     			if_blocks_1[current_block_type_index_1].m(div1, null);
     			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(button0, "click", /*onPrevious*/ ctx[4], false, false, false),
+    				listen_dev(button1, "click", /*onNext*/ ctx[3], false, false, false)
+    			];
     		},
     		p: function update(ctx, [dirty]) {
     			let previous_block_index = current_block_type_index;
@@ -7046,6 +7198,7 @@ var app = (function () {
     			if (detaching) detach_dev(main);
     			if_blocks[current_block_type_index].d();
     			if_blocks_1[current_block_type_index_1].d();
+    			run_all(dispose);
     		}
     	};
 
@@ -7066,6 +7219,19 @@ var app = (function () {
     	let miniProjects = [];
     	let users = [];
     	let projects = [];
+    	let page = 0;
+
+    	function onNext() {
+    		page += 5;
+    		$$invalidate(2, users = res.users.slice(page, page + 5));
+    		updatePage();
+    	}
+
+    	function onPrevious() {
+    		page -= 5;
+    		$$invalidate(2, users = res.users.slice(page, page + 5));
+    		updatePage();
+    	}
 
     	onMount(async () => {
     		let response = await fetch(`http://127.0.0.1:3000/data`);
@@ -7087,6 +7253,27 @@ var app = (function () {
     		$$invalidate(2, users = selected_users);
     	});
 
+    	function updatePage() {
+    		let btn_prev = document.getElementById("btn_prev");
+    		let btn_next = document.getElementById("btn_next");
+
+    		if (page > 0) {
+    			btn_prev.classList.remove("disabled");
+    		}
+
+    		if (page > res.projects.length - 5) {
+    			btn_next.classList.add("disabled");
+    		}
+
+    		if (page <= 0) {
+    			btn_prev.classList.add("disabled");
+    		}
+
+    		if (page < res.projects.length - 5) {
+    			btn_next.classList.remove("disabled");
+    		}
+    	}
+
     	const writable_props = ["url"];
 
     	Object.keys($$props).forEach(key => {
@@ -7097,7 +7284,7 @@ var app = (function () {
     	validate_slots("Users", $$slots, []);
 
     	$$self.$set = $$props => {
-    		if ("url" in $$props) $$invalidate(3, url = $$props.url);
+    		if ("url" in $$props) $$invalidate(5, url = $$props.url);
     	};
 
     	$$self.$capture_state = () => ({
@@ -7108,28 +7295,33 @@ var app = (function () {
     		res,
     		miniProjects,
     		users,
-    		projects
+    		projects,
+    		page,
+    		onNext,
+    		onPrevious,
+    		updatePage
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("url" in $$props) $$invalidate(3, url = $$props.url);
+    		if ("url" in $$props) $$invalidate(5, url = $$props.url);
     		if ("res" in $$props) $$invalidate(0, res = $$props.res);
     		if ("miniProjects" in $$props) $$invalidate(1, miniProjects = $$props.miniProjects);
     		if ("users" in $$props) $$invalidate(2, users = $$props.users);
     		if ("projects" in $$props) projects = $$props.projects;
+    		if ("page" in $$props) page = $$props.page;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [res, miniProjects, users, url];
+    	return [res, miniProjects, users, onNext, onPrevious, url];
     }
 
     class Users extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$c, create_fragment$c, safe_not_equal, { url: 3 });
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, { url: 5 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -7148,273 +7340,137 @@ var app = (function () {
     	}
     }
 
-    /* src/routes/ProjectDetails.svelte generated by Svelte v3.21.0 */
+    let fetched_users = [];
+    let fetched_projects = [];
 
+
+    async function fetch_data(){
+        let response = await fetch(`http://127.0.0.1:3000/data`);
+        let text = await response.text();
+        let data = text;
+        let obj = JSON.parse(data);
+        return { projects: obj.projects, users: obj.people };
+    }
+
+    fetch_data().then((data)=>{
+        fetched_users = data['users'];
+        fetched_projects = data['projects'];
+        
+        users.set(fetched_users);
+        projects.set(fetched_projects);
+    });
+
+    const users = writable(fetched_users);
+    const projects = writable(fetched_projects);
+
+    /* src/routes/ProjectDetails.svelte generated by Svelte v3.21.0 */
     const file$c = "src/routes/ProjectDetails.svelte";
 
     function create_fragment$d(ctx) {
     	let div2;
-    	let section3;
-    	let section0;
-    	let form;
-    	let input;
-    	let t0;
-    	let section1;
-    	let ul0;
-    	let li0;
-    	let a0;
-    	let h30;
-    	let t2;
-    	let p0;
-    	let t4;
-    	let li1;
-    	let a1;
-    	let h31;
-    	let t6;
-    	let p1;
-    	let t8;
-    	let li2;
-    	let a2;
-    	let h32;
-    	let t10;
-    	let p2;
-    	let t12;
-    	let li3;
-    	let a3;
-    	let h33;
-    	let t14;
-    	let p3;
-    	let t16;
-    	let section2;
-    	let ul1;
-    	let li4;
-    	let a4;
-    	let t18;
     	let div1;
     	let article;
     	let header;
     	let div0;
     	let h2;
-    	let t20;
-    	let p4;
+    	let t1;
+    	let p0;
     	let strong;
-    	let t22;
+    	let t3;
     	let span;
     	let img;
     	let img_src_value;
-    	let t23;
+    	let t4;
+    	let p1;
+    	let t6;
+    	let p2;
+    	let t8;
+    	let p3;
+    	let t10;
+    	let p4;
+    	let t12;
     	let p5;
-    	let t25;
-    	let p6;
-    	let t27;
-    	let p7;
-    	let t29;
-    	let p8;
-    	let t31;
-    	let p9;
 
     	const block = {
     		c: function create() {
     			div2 = element("div");
-    			section3 = element("section");
-    			section0 = element("section");
-    			form = element("form");
-    			input = element("input");
-    			t0 = space();
-    			section1 = element("section");
-    			ul0 = element("ul");
-    			li0 = element("li");
-    			a0 = element("a");
-    			h30 = element("h3");
-    			h30.textContent = "Lorem ipsum";
-    			t2 = space();
-    			p0 = element("p");
-    			p0.textContent = "Feugiat tempus veroeros dolor";
-    			t4 = space();
-    			li1 = element("li");
-    			a1 = element("a");
-    			h31 = element("h3");
-    			h31.textContent = "Dolor sit amet";
-    			t6 = space();
-    			p1 = element("p");
-    			p1.textContent = "Sed vitae justo condimentum";
-    			t8 = space();
-    			li2 = element("li");
-    			a2 = element("a");
-    			h32 = element("h3");
-    			h32.textContent = "Feugiat veroeros";
-    			t10 = space();
-    			p2 = element("p");
-    			p2.textContent = "Phasellus sed ultricies mi congue";
-    			t12 = space();
-    			li3 = element("li");
-    			a3 = element("a");
-    			h33 = element("h3");
-    			h33.textContent = "Etiam sed consequat";
-    			t14 = space();
-    			p3 = element("p");
-    			p3.textContent = "Porta lectus amet ultricies";
-    			t16 = space();
-    			section2 = element("section");
-    			ul1 = element("ul");
-    			li4 = element("li");
-    			a4 = element("a");
-    			a4.textContent = "Log In";
-    			t18 = space();
     			div1 = element("div");
     			article = element("article");
     			header = element("header");
     			div0 = element("div");
     			h2 = element("h2");
-    			h2.textContent = "Planet First";
-    			t20 = space();
-    			p4 = element("p");
+    			h2.textContent = `${/*project_data*/ ctx[0]["name"]}`;
+    			t1 = space();
+    			p0 = element("p");
     			strong = element("strong");
     			strong.textContent = "A collective and open ecosystem of planet- and human- centric projects";
-    			t22 = space();
+    			t3 = space();
     			span = element("span");
     			img = element("img");
-    			t23 = space();
+    			t4 = space();
+    			p1 = element("p");
+    			p1.textContent = "We are the Threefold Network, and have built a new peer-to-peer internet that empowers equality, freedom and sustainability. As we launch the ThreeFold Grid and many other experiences on top, the time has come for us to make our world peer-to-peer.";
+    			t6 = space();
+    			p2 = element("p");
+    			p2.textContent = "As of the 29th of April 2020, the ThreeFold Network will enter a rolling launch with many exciting announcements for the world. This will start with the announcement of our Grid 2.0 upgrade and the availability of the ThreeFold Token on Stellar Exchange.";
+    			t8 = space();
+    			p3 = element("p");
+    			p3.textContent = "The time has come to start building our peer-to-peer world together, and it goes without saying that a collective and equal approach is needed. Many beautiful projects have joined the Planet First Ecosystem, and together we aim to empower a better future for humanity and our planet.";
+    			t10 = space();
+    			p4 = element("p");
+    			p4.textContent = "If not us, who? If not now, when?";
+    			t12 = space();
     			p5 = element("p");
-    			p5.textContent = "We are the Threefold Network, and have built a new peer-to-peer internet that empowers equality, freedom and sustainability. As we launch the ThreeFold Grid and many other experiences on top, the time has come for us to make our world peer-to-peer.";
-    			t25 = space();
-    			p6 = element("p");
-    			p6.textContent = "As of the 29th of April 2020, the ThreeFold Network will enter a rolling launch with many exciting announcements for the world. This will start with the announcement of our Grid 2.0 upgrade and the availability of the ThreeFold Token on Stellar Exchange.";
-    			t27 = space();
-    			p7 = element("p");
-    			p7.textContent = "The time has come to start building our peer-to-peer world together, and it goes without saying that a collective and equal approach is needed. Many beautiful projects have joined the Planet First Ecosystem, and together we aim to empower a better future for humanity and our planet.";
-    			t29 = space();
-    			p8 = element("p");
-    			p8.textContent = "If not us, who? If not now, when?";
-    			t31 = space();
-    			p9 = element("p");
-    			p9.textContent = "Interested to learn more? Explore the first projects living on the ThreeFold Network";
-    			attr_dev(input, "type", "text");
-    			attr_dev(input, "name", "query");
-    			attr_dev(input, "placeholder", "Search");
-    			add_location(input, file$c, 9, 28, 260);
-    			attr_dev(form, "class", "search");
-    			attr_dev(form, "method", "get");
-    			attr_dev(form, "action", "#");
-    			add_location(form, file$c, 8, 24, 186);
-    			add_location(section0, file$c, 7, 20, 152);
-    			add_location(h30, file$c, 18, 36, 598);
-    			add_location(p0, file$c, 19, 36, 655);
-    			attr_dev(a0, "href", "#");
-    			add_location(a0, file$c, 17, 32, 549);
-    			add_location(li0, file$c, 16, 28, 512);
-    			add_location(h31, file$c, 24, 36, 877);
-    			add_location(p1, file$c, 25, 36, 937);
-    			attr_dev(a1, "href", "#");
-    			add_location(a1, file$c, 23, 32, 828);
-    			add_location(li1, file$c, 22, 28, 791);
-    			add_location(h32, file$c, 30, 36, 1157);
-    			add_location(p2, file$c, 31, 36, 1219);
-    			attr_dev(a2, "href", "#");
-    			add_location(a2, file$c, 29, 32, 1108);
-    			add_location(li2, file$c, 28, 28, 1071);
-    			add_location(h33, file$c, 36, 36, 1445);
-    			add_location(p3, file$c, 37, 36, 1510);
-    			attr_dev(a3, "href", "#");
-    			add_location(a3, file$c, 35, 32, 1396);
-    			add_location(li3, file$c, 34, 28, 1359);
-    			attr_dev(ul0, "class", "links");
-    			add_location(ul0, file$c, 15, 24, 465);
-    			add_location(section1, file$c, 14, 20, 431);
-    			attr_dev(a4, "href", "#");
-    			attr_dev(a4, "class", "button large fit");
-    			add_location(a4, file$c, 46, 32, 1826);
-    			add_location(li4, file$c, 46, 28, 1822);
-    			attr_dev(ul1, "class", "actions stacked");
-    			add_location(ul1, file$c, 45, 24, 1765);
-    			add_location(section2, file$c, 44, 20, 1731);
-    			attr_dev(section3, "id", "menu");
-    			add_location(section3, file$c, 4, 12, 79);
-    			add_location(h2, file$c, 59, 32, 2202);
-    			add_location(strong, file$c, 60, 35, 2259);
-    			add_location(p4, file$c, 60, 32, 2256);
+    			p5.textContent = "Interested to learn more? Explore the first projects living on the ThreeFold Network";
+    			add_location(h2, file$c, 19, 32, 555);
+    			add_location(strong, file$c, 20, 35, 622);
+    			add_location(p0, file$c, 20, 32, 619);
     			attr_dev(div0, "class", "title");
-    			add_location(div0, file$c, 58, 28, 2150);
-    			add_location(header, file$c, 57, 24, 2113);
+    			add_location(div0, file$c, 18, 28, 503);
+    			add_location(header, file$c, 17, 24, 466);
     			if (img.src !== (img_src_value = "images/pic01.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			add_location(img, file$c, 63, 53, 2473);
+    			add_location(img, file$c, 23, 53, 836);
     			attr_dev(span, "class", "image featured");
-    			add_location(span, file$c, 63, 24, 2444);
-    			add_location(p5, file$c, 64, 24, 2542);
-    			add_location(p6, file$c, 65, 24, 2822);
-    			add_location(p7, file$c, 66, 8, 3092);
-    			add_location(p8, file$c, 67, 8, 3391);
-    			add_location(p9, file$c, 68, 24, 3456);
+    			add_location(span, file$c, 23, 24, 807);
+    			add_location(p1, file$c, 24, 24, 905);
+    			add_location(p2, file$c, 25, 24, 1185);
+    			add_location(p3, file$c, 26, 8, 1455);
+    			add_location(p4, file$c, 27, 8, 1754);
+    			add_location(p5, file$c, 28, 24, 1819);
     			attr_dev(article, "class", "post");
-    			add_location(article, file$c, 56, 20, 2066);
+    			add_location(article, file$c, 16, 20, 419);
     			attr_dev(div1, "id", "main");
-    			add_location(div1, file$c, 53, 12, 1999);
+    			add_location(div1, file$c, 13, 9, 352);
     			attr_dev(div2, "id", "wrapper");
-    			add_location(div2, file$c, 1, 4, 21);
+    			add_location(div2, file$c, 12, 4, 324);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
-    			append_dev(div2, section3);
-    			append_dev(section3, section0);
-    			append_dev(section0, form);
-    			append_dev(form, input);
-    			append_dev(section3, t0);
-    			append_dev(section3, section1);
-    			append_dev(section1, ul0);
-    			append_dev(ul0, li0);
-    			append_dev(li0, a0);
-    			append_dev(a0, h30);
-    			append_dev(a0, t2);
-    			append_dev(a0, p0);
-    			append_dev(ul0, t4);
-    			append_dev(ul0, li1);
-    			append_dev(li1, a1);
-    			append_dev(a1, h31);
-    			append_dev(a1, t6);
-    			append_dev(a1, p1);
-    			append_dev(ul0, t8);
-    			append_dev(ul0, li2);
-    			append_dev(li2, a2);
-    			append_dev(a2, h32);
-    			append_dev(a2, t10);
-    			append_dev(a2, p2);
-    			append_dev(ul0, t12);
-    			append_dev(ul0, li3);
-    			append_dev(li3, a3);
-    			append_dev(a3, h33);
-    			append_dev(a3, t14);
-    			append_dev(a3, p3);
-    			append_dev(section3, t16);
-    			append_dev(section3, section2);
-    			append_dev(section2, ul1);
-    			append_dev(ul1, li4);
-    			append_dev(li4, a4);
-    			append_dev(div2, t18);
     			append_dev(div2, div1);
     			append_dev(div1, article);
     			append_dev(article, header);
     			append_dev(header, div0);
     			append_dev(div0, h2);
-    			append_dev(div0, t20);
-    			append_dev(div0, p4);
-    			append_dev(p4, strong);
-    			append_dev(article, t22);
+    			append_dev(div0, t1);
+    			append_dev(div0, p0);
+    			append_dev(p0, strong);
+    			append_dev(article, t3);
     			append_dev(article, span);
     			append_dev(span, img);
-    			append_dev(article, t23);
+    			append_dev(article, t4);
+    			append_dev(article, p1);
+    			append_dev(article, t6);
+    			append_dev(article, p2);
+    			append_dev(article, t8);
+    			append_dev(article, p3);
+    			append_dev(article, t10);
+    			append_dev(article, p4);
+    			append_dev(article, t12);
     			append_dev(article, p5);
-    			append_dev(article, t25);
-    			append_dev(article, p6);
-    			append_dev(article, t27);
-    			append_dev(article, p7);
-    			append_dev(article, t29);
-    			append_dev(article, p8);
-    			append_dev(article, t31);
-    			append_dev(article, p9);
     		},
     		p: noop,
     		i: noop,
@@ -7435,7 +7491,13 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props) {
+    function instance$d($$self, $$props, $$invalidate) {
+    	let $projects;
+    	validate_store(projects, "projects");
+    	component_subscribe($$self, projects, $$value => $$invalidate(1, $projects = $$value));
+    	const url = window.location.href;
+    	let current_project = url.substring(url.lastIndexOf("/") + 1);
+    	let project_data = $projects.find(project => project["name"] == current_project);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -7444,7 +7506,25 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("ProjectDetails", $$slots, []);
-    	return [];
+
+    	$$self.$capture_state = () => ({
+    		projects,
+    		url,
+    		current_project,
+    		project_data,
+    		$projects
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("current_project" in $$props) current_project = $$props.current_project;
+    		if ("project_data" in $$props) $$invalidate(0, project_data = $$props.project_data);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [project_data];
     }
 
     class ProjectDetails extends SvelteComponentDev {
@@ -7463,271 +7543,114 @@ var app = (function () {
 
     /* src/routes/UserDetails.svelte generated by Svelte v3.21.0 */
 
+    const { console: console_1$1 } = globals;
     const file$d = "src/routes/UserDetails.svelte";
 
     function create_fragment$e(ctx) {
     	let div2;
-    	let section3;
-    	let section0;
-    	let form;
-    	let input;
-    	let t0;
-    	let section1;
-    	let ul0;
-    	let li0;
-    	let a0;
-    	let h30;
-    	let t2;
-    	let p0;
-    	let t4;
-    	let li1;
-    	let a1;
-    	let h31;
-    	let t6;
-    	let p1;
-    	let t8;
-    	let li2;
-    	let a2;
-    	let h32;
-    	let t10;
-    	let p2;
-    	let t12;
-    	let li3;
-    	let a3;
-    	let h33;
-    	let t14;
-    	let p3;
-    	let t16;
-    	let section2;
-    	let ul1;
-    	let li4;
-    	let a4;
-    	let t18;
     	let div1;
     	let article;
     	let header;
     	let div0;
     	let h2;
-    	let t20;
-    	let p4;
+    	let t1;
+    	let p0;
     	let strong;
-    	let t22;
+    	let t3;
     	let span;
     	let img;
     	let img_src_value;
-    	let t23;
+    	let t4;
+    	let p1;
+    	let t6;
+    	let p2;
+    	let t8;
+    	let p3;
+    	let t10;
+    	let p4;
+    	let t12;
     	let p5;
-    	let t25;
-    	let p6;
-    	let t27;
-    	let p7;
-    	let t29;
-    	let p8;
-    	let t31;
-    	let p9;
 
     	const block = {
     		c: function create() {
     			div2 = element("div");
-    			section3 = element("section");
-    			section0 = element("section");
-    			form = element("form");
-    			input = element("input");
-    			t0 = space();
-    			section1 = element("section");
-    			ul0 = element("ul");
-    			li0 = element("li");
-    			a0 = element("a");
-    			h30 = element("h3");
-    			h30.textContent = "Lorem ipsum";
-    			t2 = space();
-    			p0 = element("p");
-    			p0.textContent = "Feugiat tempus veroeros dolor";
-    			t4 = space();
-    			li1 = element("li");
-    			a1 = element("a");
-    			h31 = element("h3");
-    			h31.textContent = "Dolor sit amet";
-    			t6 = space();
-    			p1 = element("p");
-    			p1.textContent = "Sed vitae justo condimentum";
-    			t8 = space();
-    			li2 = element("li");
-    			a2 = element("a");
-    			h32 = element("h3");
-    			h32.textContent = "Feugiat veroeros";
-    			t10 = space();
-    			p2 = element("p");
-    			p2.textContent = "Phasellus sed ultricies mi congue";
-    			t12 = space();
-    			li3 = element("li");
-    			a3 = element("a");
-    			h33 = element("h3");
-    			h33.textContent = "Etiam sed consequat";
-    			t14 = space();
-    			p3 = element("p");
-    			p3.textContent = "Porta lectus amet ultricies";
-    			t16 = space();
-    			section2 = element("section");
-    			ul1 = element("ul");
-    			li4 = element("li");
-    			a4 = element("a");
-    			a4.textContent = "Log In";
-    			t18 = space();
     			div1 = element("div");
     			article = element("article");
     			header = element("header");
     			div0 = element("div");
     			h2 = element("h2");
-    			h2.textContent = "Planet First";
-    			t20 = space();
-    			p4 = element("p");
+    			h2.textContent = `${/*user_data*/ ctx[0]["name"]}`;
+    			t1 = space();
+    			p0 = element("p");
     			strong = element("strong");
     			strong.textContent = "A collective and open ecosystem of planet- and human- centric projects";
-    			t22 = space();
+    			t3 = space();
     			span = element("span");
     			img = element("img");
-    			t23 = space();
+    			t4 = space();
+    			p1 = element("p");
+    			p1.textContent = "We are the Threefold Network, and have built a new peer-to-peer internet that empowers equality, freedom and sustainability. As we launch the ThreeFold Grid and many other experiences on top, the time has come for us to make our world peer-to-peer.";
+    			t6 = space();
+    			p2 = element("p");
+    			p2.textContent = "As of the 29th of April 2020, the ThreeFold Network will enter a rolling launch with many exciting announcements for the world. This will start with the announcement of our Grid 2.0 upgrade and the availability of the ThreeFold Token on Stellar Exchange.";
+    			t8 = space();
+    			p3 = element("p");
+    			p3.textContent = "The time has come to start building our peer-to-peer world together, and it goes without saying that a collective and equal approach is needed. Many beautiful projects have joined the Planet First Ecosystem, and together we aim to empower a better future for humanity and our planet.";
+    			t10 = space();
+    			p4 = element("p");
+    			p4.textContent = "If not us, who? If not now, when?";
+    			t12 = space();
     			p5 = element("p");
-    			p5.textContent = "We are the Threefold Network, and have built a new peer-to-peer internet that empowers equality, freedom and sustainability. As we launch the ThreeFold Grid and many other experiences on top, the time has come for us to make our world peer-to-peer.";
-    			t25 = space();
-    			p6 = element("p");
-    			p6.textContent = "As of the 29th of April 2020, the ThreeFold Network will enter a rolling launch with many exciting announcements for the world. This will start with the announcement of our Grid 2.0 upgrade and the availability of the ThreeFold Token on Stellar Exchange.";
-    			t27 = space();
-    			p7 = element("p");
-    			p7.textContent = "The time has come to start building our peer-to-peer world together, and it goes without saying that a collective and equal approach is needed. Many beautiful projects have joined the Planet First Ecosystem, and together we aim to empower a better future for humanity and our planet.";
-    			t29 = space();
-    			p8 = element("p");
-    			p8.textContent = "If not us, who? If not now, when?";
-    			t31 = space();
-    			p9 = element("p");
-    			p9.textContent = "Interested to learn more? Explore the first projects living on the ThreeFold Network";
-    			attr_dev(input, "type", "text");
-    			attr_dev(input, "name", "query");
-    			attr_dev(input, "placeholder", "Search");
-    			add_location(input, file$d, 9, 28, 260);
-    			attr_dev(form, "class", "search");
-    			attr_dev(form, "method", "get");
-    			attr_dev(form, "action", "#");
-    			add_location(form, file$d, 8, 24, 186);
-    			add_location(section0, file$d, 7, 20, 152);
-    			add_location(h30, file$d, 18, 36, 598);
-    			add_location(p0, file$d, 19, 36, 655);
-    			attr_dev(a0, "href", "#");
-    			add_location(a0, file$d, 17, 32, 549);
-    			add_location(li0, file$d, 16, 28, 512);
-    			add_location(h31, file$d, 24, 36, 877);
-    			add_location(p1, file$d, 25, 36, 937);
-    			attr_dev(a1, "href", "#");
-    			add_location(a1, file$d, 23, 32, 828);
-    			add_location(li1, file$d, 22, 28, 791);
-    			add_location(h32, file$d, 30, 36, 1157);
-    			add_location(p2, file$d, 31, 36, 1219);
-    			attr_dev(a2, "href", "#");
-    			add_location(a2, file$d, 29, 32, 1108);
-    			add_location(li2, file$d, 28, 28, 1071);
-    			add_location(h33, file$d, 36, 36, 1445);
-    			add_location(p3, file$d, 37, 36, 1510);
-    			attr_dev(a3, "href", "#");
-    			add_location(a3, file$d, 35, 32, 1396);
-    			add_location(li3, file$d, 34, 28, 1359);
-    			attr_dev(ul0, "class", "links");
-    			add_location(ul0, file$d, 15, 24, 465);
-    			add_location(section1, file$d, 14, 20, 431);
-    			attr_dev(a4, "href", "#");
-    			attr_dev(a4, "class", "button large fit");
-    			add_location(a4, file$d, 46, 32, 1826);
-    			add_location(li4, file$d, 46, 28, 1822);
-    			attr_dev(ul1, "class", "actions stacked");
-    			add_location(ul1, file$d, 45, 24, 1765);
-    			add_location(section2, file$d, 44, 20, 1731);
-    			attr_dev(section3, "id", "menu");
-    			add_location(section3, file$d, 4, 12, 79);
-    			add_location(h2, file$d, 59, 32, 2202);
-    			add_location(strong, file$d, 60, 35, 2259);
-    			add_location(p4, file$d, 60, 32, 2256);
+    			p5.textContent = "Interested to learn more? Explore the first projects living on the ThreeFold Network";
+    			add_location(h2, file$d, 21, 32, 559);
+    			add_location(strong, file$d, 22, 35, 623);
+    			add_location(p0, file$d, 22, 32, 620);
     			attr_dev(div0, "class", "title");
-    			add_location(div0, file$d, 58, 28, 2150);
-    			add_location(header, file$d, 57, 24, 2113);
+    			add_location(div0, file$d, 20, 28, 507);
+    			add_location(header, file$d, 19, 24, 470);
     			if (img.src !== (img_src_value = "images/pic01.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			add_location(img, file$d, 63, 53, 2473);
+    			add_location(img, file$d, 25, 53, 837);
     			attr_dev(span, "class", "image featured");
-    			add_location(span, file$d, 63, 24, 2444);
-    			add_location(p5, file$d, 64, 24, 2542);
-    			add_location(p6, file$d, 65, 24, 2822);
-    			add_location(p7, file$d, 66, 8, 3092);
-    			add_location(p8, file$d, 67, 8, 3391);
-    			add_location(p9, file$d, 68, 24, 3456);
+    			add_location(span, file$d, 25, 24, 808);
+    			add_location(p1, file$d, 26, 24, 906);
+    			add_location(p2, file$d, 27, 24, 1186);
+    			add_location(p3, file$d, 28, 8, 1456);
+    			add_location(p4, file$d, 29, 8, 1755);
+    			add_location(p5, file$d, 30, 24, 1820);
     			attr_dev(article, "class", "post");
-    			add_location(article, file$d, 56, 20, 2066);
+    			add_location(article, file$d, 18, 20, 423);
     			attr_dev(div1, "id", "main");
-    			add_location(div1, file$d, 53, 12, 1999);
+    			add_location(div1, file$d, 15, 8, 356);
     			attr_dev(div2, "id", "wrapper");
-    			add_location(div2, file$d, 1, 4, 21);
+    			add_location(div2, file$d, 13, 4, 324);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
-    			append_dev(div2, section3);
-    			append_dev(section3, section0);
-    			append_dev(section0, form);
-    			append_dev(form, input);
-    			append_dev(section3, t0);
-    			append_dev(section3, section1);
-    			append_dev(section1, ul0);
-    			append_dev(ul0, li0);
-    			append_dev(li0, a0);
-    			append_dev(a0, h30);
-    			append_dev(a0, t2);
-    			append_dev(a0, p0);
-    			append_dev(ul0, t4);
-    			append_dev(ul0, li1);
-    			append_dev(li1, a1);
-    			append_dev(a1, h31);
-    			append_dev(a1, t6);
-    			append_dev(a1, p1);
-    			append_dev(ul0, t8);
-    			append_dev(ul0, li2);
-    			append_dev(li2, a2);
-    			append_dev(a2, h32);
-    			append_dev(a2, t10);
-    			append_dev(a2, p2);
-    			append_dev(ul0, t12);
-    			append_dev(ul0, li3);
-    			append_dev(li3, a3);
-    			append_dev(a3, h33);
-    			append_dev(a3, t14);
-    			append_dev(a3, p3);
-    			append_dev(section3, t16);
-    			append_dev(section3, section2);
-    			append_dev(section2, ul1);
-    			append_dev(ul1, li4);
-    			append_dev(li4, a4);
-    			append_dev(div2, t18);
     			append_dev(div2, div1);
     			append_dev(div1, article);
     			append_dev(article, header);
     			append_dev(header, div0);
     			append_dev(div0, h2);
-    			append_dev(div0, t20);
-    			append_dev(div0, p4);
-    			append_dev(p4, strong);
-    			append_dev(article, t22);
+    			append_dev(div0, t1);
+    			append_dev(div0, p0);
+    			append_dev(p0, strong);
+    			append_dev(article, t3);
     			append_dev(article, span);
     			append_dev(span, img);
-    			append_dev(article, t23);
+    			append_dev(article, t4);
+    			append_dev(article, p1);
+    			append_dev(article, t6);
+    			append_dev(article, p2);
+    			append_dev(article, t8);
+    			append_dev(article, p3);
+    			append_dev(article, t10);
+    			append_dev(article, p4);
+    			append_dev(article, t12);
     			append_dev(article, p5);
-    			append_dev(article, t25);
-    			append_dev(article, p6);
-    			append_dev(article, t27);
-    			append_dev(article, p7);
-    			append_dev(article, t29);
-    			append_dev(article, p8);
-    			append_dev(article, t31);
-    			append_dev(article, p9);
     		},
     		p: noop,
     		i: noop,
@@ -7748,16 +7671,41 @@ var app = (function () {
     	return block;
     }
 
-    function instance$e($$self, $$props) {
+    function instance$e($$self, $$props, $$invalidate) {
+    	let $users;
+    	validate_store(users, "users");
+    	component_subscribe($$self, users, $$value => $$invalidate(1, $users = $$value));
+    	console.log($users);
+    	const url = window.location.href;
+    	let current_user = url.substring(url.lastIndexOf("/") + 1);
+    	let user_data = $users.find(user => user["name"] == current_user);
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<UserDetails> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<UserDetails> was created with unknown prop '${key}'`);
     	});
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("UserDetails", $$slots, []);
-    	return [];
+
+    	$$self.$capture_state = () => ({
+    		users,
+    		url,
+    		current_user,
+    		user_data,
+    		$users
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("current_user" in $$props) current_user = $$props.current_user;
+    		if ("user_data" in $$props) $$invalidate(0, user_data = $$props.user_data);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [user_data];
     }
 
     class UserDetails extends SvelteComponentDev {
@@ -7899,37 +7847,52 @@ var app = (function () {
     	let a3;
     	let link_action_2;
     	let t7;
-    	let section2;
-    	let section0;
+    	let nav2;
     	let ul1;
     	let li3;
     	let a4;
-    	let h30;
     	let t9;
-    	let p0;
-    	let t11;
+    	let form0;
+    	let input0;
+    	let t10;
     	let li4;
     	let a5;
-    	let h31;
+    	let t12;
+    	let section3;
+    	let section0;
+    	let form1;
+    	let input1;
     	let t13;
-    	let p1;
-    	let t15;
-    	let li5;
-    	let a6;
-    	let h32;
-    	let t17;
-    	let p2;
-    	let t19;
-    	let li6;
-    	let a7;
-    	let h33;
-    	let t21;
-    	let p3;
-    	let t23;
     	let section1;
     	let ul2;
+    	let li5;
+    	let a6;
+    	let h30;
+    	let t15;
+    	let p0;
+    	let t17;
+    	let li6;
+    	let a7;
+    	let h31;
+    	let t19;
+    	let p1;
+    	let t21;
     	let li7;
     	let a8;
+    	let h32;
+    	let t23;
+    	let p2;
+    	let t25;
+    	let li8;
+    	let a9;
+    	let h33;
+    	let t27;
+    	let p3;
+    	let t29;
+    	let section2;
+    	let ul3;
+    	let li9;
+    	let a10;
     	let dispose;
 
     	const block = {
@@ -7955,46 +7918,63 @@ var app = (function () {
     			a3 = element("a");
     			a3.textContent = "Users";
     			t7 = space();
-    			section2 = element("section");
-    			section0 = element("section");
+    			nav2 = element("nav");
     			ul1 = element("ul");
     			li3 = element("li");
     			a4 = element("a");
-    			h30 = element("h3");
-    			h30.textContent = "Lorem ipsum";
+    			a4.textContent = "Search";
     			t9 = space();
-    			p0 = element("p");
-    			p0.textContent = "Feugiat tempus veroeros dolor";
-    			t11 = space();
+    			form0 = element("form");
+    			input0 = element("input");
+    			t10 = space();
     			li4 = element("li");
     			a5 = element("a");
-    			h31 = element("h3");
-    			h31.textContent = "Dolor sit amet";
+    			a5.textContent = "Menu";
+    			t12 = space();
+    			section3 = element("section");
+    			section0 = element("section");
+    			form1 = element("form");
+    			input1 = element("input");
     			t13 = space();
-    			p1 = element("p");
-    			p1.textContent = "Sed vitae justo condimentum";
-    			t15 = space();
-    			li5 = element("li");
-    			a6 = element("a");
-    			h32 = element("h3");
-    			h32.textContent = "Feugiat veroeros";
-    			t17 = space();
-    			p2 = element("p");
-    			p2.textContent = "Phasellus sed ultricies mi congue";
-    			t19 = space();
-    			li6 = element("li");
-    			a7 = element("a");
-    			h33 = element("h3");
-    			h33.textContent = "Etiam sed consequat";
-    			t21 = space();
-    			p3 = element("p");
-    			p3.textContent = "Porta lectus amet ultricies";
-    			t23 = space();
     			section1 = element("section");
     			ul2 = element("ul");
+    			li5 = element("li");
+    			a6 = element("a");
+    			h30 = element("h3");
+    			h30.textContent = "Lorem ipsum";
+    			t15 = space();
+    			p0 = element("p");
+    			p0.textContent = "Feugiat tempus veroeros dolor";
+    			t17 = space();
+    			li6 = element("li");
+    			a7 = element("a");
+    			h31 = element("h3");
+    			h31.textContent = "Dolor sit amet";
+    			t19 = space();
+    			p1 = element("p");
+    			p1.textContent = "Sed vitae justo condimentum";
+    			t21 = space();
     			li7 = element("li");
     			a8 = element("a");
-    			a8.textContent = "Log In";
+    			h32 = element("h3");
+    			h32.textContent = "Feugiat veroeros";
+    			t23 = space();
+    			p2 = element("p");
+    			p2.textContent = "Phasellus sed ultricies mi congue";
+    			t25 = space();
+    			li8 = element("li");
+    			a9 = element("a");
+    			h33 = element("h3");
+    			h33.textContent = "Etiam sed consequat";
+    			t27 = space();
+    			p3 = element("p");
+    			p3.textContent = "Porta lectus amet ultricies";
+    			t29 = space();
+    			section2 = element("section");
+    			ul3 = element("ul");
+    			li9 = element("li");
+    			a10 = element("a");
+    			a10.textContent = "Log In";
     			attr_dev(a0, "href", "index.html");
     			add_location(a0, file$e, 8, 6, 123);
     			add_location(h1, file$e, 7, 4, 112);
@@ -8011,40 +7991,70 @@ var app = (function () {
     			add_location(ul0, file$e, 11, 6, 201);
     			attr_dev(nav1, "class", "links");
     			add_location(nav1, file$e, 10, 4, 175);
+    			attr_dev(a4, "class", "fa-search");
+    			attr_dev(a4, "href", "#search");
+    			add_location(a4, file$e, 28, 10, 567);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "name", "query");
+    			attr_dev(input0, "placeholder", "Search");
+    			add_location(input0, file$e, 30, 12, 679);
+    			attr_dev(form0, "id", "search");
+    			attr_dev(form0, "method", "get");
+    			attr_dev(form0, "action", "#");
+    			add_location(form0, file$e, 29, 10, 624);
+    			attr_dev(li3, "class", "search");
+    			add_location(li3, file$e, 27, 8, 537);
+    			attr_dev(a5, "class", "fa-bars");
+    			attr_dev(a5, "href", "#menu");
+    			add_location(a5, file$e, 34, 10, 803);
+    			attr_dev(li4, "class", "menu");
+    			add_location(li4, file$e, 33, 8, 775);
+    			add_location(ul1, file$e, 26, 6, 524);
+    			attr_dev(nav2, "class", "main");
+    			add_location(nav2, file$e, 25, 4, 499);
     			attr_dev(header, "id", "header");
     			add_location(header, file$e, 6, 2, 87);
-    			add_location(h30, file$e, 35, 12, 657);
-    			add_location(p0, file$e, 36, 12, 690);
-    			attr_dev(a4, "href", "#");
-    			add_location(a4, file$e, 34, 10, 632);
-    			add_location(li3, file$e, 33, 8, 617);
-    			add_location(h31, file$e, 41, 12, 804);
-    			add_location(p1, file$e, 42, 12, 840);
-    			attr_dev(a5, "href", "#");
-    			add_location(a5, file$e, 40, 10, 779);
-    			add_location(li4, file$e, 39, 8, 764);
-    			add_location(h32, file$e, 47, 12, 952);
-    			add_location(p2, file$e, 48, 12, 990);
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "name", "query");
+    			attr_dev(input1, "placeholder", "Search");
+    			add_location(input1, file$e, 45, 8, 1026);
+    			attr_dev(form1, "class", "search");
+    			attr_dev(form1, "method", "get");
+    			attr_dev(form1, "action", "#");
+    			add_location(form1, file$e, 44, 6, 972);
+    			add_location(section0, file$e, 43, 4, 956);
+    			add_location(h30, file$e, 54, 12, 1218);
+    			add_location(p0, file$e, 55, 12, 1251);
     			attr_dev(a6, "href", "#");
-    			add_location(a6, file$e, 46, 10, 927);
-    			add_location(li5, file$e, 45, 8, 912);
-    			add_location(h33, file$e, 53, 12, 1108);
-    			add_location(p3, file$e, 54, 12, 1149);
+    			add_location(a6, file$e, 53, 10, 1193);
+    			add_location(li5, file$e, 52, 8, 1178);
+    			add_location(h31, file$e, 60, 12, 1365);
+    			add_location(p1, file$e, 61, 12, 1401);
     			attr_dev(a7, "href", "#");
-    			add_location(a7, file$e, 52, 10, 1083);
-    			add_location(li6, file$e, 51, 8, 1068);
-    			attr_dev(ul1, "class", "links");
-    			add_location(ul1, file$e, 32, 6, 590);
-    			add_location(section0, file$e, 31, 4, 574);
+    			add_location(a7, file$e, 59, 10, 1340);
+    			add_location(li6, file$e, 58, 8, 1325);
+    			add_location(h32, file$e, 66, 12, 1513);
+    			add_location(p2, file$e, 67, 12, 1551);
     			attr_dev(a8, "href", "#");
-    			attr_dev(a8, "class", "button large fit");
-    			add_location(a8, file$e, 64, 10, 1334);
-    			add_location(li7, file$e, 63, 8, 1319);
-    			attr_dev(ul2, "class", "actions stacked");
-    			add_location(ul2, file$e, 62, 6, 1282);
-    			add_location(section1, file$e, 61, 4, 1266);
-    			attr_dev(section2, "id", "menu");
-    			add_location(section2, file$e, 28, 2, 530);
+    			add_location(a8, file$e, 65, 10, 1488);
+    			add_location(li7, file$e, 64, 8, 1473);
+    			add_location(h33, file$e, 72, 12, 1669);
+    			add_location(p3, file$e, 73, 12, 1710);
+    			attr_dev(a9, "href", "#");
+    			add_location(a9, file$e, 71, 10, 1644);
+    			add_location(li8, file$e, 70, 8, 1629);
+    			attr_dev(ul2, "class", "links");
+    			add_location(ul2, file$e, 51, 6, 1151);
+    			add_location(section1, file$e, 50, 4, 1135);
+    			attr_dev(a10, "href", "#");
+    			attr_dev(a10, "class", "button large fit");
+    			add_location(a10, file$e, 83, 10, 1895);
+    			add_location(li9, file$e, 82, 8, 1880);
+    			attr_dev(ul3, "class", "actions stacked");
+    			add_location(ul3, file$e, 81, 6, 1843);
+    			add_location(section2, file$e, 80, 4, 1827);
+    			attr_dev(section3, "id", "menu");
+    			add_location(section3, file$e, 40, 2, 911);
     			add_location(div, file$e, 5, 0, 79);
     		},
     		l: function claim(nodes) {
@@ -8067,38 +8077,53 @@ var app = (function () {
     			append_dev(nav0, t5);
     			append_dev(nav0, li2);
     			append_dev(li2, a3);
-    			append_dev(div, t7);
-    			append_dev(div, section2);
-    			append_dev(section2, section0);
-    			append_dev(section0, ul1);
+    			append_dev(header, t7);
+    			append_dev(header, nav2);
+    			append_dev(nav2, ul1);
     			append_dev(ul1, li3);
     			append_dev(li3, a4);
-    			append_dev(a4, h30);
-    			append_dev(a4, t9);
-    			append_dev(a4, p0);
-    			append_dev(ul1, t11);
+    			append_dev(li3, t9);
+    			append_dev(li3, form0);
+    			append_dev(form0, input0);
+    			append_dev(ul1, t10);
     			append_dev(ul1, li4);
     			append_dev(li4, a5);
-    			append_dev(a5, h31);
-    			append_dev(a5, t13);
-    			append_dev(a5, p1);
-    			append_dev(ul1, t15);
-    			append_dev(ul1, li5);
-    			append_dev(li5, a6);
-    			append_dev(a6, h32);
-    			append_dev(a6, t17);
-    			append_dev(a6, p2);
-    			append_dev(ul1, t19);
-    			append_dev(ul1, li6);
-    			append_dev(li6, a7);
-    			append_dev(a7, h33);
-    			append_dev(a7, t21);
-    			append_dev(a7, p3);
-    			append_dev(section2, t23);
-    			append_dev(section2, section1);
+    			append_dev(div, t12);
+    			append_dev(div, section3);
+    			append_dev(section3, section0);
+    			append_dev(section0, form1);
+    			append_dev(form1, input1);
+    			append_dev(section3, t13);
+    			append_dev(section3, section1);
     			append_dev(section1, ul2);
+    			append_dev(ul2, li5);
+    			append_dev(li5, a6);
+    			append_dev(a6, h30);
+    			append_dev(a6, t15);
+    			append_dev(a6, p0);
+    			append_dev(ul2, t17);
+    			append_dev(ul2, li6);
+    			append_dev(li6, a7);
+    			append_dev(a7, h31);
+    			append_dev(a7, t19);
+    			append_dev(a7, p1);
+    			append_dev(ul2, t21);
     			append_dev(ul2, li7);
     			append_dev(li7, a8);
+    			append_dev(a8, h32);
+    			append_dev(a8, t23);
+    			append_dev(a8, p2);
+    			append_dev(ul2, t25);
+    			append_dev(ul2, li8);
+    			append_dev(li8, a9);
+    			append_dev(a9, h33);
+    			append_dev(a9, t27);
+    			append_dev(a9, p3);
+    			append_dev(section3, t29);
+    			append_dev(section3, section2);
+    			append_dev(section2, ul3);
+    			append_dev(ul3, li9);
+    			append_dev(li9, a10);
     			if (remount) run_all(dispose);
 
     			dispose = [
