@@ -2,16 +2,14 @@
 			<div id="wrapper">
 
 				<!-- Menu -->
-					<section id="menu">
+					<!-- <section id="menu">
 
-						<!-- Search -->
 							<section>
 								<form class="search" method="get" action="#">
 									<input type="text" name="query" placeholder="Search" />
 								</form>
 							</section>
 
-						<!-- Links -->
 							<section>
 								<ul class="links">
 									<li>
@@ -41,14 +39,13 @@
 								</ul>
 							</section>
 
-						<!-- Actions -->
 							<section>
 								<ul class="actions stacked">
 									<li><a href="#" class="button large fit">Log In</a></li>
 								</ul>
 							</section>
 
-					</section>
+					</section> -->
 
 				<!-- Main -->
 					<div id="main">

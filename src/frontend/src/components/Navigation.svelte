@@ -2,70 +2,81 @@
   import { link } from "svelte-spa-router";
 </script>
 
-<!--Nav-bar-->
-<div>
-  <header id="header">
-    <h1>
-      <a href="index.html">Planet First</a>
-    </h1>
-    <nav class="links">
-      <ul>
-        <nav>
-          <li>
-            <a href="/" use:link>Home</a>
-          </li>
-          <li>
-            <a href="/projects" use:link>Projects</a>
-          </li>
-          <li>
-            <a href="/users" use:link>Users</a>
-          </li>
-        </nav>
-      </ul>
-    </nav>
-    
-  </header>
-  <!-- Menu -->
-  <section id="menu">
+<header id="header">
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-ontop">
+    <div class="container-fluid">
+      <div class="logo-liqued">
+        <a
+          href="https://wiki.threefold.io/docs/token/how_to_buy/index.html"
+          target="_blank">
+          <img src="images/logo-event.png" style="width:55%;" alt="" />
+        </a>
+      </div>
+      <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar2SupportedContent"
+        aria-controls="navbar2SupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" />
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbar2SupportedContent">
+        <div class="icon">
+          <a href="/">
+            <img src="images/3fold_icon.png" alt="" height="45" />
+          </a>
+        </div>
 
-    <!-- Links -->
-    <section>
-      <ul class="links">
-        <li>
-          <a href="#">
-            <h3>Lorem ipsum</h3>
-            <p>Feugiat tempus veroeros dolor</p>
+        <div class="logo navbar-brand">
+          <a href="/">
+            <img src="images/logo-tf.png" alt="" />
           </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Dolor sit amet</h3>
-            <p>Sed vitae justo condimentum</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Feugiat veroeros</h3>
-            <p>Phasellus sed ultricies mi congue</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <h3>Etiam sed consequat</h3>
-            <p>Porta lectus amet ultricies</p>
-          </a>
-        </li>
-      </ul>
-    </section>
+          <div class="logo-text text-dark">
+            <a
+              href="https://wiki.threefold.io/docs/token/how_to_buy/index.html"
+              target="_blank">
+              <img
+                src="images/ieo-comingcoon-sign.png"
+                style="width:100%;"
+                alt="" />
+            </a>
+            <!-- <span>INITIAL EXCHANGE OFFERING <br> MORE INFO COMING SOON!</span> -->
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item mx-1">
+            <a href="/" class="nav-link" use:link>Home</a>
+          </li>
 
-    <!-- Actions -->
-    <section>
-      <ul class="actions stacked">
-        <li>
-          <a href="#" class="button large fit">Log In</a>
-        </li>
-      </ul>
-    </section>
+          <li class="nav-item mx-1">
+            <a href="/projects" class="nav-link" use:link>Projects</a>
+          </li>
 
-  </section>
-</div>
+          <li class="nav-item mx-1">
+            <a href="/users" class="nav-link" use:link>Users</a>
+          </li>
+          <!-- <li class="search">
+            <a class="fa-search" href="#search">Search</a>
+            <form id="search" method="get" action="#" class="">
+              <input type="text" name="query" placeholder="Search" />
+            </form>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="toogle_btn">
+      <a id="show-hidden-menu" class="nav-icon">
+        <span />
+      </a>
+    </div>
+    <div class="toogle_btn">
+      <a id="hidden-menu" class="nav-icon-close">
+        <span />
+      </a>
+    </div>
+  </nav>
+</header>
