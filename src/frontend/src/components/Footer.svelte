@@ -1,4 +1,4 @@
-<section id="footer">
+<section id="footer" class="text-center">
   <ul class="icons">
     <li>
       <a

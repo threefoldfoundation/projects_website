@@ -46,6 +46,4 @@
     </ul>
   </section> -->
 
-  <!-- Footer -->
-  <Footer />
 </section>
