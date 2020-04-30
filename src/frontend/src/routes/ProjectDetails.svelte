@@ -64,32 +64,16 @@
         </span>
       {/if}
 
-      {#if project_data.info.mission}
-        <div class="content">
-          <h1>Mission:</h1>
-          <p>{project_data.info.mission}</p>
-        </div>
-      {/if}
       {#if project_data.info.description}
         <div class="content">
-          <h1>Description:</h1>
           <p>{project_data.info.description}</p>
         </div>
       {/if}
 
-      {#if project_data.info.team.length > 0}
+      {#if project_data.info.mission}
         <div class="content">
-          <h1>Team:</h1>
-          <ul>
-            {#each findTeam(project_data.info.team) as person}
-              <li>
-                <a href="#/users/{person.name}" class="author">
-                  <img src={person.links.image_path} alt="" />
-                  {person.info.name}
-                </a>
-              </li>
-            {/each}
-          </ul>
+          <h1>Mission:</h1>
+          <p>{project_data.info.mission}</p>
         </div>
       {/if}
 
@@ -120,6 +104,22 @@
               </li>
             </ul>
           {/each}
+        </div>
+      {/if}
+
+      {#if project_data.info.team.length > 0}
+        <div class="content">
+          <h1>Team:</h1>
+          <ul>
+            {#each findTeam(project_data.info.team) as person}
+              <li>
+                <a href="#/users/{person.name}" class="author">
+                  <img src={person.links.image_path} alt="" />
+                  {person.info.name}
+                </a>
+              </li>
+            {/each}
+          </ul>
         </div>
       {/if}
 
