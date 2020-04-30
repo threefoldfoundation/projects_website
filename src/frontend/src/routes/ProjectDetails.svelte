@@ -115,7 +115,7 @@
           <h1>Team:</h1>
           <ul>
             {#each findTeam(project_data.info.team) as person}
-              <li>
+              <li class="my-2">
                 <a href="#/users/{person.name}" class="author">
                   <img src={person.links.image_path} alt="" />
                   {person.info.name}
