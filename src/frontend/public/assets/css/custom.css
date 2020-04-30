@@ -88,6 +88,28 @@ body.single #footer {
     margin: auto;
 }
 
+.content .author {
+    justify-content: flex-start;
+}
+
+.content .author img {
+    margin-right: 10px;
+}
+
+.content .card {
+    list-style: none;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.content .single {
+    margin-bottom: 0 !important;
+}
+
 
 /* classes */
 
@@ -101,4 +123,8 @@ body.single #footer {
 
 .clear-both {
     clear: both;
+}
+
+.d-inline-block {
+    display: inline-block !important;
 }

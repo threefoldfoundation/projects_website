@@ -10,7 +10,6 @@
   function findTeam(team) {
     var res = [];
     team.forEach(function(person) {
-      console.log(person);
       var p = $users.find(user => user.info.name == person);
       if (p) {
         res.push(p);
@@ -82,13 +81,15 @@
         <div class="content">
           <h1>Team:</h1>
           <ul>
-           {#each findTeam(project_data.info.team) as person}
-            <li>
-            <a href="#/users/{person.name}">{person.info.name}</a>
-            <img src="{person.links.image_path}" width="50" height="50" />
-            </li>
+            {#each findTeam(project_data.info.team) as person}
+              <li>
+                <a href="#/users/{person.name}" class="author">
+                  <img src={person.links.image_path} alt="" />
+                  {person.info.name}
+                </a>
+              </li>
             {/each}
-                      </ul>
+          </ul>
         </div>
       {/if}
 
@@ -96,26 +97,26 @@
         <div class="content">
           <h1>Milestons:</h1>
           {#each project_data.milestones as milestone}
-            <ul>
+            <ul class="card">
               <li>
-                <b>-</b>
-                {milestone.name}
-              </li>
-              <li>
-                <b>Date:</b>
-                <time class="published">{milestone.date}</time>
+                <h3>
+                  {milestone.name} -
+                  <time class="published" datetime={milestone.date}>
+                    {milestone.date}
+                  </time>
+                </h3>
               </li>
               <li>
                 <b>Description:</b>
                 {milestone.description}
               </li>
               <li>
-                <b>Funding require in TFT:</b>
+                <b>Funding in TFT:</b>
                 {milestone.funding_required_tft}TFT
               </li>
               <li>
-                <b>Funding required in USD:</b>
-                {milestone.funding_required_usd}$
+                <b>Funding in USD:</b>
+                {milestone.funding_required_usd}
               </li>
             </ul>
           {/each}
@@ -124,21 +125,21 @@
 
       {#if project_data.info.countries.length > 0}
         <div class="content">
-          <h1>Countries:</h1>
-          <ul>
+          <h1 class="d-inline-block">Countries:</h1>
+          <ul class="d-inline-block single">
             {#each project_data.info.countries as country}
-              <li>{country.name}</li>
+              <li class="d-inline-block">{country.name}</li>
             {/each}
           </ul>
         </div>
       {/if}
 
       {#if project_data.info.cities.length > 0}
-        <div class="content">
-          <h1>Cities:</h1>
-          <ul>
+        <div class="content ">
+          <h1 class="d-inline-block">Cities:</h1>
+          <ul class="d-inline-block single">
             {#each project_data.info.cities as city}
-              <li>{city.name}</li>
+              <li class="d-inline-block">{city.name}</li>
             {/each}
           </ul>
         </div>
@@ -146,10 +147,10 @@
 
       {#if project_data.links.websites.length > 0}
         <div class="content">
-          <h1>Websites:</h1>
-          <ul>
+          <h1 class="d-inline-block">Websites:</h1>
+          <ul class="d-inline-block single">
             {#each project_data.links.websites as link}
-              <li>
+              <li class="d-inline-block">
                 <a href={link} target="_blank">{link}</a>
               </li>
             {/each}
@@ -159,7 +160,7 @@
 
       {#if project_data.links.linkedin}
         <div class="content">
-          <h1>Linkedin:</h1>
+          <h1 class="d-inline-block">Linkedin:</h1>
           <a href={project_data.links.linkedin}>
             {project_data.links.linkedin}
           </a>
@@ -168,7 +169,7 @@
 
       {#if project_data.links.wiki}
         <div class="content">
-          <h1>Wiki:</h1>
+          <h1 class="d-inline-block">Wiki:</h1>
           <a href={project_data.links.wiki} target="_blank">
             {project_data.links.wiki}
           </a>
@@ -177,10 +178,10 @@
 
       {#if project_data.ecosystem.badges.length > 0}
         <div class="content">
-          <h1>Badges:</h1>
-          <ul>
+          <h1 class="d-inline-block">Badges:</h1>
+          <ul class="d-inline-block single">
             {#each project_data.ecosystem.badges as badge}
-              <li>{badge}</li>
+              <li class="d-inline-block">{badge}</li>
             {/each}
           </ul>
         </div>
