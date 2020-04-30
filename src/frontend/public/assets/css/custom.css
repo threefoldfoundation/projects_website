@@ -110,6 +110,10 @@ body.single #footer {
     margin-bottom: 0 !important;
 }
 
+.post>footer .stats {
+    margin-top: 2em !important;
+}
+
 
 /* classes */
 
@@ -127,4 +131,8 @@ body.single #footer {
 
 .d-inline-block {
     display: inline-block !important;
+}
+
+.m-0 {
+    margin: 0 !important;
 }
