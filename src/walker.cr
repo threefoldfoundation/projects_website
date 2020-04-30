@@ -41,12 +41,17 @@ def _walk(path : String = CURR_PATH)
           if item.name == path_parts[1]
             p = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
             if ! name.ends_with?(".md")
+              
               if name.ends_with?(".png") || name.ends_with?(".jpeg") || name.ends_with?(".jpg")
+                
                 image_path = p.gsub(Dir.current + "/public", "")
+                
                 if path_parts[0] == "projects"
                   item.as(Project).links.image_path = image_path
                 else
+                   
                   item.as(User).links.image_path = image_path
+                  
                 end
               end
               next
@@ -107,7 +112,6 @@ def _walk(path : String = CURR_PATH)
                 item.name = item.name.gsub("_", " ")
                   
               elsif path_parts[0] == "people"
-                item.as(User).links.image_path = image_path
                 if parsed_codes.size > 0 && parsed_codes[0].has_key?("info")
                   data = parsed_codes[0].as(Hash)
                   info = data["info"].as(Hash)
