@@ -1,34 +1,26 @@
 <script>
-    import MiniProjectList from './MiniProjectList.svelte'
-    import MiniUserList from './MiniUserList.svelte'
+  import MiniProjectList from "./MiniProjectList.svelte";
+  import MiniUserList from "./MiniUserList.svelte";
 
-    export let miniProjects = []
-    export let users = []
+  export let miniProjects = [];
+  export let users = [];
 </script>
+
 <section id="sidebar">
 
-    <!-- Intro -->
-        <section id="intro">
-            <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
-            <header>
-                <h2>Planet First</h2>
-                <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-            </header>
-        </section>
+  <!-- Mini Projects -->
+  <MiniProjectList {miniProjects} />
 
-    <!-- Mini Projects -->
-        <MiniProjectList {miniProjects}/>
+  <!-- Users -->
+  <MiniUserList {users} />
 
-    <!-- Users -->
-        <MiniUserList {users} />
-
-    <!-- About -->
-        <section class="blurb">
+  <!-- About -->
+  <!-- <section class="blurb">
             <h2>About</h2>
             <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
             <ul class="actions">
                 <li><a href="#" class="button">Learn More</a></li>
             </ul>
-        </section>
+        </section> -->
 
 </section>

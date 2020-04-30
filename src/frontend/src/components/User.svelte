@@ -1,20 +1,32 @@
 <script>
-    export let user
+  export let user;
 </script>
 
 <div class="user">
   <header>
     <div class="title">
-      <h2><a href="#/users/{user.name}">{user.info.name}</a></h2>
+      <h2>
+        <a href="#/users/{user.name}">{user.info.name}</a>
+      </h2>
     </div>
   </header>
-        {#if user.links.image_path != ""}
-      <a href="#/users/{user.name}" class="image featured"><img height="250" src={user.links.image_path} alt="" /></a>
-    {:else if user.links.video != ""}
-      <iframe width="800" height="415" src={user.links.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {:else}
-      <a href="#/projects/{user.name}" class="image featured"><img height="250" src="images/pic01.jpg" alt="" /></a>
-    {/if}
+  {#if user.links.image_path != ''}
+    <a href="#/users/{user.name}" class="image featured">
+      <img height="250" src={user.links.image_path} alt="" />
+    </a>
+  {:else if user.links.video != ''}
+    <iframe
+      width="800"
+      height="415"
+      src={user.links.video}
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope;
+      picture-in-picture"
+      allowfullscreen />
+  {:else}
+    <a href="#/projects/{user.name}" class="image featured">
+      <img height="250" src="images/pic01.jpg" alt="" />
+    </a>
+  {/if}
 
-  
 </div>

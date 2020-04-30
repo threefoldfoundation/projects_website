@@ -6,10 +6,8 @@
   <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-ontop">
     <div class="container-fluid">
       <div class="logo-liqued">
-        <a
-          href="https://wiki.threefold.io/docs/token/how_to_buy/index.html"
-          target="_blank">
-          <img src="images/logo-event.png" style="width:55%;" alt="" />
+        <a href="/">
+          <img src="images/TFN.svg" style="width:55%;margin-top:-7px;" alt="" />
         </a>
       </div>
       <button
@@ -33,19 +31,8 @@
 
         <div class="logo navbar-brand">
           <a href="/">
-            <img src="images/logo-tf.png" alt="" />
+            <img src="images/TFN.svg" alt="" />
           </a>
-          <div class="logo-text text-dark">
-            <a
-              href="https://wiki.threefold.io/docs/token/how_to_buy/index.html"
-              target="_blank">
-              <img
-                src="images/ieo-comingcoon-sign.png"
-                style="width:100%;"
-                alt="" />
-            </a>
-            <!-- <span>INITIAL EXCHANGE OFFERING <br> MORE INFO COMING SOON!</span> -->
-          </div>
         </div>
         <ul class="navbar-nav">
           <li class="nav-item mx-1">
