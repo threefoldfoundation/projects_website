@@ -1,8 +1,12 @@
 {
   "version": 3,
   "file": "bundle.css",
-  "sources": [],
-  "sourcesContent": [],
+  "sources": [
+    "../../index.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  export let size = 25;\n  export let speed = 750;\n  export let color = 'rgba(0,0,0,0.4)';\n  export let thickness = 2;\n  export let gap = 40;\n  export let radius = 10;\n\n  let dash;\n  $: dash = 2 * Math.PI * radius * (100 - gap) / 100\n</script>\n\n<svg\n  height=\"{size}\"\n  width=\"{size}\"\n  style=\"animation-duration:{speed}ms;\"\n  class=\"svelte-spinner\"\n  viewbox=\"0 0 32 32\"\n>\n  <circle\n    role=\"presentation\"\n    cx=\"16\"\n    cy=\"16\"\n    r=\"{radius}\"\n    stroke=\"{color}\"\n    fill=\"none\"\n    stroke-width=\"{thickness}\"\n    stroke-dasharray=\"{dash},100\"\n    stroke-linecap=\"round\"\n  />\n</svg>\n\n<style>\n  .svelte-spinner {\n    transition-property: transform;\n    animation-name: svelte-spinner_infinite-spin;\n    animation-iteration-count: infinite;\n    animation-timing-function: linear;\n  }\n  @keyframes svelte-spinner_infinite-spin {\n    from { transform: rotate(0deg); }\n    to { transform: rotate(360deg); }\n  }\n</style>\n"
+  ],
   "names": [],
-  "mappings": ""
+  "mappings": "AAiCE,eAAe,eAAC,CAAC,AACf,mBAAmB,CAAE,SAAS,CAC9B,cAAc,CAAE,2CAA4B,CAC5C,yBAAyB,CAAE,QAAQ,CACnC,yBAAyB,CAAE,MAAM,AACnC,CAAC,AACD,WAAW,2CAA6B,CAAC,AACvC,IAAI,AAAC,CAAC,AAAC,SAAS,CAAE,OAAO,IAAI,CAAC,AAAE,CAAC,AACjC,EAAE,AAAC,CAAC,AAAC,SAAS,CAAE,OAAO,MAAM,CAAC,AAAE,CAAC,AACnC,CAAC"
 }

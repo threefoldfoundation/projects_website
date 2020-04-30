@@ -15,10 +15,11 @@ async function fetch_data(){
 fetch_data().then((data)=>{
     fetched_users = data['users']
     fetched_projects = data['projects']
-    
     users.set(fetched_users)
     projects.set(fetched_projects)
+    loading.set(false)
 })
 
 export const users = writable(fetched_users);
 export const projects = writable(fetched_projects);
+export let loading = writable(true)

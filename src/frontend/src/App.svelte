@@ -1,10 +1,9 @@
 <script>
   import Router from "../Router.svelte";
-  import { users , projects } from '../store.js'
+  import { users, projects , loading } from "../store.js";
   import routes from "./routes";
   import Navigation from "./components/Navigation.svelte";
-
-  //   import { Router, Link, Route } from "svelte-routing";
+  import Spinner from "svelte-spinner";
 </script>
 
 <svelte:head>
@@ -20,17 +19,11 @@
     <Navigation />
   </div>
   <div>
-  {#if $users.length == 0}
-    <p />
-  {:else}
-    {#await $users}
-      <p>Loading...</p>
-
-    {:then items}
+  
+    {#if $loading}
+      <center><Spinner size="300" speed="750" color="#0a73b8" thickness="2" gap="40" /></center>
+    {:else}
         <Router {routes} />
-    {:catch error}
-      {error.message}
-    {/await}
-  {/if}
+    {/if}
   </div>
 </div>
