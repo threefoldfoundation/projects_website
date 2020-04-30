@@ -79,7 +79,7 @@
           <h1 class="my-0">Team:</h1>
           {#each findTeam(project_data.info.team) as person}
             <li>
-            <a href="/users/{person.name}">{person.info.name}</a>
+            <a href="#/users/{person.name}">{person.info.name}</a>
             <img src="{person.links.image_path}" width="50" height="50" />
             </li>
           {/each}
