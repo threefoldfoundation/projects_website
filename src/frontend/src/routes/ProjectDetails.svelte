@@ -1,11 +1,24 @@
 <script>
-  import { projects } from "../../store.js";
+  import { projects, users } from "../../store.js";
 
   const url = window.location.href;
   let current_project = url.substring(url.lastIndexOf("/") + 1);
   let project_data = $projects.find(
     project => project["name"] == current_project
   );
+
+  function findTeam(team){
+    var res = []
+    team.forEach(function(person){
+      console.log(person)
+         var p = $users.find(user => user.info.name == person)
+         if (p){
+          res.push(p)
+         }
+    })
+    return res
+}
+    
 
   // project_data is all data to render from /data
 </script>
@@ -64,8 +77,11 @@
 
         {#if project_data.info.team.length > 0}
           <h1 class="my-0">Team:</h1>
-          {#each project_data.info.team as person}
-            <li>{person}</li>
+          {#each findTeam(project_data.info.team) as person}
+            <li>
+            <a href="/users/{person.name}">{person.info.name}</a>
+            <img src="{person.links.image_path}" width="50" height="50" />
+            </li>
           {/each}
         {/if}
 
