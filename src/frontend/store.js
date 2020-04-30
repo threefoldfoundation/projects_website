@@ -21,7 +21,11 @@ fetch_data().then((data)=>{
     loading.set(false)
 
     data['projects'].map(function(p){
-        categories.push(...p.ecosystem.categories)
+        p.ecosystem.categories.forEach(function(item){
+            if (! categories.includes(item)){
+                categories.push(item)
+            }
+        })
     })
     tags.set(categories)
 })

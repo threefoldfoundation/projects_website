@@ -66,32 +66,18 @@
         </span>
       {/if}
 
-      {#if project_data.info.mission}
-        <div class="content">
-          <h1>Mission:</h1>
-          <p>{project_data.info.mission}</p>
-        </div>
-      {/if}
+      {@html marked(project_data.pages[0].content)}
+
       {#if project_data.info.description}
         <div class="content">
-          <h1>Description:</h1>
           <p>{project_data.info.description}</p>
         </div>
       {/if}
 
-      {#if project_data.info.team.length > 0}
+      {#if project_data.info.mission}
         <div class="content">
-          <h1>Team:</h1>
-          <ul>
-            {#each findTeam(project_data.info.team) as person}
-              <li>
-                <a href="#/users/{person.name}" class="author">
-                  <img src={person.links.image_path} alt="" />
-                  {person.info.name}
-                </a>
-              </li>
-            {/each}
-          </ul>
+          <h1>Mission:</h1>
+          <p>{project_data.info.mission}</p>
         </div>
       {/if}
 
@@ -125,8 +111,24 @@
         </div>
       {/if}
 
-      {#if project_data.info.countries.length > 0}
+      {#if project_data.info.team.length > 0}
         <div class="content">
+          <h1>Team:</h1>
+          <ul>
+            {#each findTeam(project_data.info.team) as person}
+              <li class="my-2">
+                <a href="#/users/{person.name}" class="author">
+                  <img src={person.links.image_path} alt="" />
+                  {person.info.name}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/if}
+
+      {#if project_data.info.countries.length > 0}
+        <div class="content m-0">
           <h1 class="d-inline-block">Countries:</h1>
           <ul class="d-inline-block single">
             {#each project_data.info.countries as country}
@@ -137,7 +139,7 @@
       {/if}
 
       {#if project_data.info.cities.length > 0}
-        <div class="content ">
+        <div class="content m-0">
           <h1 class="d-inline-block">Cities:</h1>
           <ul class="d-inline-block single">
             {#each project_data.info.cities as city}
@@ -148,7 +150,7 @@
       {/if}
 
       {#if project_data.links.websites.length > 0}
-        <div class="content">
+        <div class="content m-0">
           <h1 class="d-inline-block">Websites:</h1>
           <ul class="d-inline-block single">
             {#each project_data.links.websites as link}
@@ -161,7 +163,7 @@
       {/if}
 
       {#if project_data.links.linkedin}
-        <div class="content">
+        <div class="content m-0">
           <h1 class="d-inline-block">Linkedin:</h1>
           <a href={project_data.links.linkedin}>
             {project_data.links.linkedin}
@@ -170,7 +172,7 @@
       {/if}
 
       {#if project_data.links.wiki}
-        <div class="content">
+        <div class="content m-0">
           <h1 class="d-inline-block">Wiki:</h1>
           <a href={project_data.links.wiki} target="_blank">
             {project_data.links.wiki}
@@ -178,8 +180,8 @@
         </div>
       {/if}
 
-      {#if project_data.ecosystem.badges.length > 0}
-        <div class="content">
+      <!-- {#if project_data.ecosystem.badges.length > 0}
+        <div class="content m-0">
           <h1 class="d-inline-block">Badges:</h1>
           <ul class="d-inline-block single">
             {#each project_data.ecosystem.badges as badge}
@@ -187,7 +189,7 @@
             {/each}
           </ul>
         </div>
-      {/if}
+      {/if} -->
 
       {#if project_data.ecosystem.categories.length > 0}
         <footer>

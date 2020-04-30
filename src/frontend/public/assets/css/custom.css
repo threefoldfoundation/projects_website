@@ -104,10 +104,72 @@ body.single #footer {
     background-color: #f4f4f4;
     border-radius: 5px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .content .single {
     margin-bottom: 0 !important;
+}
+
+.post>footer .stats {
+    margin-top: 2em !important;
+}
+
+#sidebar .stats {
+    list-style: none !important;
+}
+
+#sidebar .stats li {
+    display: inline-block;
+}
+
+#sidebar .stats li a {
+    background-color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}
+
+
+/* 404 */
+
+.kt-error-v1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.kt-error-v1 .kt-error-v1__container .kt-error-v1__number {
+    font-size: 150px;
+    /* margin-left: 80px; */
+    /* margin-top: 9rem; */
+    font-weight: 700;
+    color: #6c7293;
+}
+
+.kt-error-v1 .kt-error-v1__container .kt-error-v1__desc {
+    font-size: 1.5rem;
+    /* margin-left: 80px; */
+    color: #a7abc3;
+}
+
+.kt-error-v1__container h1 {
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .kt-error-v1 .kt-error-v1__container .kt-error-v1__number {
+        margin: 120px 0 0 3rem;
+        font-size: 8rem;
+    }
+    .kt-error-v1 .kt-error-v1__container .kt-error-v1__desc {
+        margin-left: 3rem;
+        padding-right: 0.5rem;
+    }
 }
 
 
@@ -127,4 +189,13 @@ body.single #footer {
 
 .d-inline-block {
     display: inline-block !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.my-1 {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
 }
