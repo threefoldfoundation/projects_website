@@ -15,10 +15,9 @@
       <img src="images/logo.png" alt="" />
     </a>
     <header>
-      <h2>Conscious Internet Alliance</h2>
+      <h2>Planet First</h2>
       <p>
-        Another fine responsive site template by
-        <a href="http://html5up.net">HTML5 UP</a>
+        Conscious Internet Alliance
       </p>
     </header>
   </section>
