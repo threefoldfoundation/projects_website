@@ -12,14 +12,14 @@
   miniProjects = $projects.slice(0, 5);
 
   function onNext() {
-    page += 5;
-    projectsList = $projects.slice(page, page + 5);
+    page += 3;
+    projectsList = $projects.slice(page, page + 3);
     updatePage();
   }
 
   function onPrevious() {
-    page -= 5;
-    projectsList = $projects.slice(page, page + 5);
+    page -= 3;
+    projectsList = $projects.slice(page, page + 3);
     updatePage();
   }
 
@@ -29,13 +29,13 @@
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }
-    if (page > $projects.length - 5) {
+    if (page > $projects.length - 3) {
       btn_next.classList.add("disabled");
     }
     if (page <= 0) {
       btn_prev.classList.add("disabled");
     }
-    if (page < $projects.length - 5) {
+    if (page < $projects.length - 3) {
       btn_next.classList.remove("disabled");
     }
   }
