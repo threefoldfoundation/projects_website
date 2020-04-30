@@ -18,11 +18,9 @@
   function getProjects(){
     console.log(params.tagname)
     if (params.tagname){
-      console.log("filtered")
       return filterProjects(params.tagname)
     }
     else{
-       console.log("all")
       return $projects;
     }
       
