@@ -31,3 +31,37 @@ a:visited {
     height: 75px;
     width: 75px;
 }
+
+.post iframe {
+    margin-bottom: 2rem !important;
+}
+
+.content {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content h1,
+.content p {
+    margin-bottom: 0 !important;
+}
+
+.content p {
+    line-height: 1.5;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    padding-left: 0;
+}
+
+
+/* classes */
+
+.text-center {
+    text-align: center;
+}
