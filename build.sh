@@ -7,5 +7,6 @@ echo "DONE"
 echo "\n"
 echo "build for production"
 cd -
+shards install
 crystal build --release src/walker.cr
 echo "DONE"
