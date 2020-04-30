@@ -1,7 +1,10 @@
 <script>
   import MiniProjectList from "./MiniProjectList.svelte";
   import MiniUserList from "./MiniUserList.svelte";
+  import TagCloud from "./TagCloud.svelte"
+
   import Footer from "./Footer.svelte";
+  import { tags } from "../../store.js";
 
   export let miniProjects = [];
   export let users = [];
@@ -43,4 +46,5 @@
     </ul>
   </section> -->
 
+  <TagCloud tags={$tags} />
 </section>

@@ -2,6 +2,7 @@ import { writable } from 'svelte/store';
 
 let fetched_users = [];
 let fetched_projects = [];
+let categories = []
 
 
 async function fetch_data(){
@@ -18,8 +19,14 @@ fetch_data().then((data)=>{
     users.set(fetched_users)
     projects.set(fetched_projects)
     loading.set(false)
+
+    data['projects'].map(function(p){
+        categories.push(...p.ecosystem.categories)
+    })
+    tags.set(categories)
 })
 
 export const users = writable(fetched_users);
 export const projects = writable(fetched_projects);
 export let loading = writable(true)
+export const tags = writable(categories)
