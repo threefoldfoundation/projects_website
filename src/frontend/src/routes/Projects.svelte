@@ -16,7 +16,6 @@
   miniProjects = $projects.slice(0, 5);
 
   function getProjects(){
-    console.log(params.tagname)
     if (params.tagname){
       return filterProjects(params.tagname)
     }

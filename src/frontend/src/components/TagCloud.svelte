@@ -1,7 +1,5 @@
 <script>
 export let tags;
-console.log(tags)
-console.log("hey")
 </script>
 <ul>
 {#each tags as tag}
