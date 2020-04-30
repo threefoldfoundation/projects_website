@@ -1,18 +1,11 @@
 <script>
-	import User from './User.svelte'
+  import User from "./User.svelte";
 
-	export let users = []
+  export let users = [];
 </script>
 
-<section>
-
-
-<ul class="posts">
-	 {#each users as user}
-	<li>
-		<User {user} />
-	</li>
-	{/each}
-</ul>
-
-</section>
+<div>
+  {#each users as user}
+    <User {user} />
+  {/each}
+</div>

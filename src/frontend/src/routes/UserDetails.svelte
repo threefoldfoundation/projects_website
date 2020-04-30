@@ -18,82 +18,105 @@
       <header>
         <div class="title">
           <h2>{user_data.info.name}</h2>
-          <p>
-            <strong>{user_data.info.bio}</strong>
-          </p>
         </div>
       </header>
 
-      {#if user_data.links.image_path != ''}
-        <a href="#/users/{user_data.name}" class="image featured">
-          <img height="250" src={user_data.links.image_path} alt="" />
-        </a>
-      {:else if user_data.links.video != ''}
+      {#if user_data.links.video != ''}
         <iframe
-        title=""
+          title=""
           width="800"
-          height="415"
+          height="530"
           src="{user_data.links.video}?title=0&byline=0&portrait=0"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope;
           picture-in-picture"
           allowfullscreen />
+      {:else if user_data.links.image_path != ''}
+        <span>
+          <img src={user_data.links.image_path} alt="" />
+        </span>
       {:else}
-        <a href="#/projects/{user_data.name}" class="image featured">
-          <img height="250" src="images/pic01.jpg" alt="" />
-        </a>
+        <span class="image featured">
+          <img height="auto" src="images/pic01.jpg" alt="" />
+        </span>
       {/if}
 
-      <div>{user_data.info.bio}</div>
+      <div class="content">
+        <p>{user_data.info.bio}</p>
+      </div>
 
       {#if user_data.info.companies.length > 0}
-        cities :
-        {#each user_data.info.companies as company}
-          <li>{company.name}</li>
-        {/each}
+        <div class="content">
+          <h1>Companies:</h1>
+          <ul>
+            {#each user_data.info.companies as company}
+              <li>{company.name}</li>
+            {/each}
+          </ul>
+        </div>
       {/if}
 
       {#if user_data.info.countries.length > 0}
-        countries :
-        {#each user_data.info.countries as country}
-          <li>{country.name}</li>
-        {/each}
+        <div class="content">
+          <h1>Countries:</h1>
+          <ul>
+            {#each user_data.info.countries as country}
+              <li>{country.name}</li>
+            {/each}
+          </ul>
+        </div>
       {/if}
 
       {#if user_data.info.cities.length > 0}
-        cities :
-        {#each user_data.info.cities as city}
-          <li>{city.name}</li>
-        {/each}
+        <div class="content">
+          <h1>Cities:</h1>
+          <ul>
+            {#each user_data.info.cities as city}
+              <li>{city.name}</li>
+            {/each}
+          </ul>
+        </div>
       {/if}
 
       {#if user_data.links.websites.length > 0}
-        websites:
-        {#each user_data.links.websites as link}
-          <a href={link}>{link}</a>
-        {/each}
+        <div class="content">
+          <h1>Websites:</h1>
+          {#each user_data.links.websites as link}
+            <a href={link} target="_blank">{link}</a>
+          {/each}
+        </div>
       {/if}
 
       {#if user_data.links.linkedin}
-        <div>
-          linkedin :
-          <a href={user_data.links.linkedin}>{user_data.links.linkedin}</a>
+        <div class="content">
+          <h1>Linkedin:</h1>
+          <a href={user_data.links.linkedin} target="_blank">
+            {user_data.links.linkedin}
+          </a>
         </div>
       {/if}
 
       {#if user_data.links.wiki}
-        <div>
-          wiki :
-          <a href={user_data.links.wiki}>{user_data.links.wiki}</a>
+        <div class="content">
+          <h1>Wiki:</h1>
+          <a href={user_data.links.wiki} target="_blank">
+            {user_data.links.wiki}
+          </a>
         </div>
       {/if}
 
       {#if user_data.ecosystem.memberships.length > 0}
-        categories
-        {#each user_data.ecosystem.memberships as membership}
-          <li>{membership}</li>
-        {/each}
+        <footer>
+          <ul class="stats">
+            {#each user_data.ecosystem.memberships as membership}
+              <li>
+                <a href="#search?q={membership}">{membership}</a>
+              </li>
+            {/each}
+          </ul>
+        </footer>
       {/if}
+
     </article>
 
   </div>

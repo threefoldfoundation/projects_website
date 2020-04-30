@@ -10,7 +10,7 @@
     </li>
     <li>
       <a
-        href="https://www.facebook.com/ThreeFoldNetwork/"
+        href="https://www.facebook.com/threefold.io/"
         target="_blank"
         class="icon brands fa-facebook-f">
         <span class="label">Facebook</span>
@@ -34,7 +34,7 @@
     </li>
     <li>
       <a
-        href="https://t.me/threefoldnetwork"
+        href="https://t.me/threefoldnews"
         target="_blank"
         class="solid fab fa-telegram-plane fa-1x">
         <span class="label">Telegram</span>

@@ -7,20 +7,20 @@
   let usersList = [];
   let page = 0;
 
-  const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = shuffled_projects.slice(0, 5);
+  // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
+  miniProjects = $projects.slice(0, 5);
   const shuffled_users = $users.sort(() => 0.5 - Math.random());
   usersList = shuffled_users.slice(0, 5);
 
   function onNext() {
-    page += 5;
-    usersList = $users.slice(page, page + 5);
+    page += 3;
+    usersList = $users.slice(page, page + 3);
     updatePage();
   }
 
   function onPrevious() {
-    page -= 5;
-    usersList = $users.slice(page, page + 5);
+    page -= 3;
+    usersList = $users.slice(page, page + 3);
     updatePage();
   }
   function updatePage() {
@@ -29,13 +29,13 @@
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }
-    if (page > $projects.length - 5) {
+    if (page > $projects.length - 3) {
       btn_next.classList.add("disabled");
     }
     if (page <= 0) {
       btn_prev.classList.add("disabled");
     }
-    if (page < $projects.length - 5) {
+    if (page < $projects.length - 3) {
       btn_next.classList.remove("disabled");
     }
   }

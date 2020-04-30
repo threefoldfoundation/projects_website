@@ -82,6 +82,12 @@ body.single #footer {
     text-align: center;
 }
 
+.user a img {
+    width: 500px !important;
+    height: 500px;
+    margin: auto;
+}
+
 
 /* classes */
 
