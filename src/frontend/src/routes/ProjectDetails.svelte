@@ -50,7 +50,7 @@
           width="800"
           height="450"
           title=""
-          src={project_data.links.video}
+          src="{project_data.links.video}?title=0&byline=0&portrait=0"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope;
           picture-in-picture"
@@ -82,10 +82,13 @@
         <div class="content">
           <h1>Team:</h1>
           <ul>
-            {#each project_data.info.team as person}
-              <li>{person}</li>
+           {#each findTeam(project_data.info.team) as person}
+            <li>
+            <a href="#/users/{person.name}">{person.info.name}</a>
+            <img src="{person.links.image_path}" width="50" height="50" />
+            </li>
             {/each}
-          </ul>
+                      </ul>
         </div>
       {/if}
 
