@@ -7,7 +7,7 @@
     project => project["name"] == current_project
   );
 
-  // project_data is all data to render
+  // project_data is all data to render from /data
 </script>
 
 <!-- Wrapper -->

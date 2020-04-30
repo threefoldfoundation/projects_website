@@ -21,7 +21,7 @@
   <div>
   
     {#if $loading}
-      <center><Spinner size="300" speed="750" color="#0a73b8" thickness="2" gap="40" /></center>
+      <center><Spinner class="spinner" size="200" speed="750" color="#0a73b8" thickness="2" gap="40" /></center>
     {:else}
         <Router {routes} />
     {/if}

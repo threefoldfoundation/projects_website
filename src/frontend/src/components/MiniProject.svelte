@@ -1,6 +1,5 @@
 <script>
   export let miniProject;
-  console.log(miniProject);
 </script>
 
 <article class="miniProject">
