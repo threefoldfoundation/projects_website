@@ -29,14 +29,14 @@
   }
 
   function onNext() {
-    page += 5;
-    projectsList = getProjects().slice(page, page + 5);
+    page += 3;
+    projectsList = getProjects().slice(page, page + 3);
     updatePage();
   }
 
   function onPrevious() {
-    page -= 5;
-    projectsList = getProjects().slice(page, page + 5);
+    page -= 3;
+    projectsList = getProjects().slice(page, page + 3);
     updatePage();
   }
 
@@ -46,13 +46,13 @@
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }
-    if (page > getProjects().length - 5) {
+    if (page > getProjects().length - 3) {
       btn_next.classList.add("disabled");
     }
     if (page <= 0) {
       btn_prev.classList.add("disabled");
     }
-    if (page < getProjects().length - 5) {
+    if (page < getProjects().length - 3) {
       btn_next.classList.remove("disabled");
     }
   }

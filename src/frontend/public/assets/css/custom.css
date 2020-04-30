@@ -59,9 +59,46 @@ a:visited {
     padding-left: 0;
 }
 
+.home_span {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+}
+
+.home_tf {
+    margin: 0 0 1em 0 !important;
+    line-height: 1.5;
+}
+
+.link_wrapper {
+    margin-bottom: 35px;
+}
+
+.icons li a {
+    color: #3c3b3b !important;
+}
+
+body.single #footer {
+    text-align: center;
+}
+
+.user a img {
+    width: 500px !important;
+    height: 500px;
+    margin: auto;
+}
+
 
 /* classes */
 
 .text-center {
     text-align: center;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.clear-both {
+    clear: both;
 }

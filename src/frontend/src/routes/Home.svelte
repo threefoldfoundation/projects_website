@@ -2,50 +2,55 @@
 <div id="wrapper">
 
   <!-- Menu -->
-  <!-- <section id="menu">
+  <section id="menu">
 
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+    <!-- Search -->
+    <section>
+      <form class="search" method="get" action="#">
+        <input type="text" name="query" placeholder="Search" />
+      </form>
+    </section>
 
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
-										</a>
-									</li>
-								</ul>
-							</section>
+    <!-- Links -->
+    <section>
+      <ul class="links">
+        <li>
+          <a href="#">
+            <h3>Lorem ipsum</h3>
+            <p>Feugiat tempus veroeros dolor</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Dolor sit amet</h3>
+            <p>Sed vitae justo condimentum</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Feugiat veroeros</h3>
+            <p>Phasellus sed ultricies mi congue</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Etiam sed consequat</h3>
+            <p>Porta lectus amet ultricies</p>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
+    <!-- Actions -->
+    <section>
+      <ul class="actions stacked">
+        <li>
+          <a href="#" class="button large fit">Log In</a>
+        </li>
+      </ul>
+    </section>
 
-					</section> -->
+  </section>
 
   <!-- Main -->
   <div id="main">
@@ -55,7 +60,7 @@
       <article class="post">
         <header>
           <div class="title text-center">
-            <h2>Planet First</h2>
+            <h2>CONSCIOUS INTERNET ALLIANCE</h2>
             <p>
               <strong>
                 A collective and open ecosystem of planet- and human- centric
@@ -78,6 +83,7 @@
           and many other experiences on top, the time has come for us to make
           our world peer-to-peer.
         </p>
+
         <p class="home_tf">
           On the 29th of April 2020, ThreeFold started a rolling launch with
           many exciting announcements for the world. This began with the
@@ -102,22 +108,14 @@
           <span class="home_span">now</span>
           , when?
         </p>
-        <p class="home_tf">
-          Interested to learn more?
-          <a href="#">
+        <p class="home_tf">Interested to learn more?</p>
+        <div class="text-center link_wrapper">
+          <a href="#/projects" class="button large">
             Explore the first projects living on the ThreeFold Network
           </a>
-        </p>
-        <!-- <footer>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer> -->
+        </div>
       </article>
     </div>
 
   </div>
-
 </div>

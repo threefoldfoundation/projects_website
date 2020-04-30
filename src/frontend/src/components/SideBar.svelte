@@ -27,9 +27,7 @@
   <MiniProjectList {miniProjects} />
 
   <!-- User List -->
-  <section>
-    <MiniUserList {users} />
-  </section>
+  <MiniUserList {users} />
 
   <!-- About -->
   <!-- <section class="blurb">
@@ -46,6 +44,4 @@
     </ul>
   </section> -->
 
-  <!-- Footer -->
-  <Footer />
 </section>
