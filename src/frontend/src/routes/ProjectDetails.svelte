@@ -1,5 +1,6 @@
 <script>
   import { projects, users } from "../../store.js";
+  import marked from 'marked'
 
   const url = window.location.href;
   let current_project = url.substring(url.lastIndexOf("/") + 1);
@@ -63,6 +64,8 @@
           <img height="auto" src="images/pic01.jpg" alt="" />
         </span>
       {/if}
+
+      {@html marked(project_data.pages[0].content)}
 
       {#if project_data.info.description}
         <div class="content">

@@ -1,7 +1,5 @@
 <script>
-  export let tags;
-  console.log(tags);
-  console.log("hey");
+export let tags;
 </script>
 
 <ul class="stats">
