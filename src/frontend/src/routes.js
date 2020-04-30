@@ -16,6 +16,7 @@ if (!urlParams.has('routemap')) {
         // Exact path
         '/': Home,
         '/projects': Projects,
+        '/projects/tags/:tagname': Projects,
         '/users': Users,
         '/projects/:name': ProjectDetails, 
         '/users/:name': UserDetails,
@@ -37,6 +38,7 @@ if (!urlParams.has('routemap')) {
     // Exact path
     routes.set('/', Home)
     routes.set('/projects', Projects)
+    routes.set( '/projects/tags/:tagname', Projects)
     routes.set('/projects/:name', ProjectDetails)
     routes.set('/users/:name', UserDetails)
     routes.set('/error', Error)

@@ -42,7 +42,7 @@
     <ul class="stats">
       {#each project.ecosystem.categories as category}
         <li>
-          <a href="#search?q={category}">{category}</a>
+          <a href="#/projects/tags/{category}">{category}</a>
         </li>
       {/each}
     </ul>

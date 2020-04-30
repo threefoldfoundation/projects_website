@@ -3,23 +3,40 @@
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
 
+  export let params = {}
+  
+  
   let miniProjects = [];
   let projectsList = [];
+  let filteredProjects = [];
   let page = 0;
 
   let selected_users = $users.slice(0, 5);
-  projectsList = $projects.slice(0, 3);
+  projectsList =getProjects().slice(0, 3);
   miniProjects = $projects.slice(0, 5);
+
+  function getProjects(){
+    console.log(params.tagname)
+    if (params.tagname){
+      console.log("filtered")
+      return filterProjects(params.tagname)
+    }
+    else{
+       console.log("all")
+      return $projects;
+    }
+      
+  }
 
   function onNext() {
     page += 5;
-    projectsList = $projects.slice(page, page + 5);
+    projectsList = getProjects().slice(page, page + 5);
     updatePage();
   }
 
   function onPrevious() {
     page -= 5;
-    projectsList = $projects.slice(page, page + 5);
+    projectsList = getProjects().slice(page, page + 5);
     updatePage();
   }
 
@@ -29,16 +46,22 @@
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }
-    if (page > $projects.length - 5) {
+    if (page > getProjects().length - 5) {
       btn_next.classList.add("disabled");
     }
     if (page <= 0) {
       btn_prev.classList.add("disabled");
     }
-    if (page < $projects.length - 5) {
+    if (page < getProjects().length - 5) {
       btn_next.classList.remove("disabled");
     }
   }
+
+  function filterProjects(category){
+    return $projects.filter(project => project.ecosystem.categories.includes(category))
+
+  }
+
 </script>
 
 <main>
