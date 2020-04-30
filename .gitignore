@@ -9,3 +9,5 @@ shard.lock
 src/frontend/public/build/bundle.js
 src/frontend/public/build/bundle.js.map
 walker
+package-lock.json
+
