@@ -1,7 +1,6 @@
 <script>
   import Router from "../Router.svelte";
-  //   import Router from "svelte-spa-router";
-  // Import the list of routes
+  import { users , projects } from '../store.js'
   import routes from "./routes";
   import Navigation from "./components/Navigation.svelte";
 
@@ -21,6 +20,17 @@
     <Navigation />
   </div>
   <div>
-    <Router {routes} />
+  {#if $users.length == 0}
+    <p />
+  {:else}
+    {#await $users}
+      <p>Loading...</p>
+
+    {:then items}
+        <Router {routes} />
+    {:catch error}
+      {error.message}
+    {/await}
+  {/if}
   </div>
 </div>
