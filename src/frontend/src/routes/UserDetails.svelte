@@ -30,9 +30,10 @@
         </a>
       {:else if user_data.links.video != ''}
         <iframe
+        title=""
           width="800"
           height="415"
-          src={user_data.links.video}
+          src="{user_data.links.video}?title=0&byline=0&portrait=0"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope;
           picture-in-picture"

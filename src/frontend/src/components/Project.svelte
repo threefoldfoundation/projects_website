@@ -15,7 +15,7 @@
     <iframe
       width="950"
       height="550"
-      src={project.links.video}
+      src="{project.links.video}?title=0&byline=0&portrait=0"
       title=""
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope;
