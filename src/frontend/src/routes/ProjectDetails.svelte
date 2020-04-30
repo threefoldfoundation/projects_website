@@ -42,17 +42,19 @@
             allowfullscreen />
         {:else if project_data.links.image_path != ''}
           <a href="#/project_data/{project_data.name}" class="image featured">
-            <img height="auto" src={project_data.links.image_path} alt="" />
+            <img src={project_data.links.image_path} alt="" />
           </a>
         {:else}
           <a href="#/project_data/{project_data.name}" class="image featured">
-            <img height="auto" src="images/pic01.jpg" alt="" />
+            <img src="images/pic01.jpg" alt="" />
           </a>
         {/if}
 
         {#if project_data.info.mission}
-          <h1 class="my-0">Mission:</h1>
-          <p style="margin-bottom:1em;">{project_data.info.mission}</p>
+          <div class="content">
+            <h1 class="my-0">Mission:</h1>
+            <p style="margin-bottom:1em;">{project_data.info.mission}</p>
+          </div>
         {/if}
 
         {#if project_data.info.description}

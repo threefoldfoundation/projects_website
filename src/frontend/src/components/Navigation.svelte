@@ -2,12 +2,14 @@
   import { link } from "svelte-spa-router";
 </script>
 
-<header id="header">
+<!-- <header id="header">
   <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-ontop">
     <div class="container-fluid">
       <div class="logo-liqued">
-        <a href="/">
-          <img src="images/TFN.svg" style="width:55%;margin-top:-7px;" alt="" />
+        <a
+          href="https://wiki.threefold.io/docs/token/how_to_buy/index.html"
+          target="_blank">
+          <img src="images/ieo-comingcoon-sign.png" style="width:10%;" alt="" />  
         </a>
       </div>
       <button
@@ -46,12 +48,6 @@
           <li class="nav-item mx-1">
             <a href="/users" class="nav-link" use:link>Users</a>
           </li>
-          <!-- <li class="search">
-            <a class="fa-search" href="#search">Search</a>
-            <form id="search" method="get" action="#" class="">
-              <input type="text" name="query" placeholder="Search" />
-            </form>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -66,4 +62,64 @@
       </a>
     </div>
   </nav>
+</header> -->
+
+<!-- Header -->
+<header id="header">
+  <div class="navbar-brand">
+    <a href="/">
+      <img src="/images/TFN.svg" alt="" />
+    </a>
+  </div>
+  <nav class="links">
+    <ul>
+      <li>
+        <a href="/" use:link>Home</a>
+      </li>
+      <li>
+        <a href="/projects" use:link>Projects</a>
+      </li>
+      <li>
+        <a href="/users" use:link>People</a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="main">
+    <ul>
+      <li class="search">
+        <a class="fa-search" href="#search">Search</a>
+        <form id="search" method="get" action="#">
+          <input type="text" name="query" placeholder="Search" />
+        </form>
+      </li>
+      <li class="menu">
+        <a class="fa-bars" href="#menu">Menu</a>
+      </li>
+    </ul>
+  </nav>
 </header>
+
+<!-- Menu -->
+<section id="menu">
+
+  <!-- Search -->
+  <section>
+    <form class="search" method="get" action="#">
+      <input type="text" name="query" placeholder="Search" />
+    </form>
+  </section>
+
+  <!-- Links -->
+  <section>
+    <ul class="links">
+      <!-- <li>
+        <a href="#">
+          <h3>Lorem ipsum</h3>
+          <p>Feugiat tempus veroeros dolor</p>
+        </a>
+      </li> -->
+
+    </ul>
+  </section>
+
+</section>

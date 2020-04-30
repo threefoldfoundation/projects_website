@@ -8,8 +8,8 @@
   let page = 0;
 
   let selected_users = $users.slice(0, 5);
-  projectsList = $projects.slice(0, 5);
-  miniProjects = projectsList;
+  projectsList = $projects.slice(0, 3);
+  miniProjects = $projects.slice(0, 5);
 
   function onNext() {
     page += 5;

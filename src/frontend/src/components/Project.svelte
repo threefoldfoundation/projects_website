@@ -3,19 +3,18 @@
   export let project;
 </script>
 
-<article class="project post text-center ">
+<article class="post">
   <header>
-    <div class="title text-left">
+    <div class="title">
       <h2>
         <a href="#/projects/{project.name}">{project.name}</a>
       </h2>
     </div>
   </header>
-
   {#if project.links.video != ''}
     <iframe
-      width="800"
-      height="415"
+      width="950"
+      height="550"
       src={project.links.video}
       title=""
       frameborder="0"
@@ -24,21 +23,20 @@
       allowfullscreen />
   {:else if project.links.image_path != ''}
     <a href="#/projects/{project.name}" class="image featured">
-      <img height="auto" src={project.links.image_path} alt="" />
+      <img src={project.links.image_path} alt="" />
     </a>
   {:else}
     <a href="#/projects/{project.name}" class="image featured">
-      <img height="auto" src="images/pic01.jpg" alt="" />
+      <img src="images/pic01.jpg" alt="" />
     </a>
   {/if}
 
   <p>{project.info.mission}</p>
+
   <footer>
     <ul class="actions">
       <li>
-        <a href="#/projects/{project.name}" class="button large">
-          Continue Reading
-        </a>
+        <a href="#/projects/{project.name}" class="button large">Learn more</a>
       </li>
     </ul>
     <ul class="stats">
