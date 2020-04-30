@@ -2,64 +2,71 @@
   import { users, projects } from "../../store.js";
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
+  import * as animateScroll from "svelte-scrollto";
+  animateScroll.scrollToTop();
 
-  export let params = {}
-  
-  
+  export let params = {};
+
   let miniProjects = [];
   let projectsList = [];
   let filteredProjects = [];
-  let page = 0;
+  let page = 0,
+    addWith = 3,
+    lastpage = false;
 
   let selected_users = $users.slice(0, 5);
-  projectsList =getProjects().slice(0, 3);
+  projectsList = getProjects().slice(0, 3);
   miniProjects = $projects.slice(0, 5);
 
-  function getProjects(){
-    console.log(params.tagname)
-    if (params.tagname){
-      return filterProjects(params.tagname)
-    }
-    else{
+  function filterProjects(category) {
+    return $projects.filter(project =>
+      project.ecosystem.categories.includes(category)
+    );
+  }
+
+  function getProjects() {
+    console.log(params.tagname);
+    if (params.tagname) {
+      return filterProjects(params.tagname);
+    } else {
       return $projects;
     }
-      
   }
 
   function onNext() {
     page += 3;
-    projectsList = getProjects().slice(page, page + 3);
     updatePage();
+    if (lastpage) projectsList = getProjects().slice(page);
+    else projectsList = getProjects().slice(page, page + addWith);
+    animateScroll.scrollToTop();
   }
 
   function onPrevious() {
     page -= 3;
-    projectsList = getProjects().slice(page, page + 3);
     updatePage();
+    projectsList = getProjects().slice(page, page + addWith);
+    animateScroll.scrollToTop();
   }
 
   function updatePage() {
     let btn_prev = document.getElementById("btn_prev");
     let btn_next = document.getElementById("btn_next");
+    let len = getProjects().length;
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }
-    if (page > getProjects().length - 3) {
+    if (page >= len - 3) {
+      lastpage = true;
       btn_next.classList.add("disabled");
     }
-    if (page <= 0) {
+    if (page < 3) {
       btn_prev.classList.add("disabled");
     }
-    if (page < getProjects().length - 3) {
+    if (page < len - 3) {
+      lastpage = false;
       btn_next.classList.remove("disabled");
     }
   }
-
-  function filterProjects(category){
-    return $projects.filter(project => project.ecosystem.categories.includes(category))
-
-  }
-
 </script>
 
 <main>

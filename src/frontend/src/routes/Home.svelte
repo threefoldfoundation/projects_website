@@ -1,3 +1,8 @@
+<script>
+  import * as animateScroll from "svelte-scrollto";
+  animateScroll.scrollToTop();
+</script>
+
 <!-- Wrapper -->
 <div id="wrapper">
 
