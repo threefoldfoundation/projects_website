@@ -1,1 +1,4 @@
-KEMAL_ENV=production ./walker
+cd public/threefold
+git pull
+cd -
+KEMAL_ENV=production ./walker -p 80
