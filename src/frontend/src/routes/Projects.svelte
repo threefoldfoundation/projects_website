@@ -6,7 +6,7 @@
   animateScroll.scrollToTop();
 
   export let params = {};
-
+  console.log(params)
   let miniProjects = [];
   let projectsList = [];
   let filteredProjects = [];
