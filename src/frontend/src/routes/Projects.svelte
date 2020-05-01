@@ -3,10 +3,11 @@
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
+  
   animateScroll.scrollToTop();
 
   export let params = {};
-  console.log(params)
+
   let miniProjects = [];
   let projectsList = [];
   let filteredProjects = [];
@@ -25,7 +26,6 @@
   }
 
   function getProjects() {
-    console.log(params.tagname);
     if (params.tagname) {
       return filterProjects(params.tagname);
     } else {

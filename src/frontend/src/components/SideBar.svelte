@@ -18,15 +18,15 @@
       <img src="images/logo.png" alt="" />
     </a>
     <header>
-      <h2>Planet First</h2>
+      <h3>Conscious Internet Alliance</h3>
       <p>
-        Conscious Internet Alliance
+        
       </p>
     </header>
   </section>
 
   <TagCloud tags={$tags} />
-  
+
   <!-- Mini Projects -->
   <MiniProjectList {miniProjects} />
 

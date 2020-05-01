@@ -3,6 +3,9 @@
   import UserList from "../components/UserList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
+
+   export let params = {};
+
   animateScroll.scrollToTop();
 
   let miniProjects = [],
@@ -15,27 +18,46 @@
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
   miniProjects = $projects.slice(0, 5);
   miniusersList = $users.slice(0, 3);
-  usersList = $users.slice(0, 3);
+  usersList = getUsers().slice(0, 3);
+
+  function filterUsers(membership) {
+    return $users.filter(user =>
+      user.ecosystem.memberships.includes(membership)
+    );
+  }
+
+  function getUsers() {
+    if (params.tagname) {
+      console.log(params.tagname)
+      console.log("**")
+      return filterUsers(params.tagname);
+    } else {
+      console.log("all")
+      return $users;
+    }
+  }
 
   function onNext() {
     page += 3;
     updatePage();
     if (lastpage) {
-      usersList = $users.slice(page);
-    } else usersList = $users.slice(page, page + addWith);
+      usersList = getUsers().slice(page);
+    } else usersList = getUsers().slice(page, page + addWith);
     animateScroll.scrollToTop();
   }
+
+
 
   function onPrevious() {
     page -= 3;
     updatePage();
-    usersList = $users.slice(page, page + addWith);
+    usersList = getUsers().slice(page, page + addWith);
     animateScroll.scrollToTop();
   }
   function updatePage() {
     let btn_prev = document.getElementById("btn_prev");
     let btn_next = document.getElementById("btn_next");
-    let len = $users.length;
+    let len = getUsers().length;
     if (page > 0) {
       btn_prev.classList.remove("disabled");
     }

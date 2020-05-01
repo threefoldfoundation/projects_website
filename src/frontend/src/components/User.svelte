@@ -29,4 +29,19 @@
       <img height="auto" src="images/pic01.jpg" alt="" />
     </a>
   {/if}
+   <footer>
+    <ul class="actions">
+      <li>
+        <a href="#/users/{user.name}" class="button large">Learn more</a>
+      </li>
+    </ul>
+    <ul class="stats">
+      {#each user.ecosystem.memberships as membership}
+        <li>
+          <a href="#/users/tags/{membership}">{membership}</a>
+        </li>
+      {/each}
+    </ul>
+  </footer>
+
 </article>
