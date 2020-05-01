@@ -26,9 +26,13 @@ class MdPage
                 @content = @content.gsub(x[idx], "")
                 @content = @content.gsub("### data", "")
                 @content = @content.gsub("```python\n\n```", "")
+                @content = @content.gsub("```python\n\n\n```", "")
                 @content = @content.gsub("```\n\n```", "")
                 first_line = @content.lines[0]
                 @content = @content.gsub(first_line, "")
+                if @name == "artheon"
+                    puts(@content)
+                end
             rescue exception
                 puts "*******************\n"
                 puts "failed to parse code as toml\n" 

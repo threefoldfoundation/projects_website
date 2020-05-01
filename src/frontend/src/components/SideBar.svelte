@@ -25,6 +25,8 @@
     </header>
   </section>
 
+  <TagCloud tags={$tags} />
+  
   <!-- Mini Projects -->
   <MiniProjectList {miniProjects} />
 
@@ -46,5 +48,5 @@
     </ul>
   </section> -->
 
-  <TagCloud tags={$tags} />
+  
 </section>
