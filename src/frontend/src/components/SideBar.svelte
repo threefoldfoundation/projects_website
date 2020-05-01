@@ -4,7 +4,7 @@
   import TagCloud from "./TagCloud.svelte"
 
   import Footer from "./Footer.svelte";
-  import { tags } from "../../store.js";
+  import { alltags } from "../../store.js";
 
   export let miniProjects = [];
   export let users = [];
@@ -25,7 +25,7 @@
     </header>
   </section>
 
-  <TagCloud tags={$tags} />
+  <TagCloud tags={$alltags} />
 
   <!-- Mini Projects -->
   <MiniProjectList {miniProjects} />

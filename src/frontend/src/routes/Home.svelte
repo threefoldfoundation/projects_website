@@ -65,7 +65,7 @@
         <p class="home_tf">Interested to learn more?</p>
         <div class="text-center link_wrapper">
           <a href="#/projects" class="button large">
-            Explore the first projects living on the ThreeFold Network
+            Explore Conscious Internet Alliance
           </a>
         </div>
       </article>

@@ -6,7 +6,7 @@ export let tags;
   <h1>Tags</h1>
   {#each tags as tag}
     <li class="my-1">
-      <a href="#/projects/tags/{tag}">{tag}</a>
+      <a href="{tag.href}">{tag.name}</a>
     </li>
   {/each}
 </ul>
