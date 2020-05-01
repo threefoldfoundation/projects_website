@@ -3,7 +3,8 @@
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
-  
+  import {getRandomSlice} from "../utils.js"
+
   animateScroll.scrollToTop();
 
   export let params = {};
@@ -15,9 +16,9 @@
     addWith = 3,
     lastpage = false;
 
-  let selected_users = $users.slice(0, 5);
+  let selected_users = getRandomSlice($users, 5);
   projectsList = getProjects().slice(0, 3);
-  miniProjects = $projects.slice(0, 5);
+  miniProjects = getRandomSlice($projects, 5);
 
   function filterProjects(category) {
     return $projects.filter(project =>
