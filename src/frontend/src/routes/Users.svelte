@@ -29,8 +29,11 @@
 
   function getUsers() {
     if (params.tagname) {
+      console.log(params.tagname)
+      console.log("**")
       return filterUsers(params.tagname);
     } else {
+      console.log("all")
       return $users;
     }
   }
