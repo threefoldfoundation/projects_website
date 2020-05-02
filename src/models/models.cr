@@ -30,9 +30,7 @@ class MdPage
                 @content = @content.gsub("```\n\n```", "")
                 first_line = @content.lines[0]
                 @content = @content.gsub(first_line, "")
-                if @name == "artheon"
-                    puts(@content)
-                end
+                
             rescue exception
                 puts "*******************\n"
                 puts "failed to parse code as toml\n" 

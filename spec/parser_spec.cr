@@ -252,8 +252,6 @@ describe MdPage do
   it "parse_toml_milestones" do
     p = MdPage.new "", "", content=toml_milestones
     s, tomls = p.parse
-    puts "Now only tomls\n*********"
-    puts s, tomls
   end
 
 end
