@@ -22,15 +22,18 @@
       </header>
 
       {#if user_data.links.video != ''}
-        <iframe
-          title=""
-          width="800"
-          height="530"
-          src="{user_data.links.video}?title=0&byline=0&portrait=0"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope;
-          picture-in-picture"
-          allowfullscreen />
+        <div class="embed-container">
+          <iframe
+            title=""
+            width="800"
+            height="530"
+            class="mb-5"
+            src="{user_data.links.video}?title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture"
+            allowfullscreen />
+        </div>
       {:else if user_data.links.image_path != ''}
         <span>
           <img src={user_data.links.image_path} alt="" />
