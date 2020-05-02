@@ -5,6 +5,7 @@
 </script>
 
 <ul class="posts">
+<h1>People</h1>
   {#each users as user}
     <li>
       <MiniUser {user} />

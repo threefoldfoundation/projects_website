@@ -4,7 +4,7 @@
   import TagCloud from "./TagCloud.svelte"
 
   import Footer from "./Footer.svelte";
-  import { tags } from "../../store.js";
+  import { alltags } from "../../store.js";
 
   export let miniProjects = [];
   export let users = [];
@@ -18,12 +18,14 @@
       <img src="images/logo.png" alt="" />
     </a>
     <header>
-      <h2>Planet First</h2>
+      <h3>Conscious Internet Alliance</h3>
       <p>
-        Conscious Internet Alliance
+        
       </p>
     </header>
   </section>
+
+  <TagCloud tags={$alltags} />
 
   <!-- Mini Projects -->
   <MiniProjectList {miniProjects} />
@@ -46,5 +48,5 @@
     </ul>
   </section> -->
 
-  <TagCloud tags={$tags} />
+  
 </section>

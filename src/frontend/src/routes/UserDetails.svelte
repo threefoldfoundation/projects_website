@@ -1,5 +1,7 @@
 <script>
   import { users } from "../../store.js";
+  import * as animateScroll from "svelte-scrollto";
+  animateScroll.scrollToTop()
 
   const url = window.location.href;
   let current_user = url.substring(url.lastIndexOf("/") + 1);

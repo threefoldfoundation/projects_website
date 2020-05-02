@@ -6,6 +6,7 @@
 
 <section>
   <div class="mini-posts">
+  <h1>Projects</h1>
     {#each miniProjects as miniProject}
       <MiniProject {miniProject} />
     {/each}

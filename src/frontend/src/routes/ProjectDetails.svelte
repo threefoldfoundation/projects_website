@@ -2,8 +2,12 @@
   import { projects, users } from "../../store.js";
   import marked from "marked";
 
+  import * as animateScroll from "svelte-scrollto";
+  animateScroll.scrollToTop()
+
   const url = window.location.href;
-  let current_project = url.substring(url.lastIndexOf("/") + 1);
+  let current_project = url.substring(url.lastIndexOf("/") + 1).replace("%20", " ");
+  
   let project_data = $projects.find(
     project => project["name"] == current_project
   );
@@ -18,6 +22,10 @@
     });
     return res;
   }
+
+  let team = findTeam(project_data.info.team)
+
+  
 
   // project_data is all data to render from /data
 </script>
@@ -113,11 +121,12 @@
         </div>
       {/if}
 
-      {#if project_data.info.team.length > 0}
+      
+      {#if team.length > 0}
         <div class="content">
           <h1>Team:</h1>
           <ul>
-            {#each findTeam(project_data.info.team) as person}
+            {#each team as person}
               <li class="my-2">
                 <a href="#/users/{person.name}" class="author">
                   <img src={person.links.image_path} alt="" />
