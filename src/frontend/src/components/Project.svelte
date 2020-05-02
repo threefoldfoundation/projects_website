@@ -1,6 +1,10 @@
 <script>
   import marked from "marked";
   export let project;
+
+   function onClick(evt){
+      window.open(evt.target.href);
+  }
 </script>
 
 <article class="post">
@@ -42,7 +46,7 @@
     <ul class="stats">
       {#each project.ecosystem.categories as category}
         <li>
-          <a href="#/projects/tags/{category}">{category}</a>
+          <a on:click={onClick} href="#/projects/tags/{category}">{category}</a>
         </li>
       {/each}
     </ul>

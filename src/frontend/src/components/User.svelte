@@ -1,5 +1,8 @@
 <script>
   export let user;
+   function onClick(evt){
+      window.open(evt.target.href);
+  }
 </script>
 
 <article class="post user">
@@ -32,13 +35,13 @@
    <footer>
     <ul class="actions">
       <li>
-        <a href="#/users/{user.name}" class="button large">Learn more</a>
+        <a  href="#/users/{user.name}" class="button large">Learn more</a>
       </li>
     </ul>
     <ul class="stats">
       {#each user.ecosystem.memberships as membership}
         <li>
-          <a href="#/users/tags/{membership}">{membership}</a>
+          <a on:click={onClick} href="#/users/tags/{membership}">{membership}</a>
         </li>
       {/each}
     </ul>

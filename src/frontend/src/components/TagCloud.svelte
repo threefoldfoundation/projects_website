@@ -6,6 +6,10 @@ export let tags;
       tags_category = "users"
   }
 
+  function onClick(evt){
+      window.open(evt.target.href);
+  }
+
 </script>
 
 <ul class="stats">
@@ -13,9 +17,9 @@ export let tags;
   {#each tags as tag}
     <li class="my-1">
       {#if tag.href.includes("users") && tags_category == "users"}
-      <a href="{tag.href}">{tag.name}</a>
+      <a on:click={onClick} href="{tag.href}">{tag.name}</a>
       {:else if tag.href.includes("projects") && tags_category == "projects"}
-        <a href="{tag.href}">{tag.name}</a>
+        <a on:click={onClick} href="{tag.href}">{tag.name}</a>
       {/if}
     </li>
   {/each}
