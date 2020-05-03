@@ -12,7 +12,7 @@
     </div>
   </header>
   {#if project.links.video != ''}
-    <div class="embed-container">
+    <div class="embed-container my-3">
       <iframe
         width="950"
         height="550"

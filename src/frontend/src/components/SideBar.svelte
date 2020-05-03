@@ -14,11 +14,11 @@
 <section id="sidebar">
   <!-- Intro -->
   <section id="intro">
-    <a href="/" class="logo">
+    <!-- <a href="/" class="logo">
       <img src="images/logo.png" alt="" />
-    </a>
+    </a> -->
     <header>
-      <h3>Conscious Internet Alliance</h3>
+      <h1>Conscious Internet Alliance</h1>
       <p>
         
       </p>

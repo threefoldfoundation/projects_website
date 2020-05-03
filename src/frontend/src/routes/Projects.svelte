@@ -6,8 +6,6 @@
   import {getRandomSlice} from "../utils.js"
   import { onMount } from 'svelte';
 
- 
-  
   animateScroll.scrollToTop();
 
   export let params = {};

@@ -206,11 +206,20 @@ body.single #footer {
     margin-bottom: 4.5rem !important;
 }
 
+.my-3 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: arial;
+}
+
+#intro h1 {
+    font-size: 1.4em !important;
 }
 
 #header {
@@ -246,12 +255,47 @@ body.single #footer {
 
 .navigation {
     margin: 0px;
-    float: right;
+    /* float: right; */
 }
 
 .navigation li {
     list-style: none;
-    float: left;
+    /* float: left; */
+}
+
+#header nav {
+    -moz-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-left: solid 1px rgba(160, 160, 160, 0.3);
+    height: inherit;
+    line-height: inherit;
+    margin-left: 1.5em;
+    overflow: hidden;
+    padding-left: 1.5em;
+}
+
+#header nav ul li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#header nav ul li {
+    border-left: solid 1px rgba(160, 160, 160, 0.3);
+    line-height: 1;
+    margin-left: 1em;
+    padding-left: 1em;
+}
+
+#header nav ul li a {
+    border-bottom: 0;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 0.7em;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
 }
 
 .navigation li a {
@@ -287,12 +331,6 @@ body.single #footer {
     line-height: 0;
 }
 
-.navigation a:hover,
-.show-menu-btn:hover,
-.hide-menu-btn:hover {
-    color: #00ff0a;
-}
-
 #toggle-btn {
     position: absolute;
     visibility: hidden;
@@ -320,6 +358,11 @@ body.single #footer {
     .navigation li {
         width: 100%;
     }
+    #header nav ul li {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
     .navigation li a {
         padding: 15px 15px;
         text-align: left;
@@ -343,11 +386,10 @@ body.single #footer {
     #toggle-btn:checked~nav .navigation {
         top: 0px;
     }
-}
-
-.button.large {
-    font-size: 0.55em !important;
-    padding: 0 1em !important;
+    .button.large {
+        font-size: 0.55em !important;
+        padding: 0 1em !important;
+    }
 }
 
 @media (max-width: 768px) {

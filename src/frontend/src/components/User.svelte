@@ -11,10 +11,8 @@
     </div>
   </header>
   {#if user.links.video !== ''}
-    <div class="embed-container">
+    <div class="embed-container my-3">
       <iframe
-        width="950"
-        height="550"
         src="{user.links.video}?title=0&byline=0&portrait=0"
         title=""
         frameborder="0"
