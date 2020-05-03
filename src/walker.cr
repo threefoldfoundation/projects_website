@@ -174,9 +174,6 @@ def _walk(path : String = CURR_PATH)
   WEBSITES.projects.each do |item|
     item.name = item.name.gsub("_", " ")
   end
-  WEBSITES.people.each do |item|
-    item.name = item.name.gsub("_", " ")
-  end
 end
 
 get "/data" do |env|
