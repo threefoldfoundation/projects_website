@@ -11,12 +11,10 @@ export let tags;
 <ul class="stats">
   <h1>Tags</h1>
   {#each tags as tag}
-    <li class="my-1">
       {#if tag.href.includes("users") && tags_category == "users"}
-      <a href="{tag.href}">{tag.name}</a>
+      <li class="my-1"><a href="{tag.href}">{tag.name}</a></li>
       {:else if tag.href.includes("projects") && tags_category == "projects"}
-        <a href="{tag.href}">{tag.name}</a>
+        <li><a href="{tag.href}">{tag.name}</a></li>
       {/if}
-    </li>
   {/each}
 </ul>
