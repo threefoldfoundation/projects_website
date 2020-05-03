@@ -12,9 +12,8 @@
   let miniProjects = [],
     miniusersList = [];
   let usersList = [];
-  let page = 0,
-    addWith = 3,
-    lastpage = false;
+  let page = 1,
+    addWith = 3;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
   miniProjects = getRandomSlice($projects, 5);
@@ -40,41 +39,42 @@
   }
 
   function onNext() {
-    page += 3;
+    page += 1;
     updatePage();
-    if (lastpage) {
-      usersList = getUsers().slice(page);
-    } else usersList = getUsers().slice(page, page + addWith);
+    usersList = getUsers().slice((page-1)*addWith, ((page-1)*addWith)+addWith);
     animateScroll.scrollToTop();
   }
 
 
 
   function onPrevious() {
-    page -= 3;
+    page -= 1;
     updatePage();
-    usersList = getUsers().slice(page, page + addWith);
+    usersList = getUsers().slice((page-1)*addWith, ((page-1)*addWith)+addWith);
     animateScroll.scrollToTop();
   }
   function updatePage() {
     let btn_prev = document.getElementById("btn_prev");
     let btn_next = document.getElementById("btn_next");
     let len = getUsers().length;
-    if (page > 0) {
-      btn_prev.classList.remove("disabled");
-    }
-    if (page >= len - 3) {
-      lastpage = true;
-      btn_next.classList.add("disabled");
-    }
-    if (page < 3) {
-      btn_prev.classList.add("disabled");
-    }
-    if (page < len - 3) {
-      lastpage = false;
+    let noPages = Math.ceil(len/3)
+    
+    if (noPages > page){
       btn_next.classList.remove("disabled");
+      if (page !== 1){
+          btn_prev.classList.remove("disabled");
+      }
     }
+      
+      
+    else if (noPages = page)
+      btn_next.classList.add("disabled");
+      btn_prev.classList.remove("disabled");
+
+    if (page == 1)
+      btn_prev.classList.add("disabled");
   }
+
 </script>
 
 <main>
