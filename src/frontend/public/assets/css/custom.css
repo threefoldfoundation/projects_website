@@ -296,6 +296,7 @@ body.single #footer {
     font-weight: 400;
     letter-spacing: 0.25em;
     text-transform: uppercase;
+    color: #3c3b3b !important;
 }
 
 .navigation li a {
