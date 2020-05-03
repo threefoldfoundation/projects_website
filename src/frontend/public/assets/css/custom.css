@@ -218,6 +218,10 @@ body.single #footer {
     font-family: arial;
 }
 
+#intro h1 {
+    font-size: 1.8em !important;
+}
+
 #header {
     display: block !important;
     line-height: 0;
