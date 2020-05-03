@@ -1,6 +1,6 @@
 <script>
   import { projects, users } from "../../store.js";
-  import marked from 'marked'
+  import marked from "marked";
 
   import * as animateScroll from "svelte-scrollto";
   animateScroll.scrollToTop()
@@ -54,15 +54,18 @@
       </header>
 
       {#if project_data.links.video != ''}
-        <iframe
-          width="800"
-          height="450"
-          title=""
-          src="{project_data.links.video}?title=0&byline=0&portrait=0"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope;
-          picture-in-picture"
-          allowfullscreen />
+        <div class="embed-container">
+          <iframe
+            width="800"
+            height="450"
+            title=""
+            class="mb-5"
+            src="{project_data.links.video}?title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture"
+            allowfullscreen />
+        </div>
       {:else if project_data.links.image_path != ''}
         <span class="image featured">
           <img src={project_data.links.image_path} alt="" />

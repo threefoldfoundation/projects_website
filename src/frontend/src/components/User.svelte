@@ -11,15 +11,17 @@
     </div>
   </header>
   {#if user.links.video !== ''}
-    <iframe
-      width="950"
-      height="550"
-      src="{user.links.video}?title=0&byline=0&portrait=0"
-      title=""
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope;
-      picture-in-picture"
-      allowfullscreen />
+    <div class="embed-container">
+      <iframe
+        width="950"
+        height="550"
+        src="{user.links.video}?title=0&byline=0&portrait=0"
+        title=""
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture"
+        allowfullscreen />
+    </div>
   {:else if user.links.image_path !== ''}
     <a href="#/users/{user.name}" class="image featured">
       <img src={user.links.image_path} alt="" />

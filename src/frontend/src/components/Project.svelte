@@ -12,15 +12,17 @@
     </div>
   </header>
   {#if project.links.video != ''}
-    <iframe
-      width="950"
-      height="550"
-      src="{project.links.video}?title=0&byline=0&portrait=0"
-      title=""
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope;
-      picture-in-picture"
-      allowfullscreen />
+    <div class="embed-container">
+      <iframe
+        width="950"
+        height="550"
+        src="{project.links.video}?title=0&byline=0&portrait=0"
+        title=""
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope;
+        picture-in-picture"
+        allowfullscreen />
+    </div>
   {:else if project.links.image_path != ''}
     <a href="#/projects/{project.name}" class="image featured">
       <img src={project.links.image_path} alt="" />
