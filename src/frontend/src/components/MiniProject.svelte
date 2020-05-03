@@ -6,7 +6,7 @@
 <article class="mini-post">
   <header>
     <h3>
-      <a href>{miniProject.name}</a>
+      <a href="#/projects/{miniProject.name}">{miniProject.name}</a>
     </h3>
   </header>
   {#if miniProject.links.logo_path != ''}

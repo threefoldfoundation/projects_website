@@ -3,15 +3,16 @@
   import marked from "marked";
 
   import * as animateScroll from "svelte-scrollto";
-  animateScroll.scrollToTop()
+  animateScroll.scrollToTop();
 
   const url = window.location.href;
-  let current_project = url.substring(url.lastIndexOf("/") + 1).replace("%20", " ");
-  
+  let current_project = url
+    .substring(url.lastIndexOf("/") + 1)
+    .replace("%20", " ");
+
   let project_data = $projects.find(
     project => project["name"] == current_project
   );
-
   function findTeam(team) {
     var res = [];
     team.forEach(function(person) {
@@ -23,9 +24,7 @@
     return res;
   }
 
-  let team = findTeam(project_data.info.team)
-
-  
+  let team = findTeam(project_data.info.team);
 
   // project_data is all data to render from /data
 </script>
@@ -53,20 +52,7 @@
         </div> -->
       </header>
 
-      {#if project_data.links.video != ''}
-        <div class="embed-container">
-          <iframe
-            width="800"
-            height="450"
-            title=""
-            class="mb-5"
-            src="{project_data.links.video}?title=0&byline=0&portrait=0"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope;
-            picture-in-picture"
-            allowfullscreen />
-        </div>
-      {:else if project_data.links.image_path != ''}
+      {#if project_data.links.image_path != ''}
         <span class="image featured">
           <img src={project_data.links.image_path} alt="" />
         </span>
@@ -121,7 +107,6 @@
         </div>
       {/if}
 
-      
       {#if team.length > 0}
         <div class="content">
           <h1>Team:</h1>
@@ -201,6 +186,29 @@
           </ul>
         </div>
       {/if} -->
+
+      {#if project_data.links.video != ''}
+        <div class="embed-container my-3">
+          <iframe
+            width="800"
+            height="450"
+            title=""
+            class="mb-5"
+            src="{project_data.links.video}?title=0&byline=0&portrait=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture"
+            allowfullscreen />
+        </div>
+      {:else if project_data.links.image_path != ''}
+        <span class="image featured">
+          <img src={project_data.links.image_path} alt="" />
+        </span>
+      {:else}
+        <span class="image featured">
+          <img height="auto" src="images/pic01.jpg" alt="" />
+        </span>
+      {/if}
 
       {#if project_data.ecosystem.categories.length > 0}
         <footer>
