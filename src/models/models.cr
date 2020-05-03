@@ -142,10 +142,11 @@ class Links
         websites: Array(String),
         wiki: String,
         video: String,
+        logo_path: String,
         image_path: String
     )
 
-    def initialize(@linkedin="", @websites=Array(String).new, @wiki="", @video="", @image_path="");end
+    def initialize(@linkedin="", @websites=Array(String).new, @wiki="", @video="", @image_path="", @logo_path="");end
 
 end
 

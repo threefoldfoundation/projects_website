@@ -38,22 +38,33 @@ def _walk(path : String = CURR_PATH)
         end
         items.each do |item|
           image_path = ""
+          logo_path = ""
+
           if item.name == path_parts[1]
             p = Dir.current + "/public/threefold/info" + "/" + path_parts[0] + "/" + path_parts[1] + "/" + name
             if ! name.ends_with?(".md")
-              
-              if name.ends_with?(".png") || name.ends_with?(".jpeg") || name.ends_with?(".jpg")
-                
-                image_path = p.gsub(Dir.current + "/public", "")
-                
+
+              if name == "logo.png"
+                logo_path = p.gsub(Dir.current + "/public", "")
                 if path_parts[0] == "projects"
-                  item.as(Project).links.image_path = image_path
+                  item.as(Project).links.logo_path = logo_path
                 else
-                   
-                  item.as(User).links.image_path = image_path
+                  item.as(User).links.logo_path = logo_path
+                end
+              else
+                if name.ends_with?(".png") || name.ends_with?(".jpeg") || name.ends_with?(".jpg")
+                  image_path = p.gsub(Dir.current + "/public", "")
+                  if path_parts[0] == "projects"
+                    item.as(Project).links.image_path = image_path
+                  else
+                    item.as(User).links.image_path = image_path
+                  end
+  
                   
                 end
               end
+
+              
               next
             end
             page = MdPage.new name.gsub(".md", ""),  p, File.read(p)
@@ -109,7 +120,7 @@ def _walk(path : String = CURR_PATH)
                     end
                   end
                 end
-                item.name = item.name.gsub("_", " ")
+                
                   
               elsif path_parts[0] == "people"
                 if parsed_codes.size > 0 && parsed_codes[0].has_key?("info")
@@ -152,12 +163,19 @@ def _walk(path : String = CURR_PATH)
               puts "error parsing file "  + p
               puts exception
             end
-
+        
         end
 
         end
       end
     end
+  end
+
+  WEBSITES.projects.each do |item|
+    item.name = item.name.gsub("_", " ")
+  end
+  WEBSITES.people.each do |item|
+    item.name = item.name.gsub("_", " ")
   end
 end
 
