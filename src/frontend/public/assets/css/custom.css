@@ -299,6 +299,10 @@ body.single #footer {
     color: #3c3b3b !important;
 }
 
+.show-menu-btn i {
+    color: #3c3b3b !important;
+}
+
 .navigation li a {
     color: #fff;
     padding: 0px 15px;
