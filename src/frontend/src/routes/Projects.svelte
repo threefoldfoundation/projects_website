@@ -3,7 +3,7 @@
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
-  import {getRandomSlice} from "../utils.js"
+  import { getRandomSlice } from "../utils.js";
 
   animateScroll.scrollToTop();
 
@@ -20,8 +20,9 @@
   projectsList = getProjects().slice(0, 3);
   miniProjects = getRandomSlice($projects, 5);
 
-   $: if (params.tagname) { //watch the params.id for changes
-      projectsList = getProjects().slice(0, 3);
+  $: if (params.tagname) {
+    //watch the params.id for changes
+    projectsList = getProjects().slice(0, 3);
   }
 
   function filterProjects(category) {

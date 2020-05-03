@@ -1,5 +1,9 @@
 <script>
   import { link } from "svelte-spa-router";
+  let navcheck;
+  function linkClick() {
+    navcheck.checked = false;
+  }
 </script>
 
 <!-- Header -->
@@ -10,21 +14,21 @@
     </a>
   </div>
 
-  <input type="checkbox" id="toggle-btn" />
+  <input type="checkbox" id="toggle-btn" bind:this={navcheck} />
   <label for="toggle-btn" class="show-menu-btn">
     <i class="fas fa-bars" />
   </label>
 
-  <nav>
-    <ul class="navigation" id="nav">
+  <nav class="">
+    <ul class="navigation">
       <li>
-        <a href="/" use:link class="nav-link">Home</a>
+        <a href="#/" on:click={linkClick}>Home</a>
       </li>
       <li>
-        <a href="/projects" use:link class="nav-link">Projects</a>
+        <a href="#/projects" on:click={linkClick}>Projects</a>
       </li>
       <li>
-        <a href="/users" use:link class="nav-link">People</a>
+        <a href="#/users" on:click={linkClick}>People</a>
       </li>
       <label for="toggle-btn" class="hide-menu-btn">
         <i class="fas fa-times" />
