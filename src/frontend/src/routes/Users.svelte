@@ -21,6 +21,10 @@
   miniusersList = getRandomSlice($users, 5);
   usersList = getUsers().slice(0, 3);
 
+  $: if (params.tagname) { //watch the params.id for changes
+      usersList = getUsers().slice(0, 3);
+  }
+
   function filterUsers(membership) {
     return $users.filter(user =>
       user.ecosystem.memberships.includes(membership)
@@ -29,11 +33,8 @@
 
   function getUsers() {
     if (params.tagname) {
-      console.log(params.tagname)
-      console.log("**")
       return filterUsers(params.tagname);
     } else {
-      console.log("all")
       return $users;
     }
   }

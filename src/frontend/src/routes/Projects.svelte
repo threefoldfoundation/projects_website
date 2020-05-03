@@ -20,6 +20,10 @@
   projectsList = getProjects().slice(0, 3);
   miniProjects = getRandomSlice($projects, 5);
 
+   $: if (params.tagname) { //watch the params.id for changes
+      projectsList = getProjects().slice(0, 3);
+  }
+
   function filterProjects(category) {
     return $projects.filter(project =>
       project.ecosystem.categories.includes(category)
