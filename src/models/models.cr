@@ -25,7 +25,7 @@ class MdPage
                 res.push(toml)
                 @content = @content.gsub(x[idx], "")
                 @content = @content.gsub("### data", "")
-                @content = @content.gsub("### Roadmap")
+                @content = @content.gsub("### Roadmap", "")
                 @content = @content.gsub("```python\n\n```", "")
                 @content = @content.gsub("```python\n\n\n```", "")
                 @content = @content.gsub("```\n\n```", "")
