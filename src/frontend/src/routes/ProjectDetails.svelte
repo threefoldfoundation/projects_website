@@ -26,7 +26,8 @@
 
   let team = findTeam(project_data.info.team);
   let pageUrl = location.href
-  // project_data is all data to render from /data
+  let imageUrl = location.origin + project_data.links.image_path
+      
 </script>
 
 <svelte:head>
@@ -34,7 +35,7 @@
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Concious Internet Alliance" />
   <meta property="og:description"   content="A collective and open ecosystem of planet and human centric projects" />
-  <meta property="og:image"         content="{project_data.links.image_path}" />
+  <meta property="og:image"         content="{imageUrl}" />
 </svelte:head>
 
 <!-- Wrapper -->
@@ -227,6 +228,8 @@
         </a>
       </div>
 
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
       <div id="fb-root"></div>
       <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -239,6 +242,7 @@
       <!-- Your share button code -->
       <div class="fb-share-button" 
         data-href="{pageUrl}" 
+        data-exta="{project_data.links.image_path}"
         data-layout="button_count">
       </div>
 
