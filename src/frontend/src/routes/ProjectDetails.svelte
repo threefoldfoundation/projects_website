@@ -34,7 +34,7 @@
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Concious Internet Alliance" />
   <meta property="og:description"   content="A collective and open ecosystem of planet and human centric projects" />
-  <meta property="og:image"         content="project_data.links.image_path" />
+  <meta property="og:image"         content="{project_data.links.image_path}" />
 </svelte:head>
 
 <!-- Wrapper -->
