@@ -2,7 +2,7 @@
   <ul class="icons">
     <li>
       <a
-        href="https://twitter.com/threefoldntwrk"
+        href="https://twitter.com/threefold_io"
         target="_blank"
         class="icon brands fa-twitter">
         <span class="label">Twitter</span>
