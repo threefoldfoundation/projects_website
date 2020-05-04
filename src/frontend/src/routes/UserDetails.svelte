@@ -52,8 +52,8 @@
 
       {#if user_data.info.companies.length > 0}
         <div class="content">
-          <h1>Companies:</h1>
-          <ul>
+          <h1 class="d-inline-block">Companies:</h1>
+          <ul class="d-inline-block single">
             {#each user_data.info.companies as company}
               <li>{company.name}</li>
             {/each}
@@ -63,8 +63,8 @@
 
       {#if user_data.info.countries.length > 0}
         <div class="content">
-          <h1>Countries:</h1>
-          <ul>
+          <h1 class="d-inline-block">Countries:</h1>
+          <ul class="d-inline-block single">
             {#each user_data.info.countries as country}
               <li>{country.name}</li>
             {/each}
@@ -74,8 +74,8 @@
 
       {#if user_data.info.cities.length > 0}
         <div class="content">
-          <h1>Cities:</h1>
-          <ul>
+          <h1 class="d-inline-block">Cities:</h1>
+          <ul class="d-inline-block single">
             {#each user_data.info.cities as city}
               <li>{city.name}</li>
             {/each}
@@ -85,7 +85,7 @@
 
       {#if user_data.links.websites.length > 0}
         <div class="content">
-          <h1>Websites:</h1>
+          <h1 class="d-inline-block">Websites:</h1>
           {#each user_data.links.websites as link}
             <a href={link} target="_blank">{link}</a>
           {/each}
@@ -94,7 +94,7 @@
 
       {#if user_data.links.linkedin}
         <div class="content">
-          <h1>Linkedin:</h1>
+          <h1 class="d-inline-block">Linkedin:</h1>
           <a href={user_data.links.linkedin} target="_blank">
             {user_data.links.linkedin}
           </a>
@@ -103,7 +103,7 @@
 
       {#if user_data.links.wiki}
         <div class="content">
-          <h1>Wiki:</h1>
+          <h1 class="d-inline-block">Wiki:</h1>
           <a href={user_data.links.wiki} target="_blank">
             {user_data.links.wiki}
           </a>
