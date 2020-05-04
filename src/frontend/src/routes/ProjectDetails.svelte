@@ -25,9 +25,17 @@
   }
 
   let team = findTeam(project_data.info.team);
-
+  let pageUrl = location.href
   // project_data is all data to render from /data
 </script>
+
+<svelte:head>
+  <meta property="og:url"           content="{pageUrl}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Concious Internet Alliance" />
+  <meta property="og:description"   content="A collective and open ecosystem of planet and human centric projects" />
+  <meta property="og:image"         content="project_data.links.image_path" />
+</svelte:head>
 
 <!-- Wrapper -->
 
@@ -218,6 +226,27 @@
           Support this project
         </a>
       </div>
+
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your share button code -->
+      <div class="fb-share-button" 
+        data-href="{pageUrl}" 
+        data-layout="button_count">
+      </div>
+
+      <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+      <script type="IN/Share" data-url="{pageUrl}"></script>
+      
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
       {#if project_data.ecosystem.categories.length > 0}
         <footer>
