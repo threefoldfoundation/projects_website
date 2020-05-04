@@ -229,6 +229,10 @@ body.single #footer {
     background-color: #a8ddf3 !important;
 }
 
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
 * {
     margin: 0;
     padding: 0;

@@ -210,6 +210,15 @@
         </span>
       {/if}
 
+      <div class="text-center link_wrapper my-4">
+        <a
+          href="https://threefold.io/token.html"
+          target="_blank"
+          class="button large text-uppercase">
+          Support this project
+        </a>
+      </div>
+
       {#if project_data.ecosystem.categories.length > 0}
         <footer>
           <ul class="stats">
