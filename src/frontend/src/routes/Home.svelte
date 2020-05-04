@@ -8,7 +8,7 @@
     <article class="post text-center">
       <header>
         <div class="title">
-          <h2>CONSCIOUS INTERNET ALLIANCE</h2>
+          <h1>CONSCIOUS INTERNET ALLIANCE</h1>
           <p>
             <strong>
               A collective and open ecosystem of planet- and human- centric
@@ -56,8 +56,8 @@
         , when?
       </p>
       <p class="home_tf">Interested to learn more?</p>
-      <div class="text-center link_wrapper">
-        <a href="#/projects" class="button large">
+      <div class="text-center link_wrapper my-4">
+        <a href="#/projects" class="button large blue">
           Explore Conscious Internet Alliance
         </a>
       </div>

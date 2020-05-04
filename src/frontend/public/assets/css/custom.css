@@ -206,10 +206,6 @@ body.single #footer {
     margin-bottom: 0.25rem !important;
 }
 
-.mb-5 {
-    margin-bottom: 4.5rem !important;
-}
-
 .my-2 {
     margin-top: 0.75rem !important;
     margin-bottom: 0.75rem !important;
@@ -218,6 +214,19 @@ body.single #footer {
 .my-3 {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
+}
+
+.my-4 {
+    margin-top: 2.25rem !important;
+    margin-bottom: 2.25rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 4.5rem !important;
+}
+
+.blue {
+    background-color: #a8ddf3 !important;
 }
 
 * {
@@ -248,10 +257,16 @@ body.single #footer {
 }
 
 .brand-logo {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
     width: 10%;
     max-width: 185px;
     float: left;
-    /* padding: 14px 0px; */
 }
 
 .brand-logo a {
@@ -351,6 +366,18 @@ body.single #footer {
     z-index: -1111;
 }
 
+.post>header .title h1 {
+    font-size: 2em !important;
+}
+
+header p {
+    font-size: 0.9em !important;
+}
+
+.home_tf {
+    font-size: 1.1em;
+}
+
 
 /*-- Responsive CSS --*/
 
@@ -391,7 +418,7 @@ body.single #footer {
         z-index: 1;
     }
     .brand-logo {
-        width: 40%;
+        width: 35%;
     }
     .hide-menu-btn {
         position: absolute;
