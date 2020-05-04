@@ -1,7 +1,7 @@
 <script>
   import { users } from "../../store.js";
   import * as animateScroll from "svelte-scrollto";
-  animateScroll.scrollToTop()
+  animateScroll.scrollToTop();
 
   const url = window.location.href;
   let current_user = url.substring(url.lastIndexOf("/") + 1);
@@ -86,9 +86,13 @@
       {#if user_data.links.websites.length > 0}
         <div class="content">
           <h1 class="d-inline-block">Websites:</h1>
-          {#each user_data.links.websites as link}
-            <a href={link} target="_blank">{link}</a>
-          {/each}
+          <ul class="d-inline-block single">
+            {#each user_data.links.websites as link}
+              <li class="d-inline-block">
+                <a href={link} target="_blank">{link}</a>
+              </li>
+            {/each}
+          </ul>
         </div>
       {/if}
 
