@@ -87,6 +87,10 @@ body.single #footer {
     margin-right: 10px;
 }
 
+.content .project img {
+    width: 11em !important;
+}
+
 .content .card {
     list-style: none;
     padding: 10px;
