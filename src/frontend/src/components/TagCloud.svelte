@@ -10,13 +10,14 @@ export let tags;
   );
 
   function getSelected(t){
-
+    console.log( t.indexOf("#/users/tags"))
+    console.log()
     var projectsIdx = t.indexOf("#/projects/tags")
     var peopleIdx = t.indexOf("#/users/tags")
     if (projectsIdx != -1)
       return t.substring(projectsIdx+16)
     else if (peopleIdx != -1)
-      return t.substring(projectsIdx+13)
+      return t.substring(peopleIdx+13)
     else 
       return "all"
   }
