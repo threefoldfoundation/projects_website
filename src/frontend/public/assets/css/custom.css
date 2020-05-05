@@ -150,7 +150,9 @@ body.single #footer {
     height: 100%;
 }
 
-
+a:visited {
+  color: rgb(109, 109, 109) !important;
+}
 /* 404 */
 
 .kt-error-v1 {
