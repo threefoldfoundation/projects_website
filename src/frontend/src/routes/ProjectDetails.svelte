@@ -90,7 +90,7 @@
 
       {#if project_data.milestones.length > 0}
         <div class="content">
-          <h1>Milestons:</h1>
+          <h1>Milestones:</h1>
           {#each project_data.milestones as milestone}
             <ul class="card">
               <li>
@@ -221,6 +221,7 @@
         </span>
       {/if}
 
+    {#if project_data.ecosystem.badges.includes("tftgranted")}
       <div class="text-center link_wrapper my-4">
         <a
           href="https://wiki.threefold.io/#/tdeoverview"
@@ -229,6 +230,7 @@
           Support this project
         </a>
       </div>
+      {/if}
 
       <!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js">
 
