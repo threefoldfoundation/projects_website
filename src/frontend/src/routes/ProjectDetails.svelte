@@ -221,6 +221,7 @@
         </span>
       {/if}
 
+    {#if project_data.ecosystem.badges.includes("tftgranted")}
       <div class="text-center link_wrapper my-4">
         <a
           href="https://wiki.threefold.io/#/tdeoverview"
@@ -229,6 +230,7 @@
           Support this project
         </a>
       </div>
+      {/if}
 
       <!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js">
 
