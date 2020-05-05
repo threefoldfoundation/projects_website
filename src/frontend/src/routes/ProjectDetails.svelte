@@ -138,9 +138,10 @@
         <div class="content">
           <h1 class="d-inline-block">Countries:</h1>
           <ul class="d-inline-block single">
-            {#each project_data.info.countries as country}
-              <li class="d-inline-block">{country.name}</li>
+            {#each project_data.info.countries.slice(0, -1) as country}
+              <li class="d-inline-block">{country.name} ,</li>
             {/each}
+            <li class="d-inline-block">{project_data.info.countries[project_data.info.countries.length-1].name}</li>
           </ul>
         </div>
       {/if}
@@ -149,9 +150,10 @@
         <div class="content">
           <h1 class="d-inline-block">Cities:</h1>
           <ul class="d-inline-block single">
-            {#each project_data.info.cities as city}
-              <li class="d-inline-block">{city.name}</li>
+            {#each project_data.info.cities.slice(0, -1) as city}
+              <li class="d-inline-block">{city.name} ,</li>
             {/each}
+            <li class="d-inline-block">{project_data.info.cities[project_data.info.cities.length-1].name}</li>
           </ul>
         </div>
       {/if}
@@ -160,11 +162,13 @@
         <div class="content">
           <h1 class="d-inline-block">Websites:</h1>
           <ul class="d-inline-block single">
-            {#each project_data.links.websites as link}
+            {#each project_data.links.websites.slice(0, -1) as link}
               <li class="d-inline-block">
-                <a href={link} target="_blank">{link}</a>
+                <a href={link} target="_blank">{link}</a> ,
               </li>
             {/each}
+              <a href={project_data.links.websites[project_data.links.websites.length-1]} target="_blank">{project_data.links.websites[project_data.links.websites.length-1]}</a>
+
           </ul>
         </div>
       {/if}
@@ -186,17 +190,6 @@
           </a>
         </div>
       {/if}
-
-      <!-- {#if project_data.ecosystem.badges.length > 0}
-        <div class="content m-0">
-          <h1 class="d-inline-block">Badges:</h1>
-          <ul class="d-inline-block single">
-            {#each project_data.ecosystem.badges as badge}
-              <li class="d-inline-block">{badge}</li>
-            {/each}
-          </ul>
-        </div>
-      {/if} -->
 
       {#if project_data.links.video != ''}
         <div class="embed-container my-3">
