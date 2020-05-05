@@ -14,7 +14,14 @@ export let tags;
       {#if tag.href.includes("users") && tags_category == "users"}
       <li class="my-1"><a href="{tag.href}">{tag.name}</a></li>
       {:else if tag.href.includes("projects") && tags_category == "projects"}
-        <li><a href="{tag.href}">{tag.name}</a></li>
+        <li class="my-1"><a href="{tag.href}">{tag.name}</a></li>
       {/if}
   {/each}
+
+  {#if tags_category == "users"}
+     <li class="my-1"><a href="#/users"><b>ALL</b></a></li>
+  {:else}
+  <li class="my-1"><a href="#/projects"><b>ALL</b></a></li>
+  {/if}
+
 </ul>
