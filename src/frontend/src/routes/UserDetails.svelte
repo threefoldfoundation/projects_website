@@ -83,9 +83,10 @@
         <div class="content">
           <h1 class="d-inline-block">Companies:</h1>
           <ul class="d-inline-block single">
-            {#each user_data.info.companies as company}
-              <li>{company.name}</li>
+            {#each user_data.info.companies.slice(0, -1) as company}
+              <li>{company.name} ,</li>
             {/each}
+            <li>{user_data.info.companies[user_data.info.companies.length-1].name}</li>
           </ul>
         </div>
       {/if}
@@ -94,9 +95,10 @@
         <div class="content">
           <h1 class="d-inline-block">Countries:</h1>
           <ul class="d-inline-block single">
-            {#each user_data.info.countries as country}
-              <li>{country.name}</li>
+            {#each user_data.info.countries.slice(0, -1) as country}
+              <li>{country.name} ,</li>
             {/each}
+            <li>{user_data.info.countries[user_data.info.countries.length-1].name}</li>
           </ul>
         </div>
       {/if}
@@ -105,9 +107,10 @@
         <div class="content">
           <h1 class="d-inline-block">Cities:</h1>
           <ul class="d-inline-block single">
-            {#each user_data.info.cities as city}
-              <li>{city.name}</li>
+            {#each user_data.info.cities.slice(0, -1) as city}
+              <li>{city.name} ,</li>
             {/each}
+            <li>{user_data.info.cities[user_data.info.cities.length-1].name}</li>
           </ul>
         </div>
       {/if}
@@ -116,11 +119,12 @@
         <div class="content">
           <h1 class="d-inline-block">Websites:</h1>
           <ul class="d-inline-block single">
-            {#each user_data.links.websites as link}
+            {#each user_data.links.websites.slice(0,-1) as link}
               <li class="d-inline-block">
-                <a href={link} target="_blank">{link}</a>
+                <a href={link} target="_blank">{link}</a> ,
               </li>
             {/each}
+            <a href={user_data.links.websites[user_data.links.websites.length-1]} target="_blank">{user_data.links.websites[user_data.links.websites.length-1]}</a>
           </ul>
         </div>
       {/if}
@@ -148,7 +152,7 @@
           <ul class="stats">
             {#each user_data.ecosystem.memberships as membership}
               <li>
-                <a href="#search?q={membership}">{membership}</a>
+                <a href="#/users/tags/{membership}">{membership}</a>
               </li>
             {/each}
           </ul>
