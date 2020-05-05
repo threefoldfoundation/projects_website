@@ -239,7 +239,7 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
 
-      <!-- Your share button code -->
+      <!-- Your share button code
       <div class="fb-share-button" 
         data-href="{pageUrl}" 
         data-exta="{project_data.links.image_path}"
@@ -250,7 +250,7 @@
       <script type="IN/Share" data-url="{pageUrl}"></script>
       
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 
       {#if project_data.ecosystem.categories.length > 0}
         <footer>
