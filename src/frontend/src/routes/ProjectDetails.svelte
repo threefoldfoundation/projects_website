@@ -25,17 +25,19 @@
   }
 
   let team = findTeam(project_data.info.team);
-  let pageUrl = location.href
-  let imageUrl = location.origin + project_data.links.image_path
-      
+  let pageUrl = location.href;
+  let imageUrl = location.origin + project_data.links.image_path;
 </script>
 
 <svelte:head>
-  <meta property="og:url"           content="{pageUrl}" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Concious Internet Alliance" />
-  <meta property="og:description"   content="A collective and open ecosystem of planet and human centric projects" />
-  <meta property="og:image"         content="{imageUrl}" />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Concious Internet Alliance" />
+  <meta
+    property="og:description"
+    content="A collective and open ecosystem of planet and human centric
+    projects" />
+  <meta property="og:image" content={imageUrl} />
 </svelte:head>
 
 <!-- Wrapper -->
@@ -221,37 +223,55 @@
 
       <div class="text-center link_wrapper my-4">
         <a
-          href="https://threefold.io/token.html"
+          href="https://wiki.threefold.io/#/tdeoverview"
           target="_blank"
           class="button large text-uppercase">
           Support this project
         </a>
       </div>
 
-      <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js">
 
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
+      </script>
+      <div id="fb-root" />
+      <script>
+        (function(d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src =
+            "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "facebook-jssdk");
+      </script>
       <!-- Your share button code -->
-      <div class="fb-share-button" 
-        data-href="{pageUrl}" 
-        data-exta="{project_data.links.image_path}"
-        data-layout="button_count">
-      </div>
+      <div
+        class="fb-share-button"
+        data-href={pageUrl}
+        data-exta={project_data.links.image_path}
+        data-layout="button_count" />
 
-      <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-      <script type="IN/Share" data-url="{pageUrl}"></script>
-      
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <script src="https://platform.linkedin.com/in.js" type="text/javascript">
+        lang: en_US;
+      </script>
+      <script type="IN/Share" data-url={pageUrl}>
 
+      </script>
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button"
+        data-size="large"
+        data-show-count="false">
+        Tweet
+      </a>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8">
+
+      </script>
       {#if project_data.ecosystem.categories.length > 0}
         <footer>
           <ul class="stats">
