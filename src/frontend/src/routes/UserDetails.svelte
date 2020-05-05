@@ -1,5 +1,5 @@
 <script>
-  import { users } from "../../store.js";
+  import { users, projects } from "../../store.js";
   import * as animateScroll from "svelte-scrollto";
   animateScroll.scrollToTop();
 
@@ -8,6 +8,19 @@
   let user_data = $users.find(user => user["name"] == current_user);
 
   // user_data is all data to render from /data
+
+  function findProjects(user) {
+    var res = [];
+    $projects.forEach(function(proj) {
+      if (proj.info.team.includes(user)) {
+        res.push(proj);
+      }
+    });
+    return res;
+  }
+
+  let userProjects = findProjects(user_data.info.name);
+
 </script>
 
 <!-- Wrapper -->
@@ -49,6 +62,22 @@
       <div class="content">
         <p>{user_data.info.bio}</p>
       </div>
+
+       {#if userProjects.length > 0}
+        <div class="content">
+          <h1>Projects:</h1>
+          <ul>
+            {#each userProjects as p}
+              <li class="my-2">
+                <a href="#/projects/{p.name}" class="author">
+                  <img src={p.links.logo_path} alt="" />
+                  {p.name}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/if}
 
       {#if user_data.info.companies.length > 0}
         <div class="content">
