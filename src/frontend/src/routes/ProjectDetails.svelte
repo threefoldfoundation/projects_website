@@ -107,7 +107,7 @@
               </li>
               <li>
                 <b>Funding in TFT:</b>
-                {milestone.funding_required_tft}TFT
+                {milestone.funding_required_tft}
               </li>
               <li>
                 <b>Funding in USD:</b>

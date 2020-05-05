@@ -179,10 +179,6 @@ body.single #footer {
     margin: 0 !important;
 }
 
-.active {
-    color: #2ebaae !important;
-}
-
 
 /* classes */
 
@@ -385,6 +381,10 @@ header p {
 
 .home_tf {
     font-size: 1.1em;
+}
+
+.active {
+    color: #2ebaae !important;
 }
 
 
