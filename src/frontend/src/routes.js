@@ -5,6 +5,7 @@ import Home from './routes/Home.svelte'
 import Projects from './routes/Projects.svelte'
 import Users from './routes/Users.svelte'
 import Search from './routes/Search.svelte'
+import Join from './routes/Join.svelte'
 import ProjectDetails from './routes/ProjectDetails.svelte'
 import UserDetails from './routes/UserDetails.svelte'
 import Error from './routes/Error.svelte'
@@ -25,6 +26,7 @@ if (!urlParams.has('routemap')) {
         '/projects/:name': ProjectDetails, 
         '/users/:name': UserDetails,
         '/search/:keyword': Search,
+        '/join': Join,
         '/error': Error
 
         // // Using named parameters, with last being optional
@@ -48,6 +50,7 @@ if (!urlParams.has('routemap')) {
     routes.set('/projects/:name', ProjectDetails)
     routes.set('/users/:name', UserDetails)
     routes.set('/search/:keyword', Search)
+    routes.set('/join', Join)
     routes.set('/error', Error)
 }
 export default routes

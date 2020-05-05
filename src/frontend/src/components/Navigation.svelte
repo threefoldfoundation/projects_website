@@ -6,6 +6,8 @@
         return "people"
       }else if (t.includes("#/projects") || t == "PROJECTS"){
         return "projects"
+      }else if (t.includes("#/join") || t == "JOIN US"){
+        return "join"
       }
       return "home"
   }
@@ -55,6 +57,13 @@
         <a class="active" href="#/users" on:click={linkClick}>People</a>
         {:else}
         <a href="#/users" on:click={linkClick}>People</a>
+        {/if}
+      </li>
+      <li>
+       {#if active == "join"}
+        <a class="active" href="#/join" on:click={linkClick}>Join us</a>
+        {:else}
+        <a href="#/join" on:click={linkClick}>Join us</a>
         {/if}
       </li>
       <label for="toggle-btn" class="hide-menu-btn">
