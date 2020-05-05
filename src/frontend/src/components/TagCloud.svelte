@@ -6,22 +6,46 @@ export let tags;
       tags_category = "users"
   }
 
+  $: selected = "all"
+  
+  function tagSelected(evt){
+    selected = evt.target.innerText.toLowerCase()
+    
+  }
+
 </script>
 
 <ul class="stats">
   <h1>Tags</h1>
   {#each tags as tag}
       {#if tag.href.includes("users") && tags_category == "users"}
-      <li class="my-1"><a href="{tag.href}">{tag.name}</a></li>
+      {#if tag.name == selected}
+      <li class="my-1"><a class= "active" on:click={tagSelected} href="{tag.href}">{tag.name}</a></li>
+      {:else}
+      <li class="my-1"><a  on:click={tagSelected} href="{tag.href}">{tag.name}</a></li>
+      {/if}
+      
       {:else if tag.href.includes("projects") && tags_category == "projects"}
-        <li class="my-1"><a href="{tag.href}">{tag.name}</a></li>
+        {#if tag.name == selected}
+      <li class="my-1"><a  on:click={tagSelected} class= "active" href="{tag.href}">{tag.name}</a></li>
+        {:else}
+        <li class="my-1"><a  on:click={tagSelected} href="{tag.href}">{tag.name}</a></li>
+        {/if}
       {/if}
   {/each}
 
   {#if tags_category == "users"}
-     <li class="my-1"><a href="#/users"><b>ALL</b></a></li>
+    {#if selected == "all"}
+     <li class="my-1"><a  on:click={tagSelected} class= "active" href="#/users">ALL</a></li>
+     {:else}
+     <li class="my-1"><a  on:click={tagSelected} href="#/users">ALL</li>
+     {/if}
   {:else}
-  <li class="my-1"><a href="#/projects"><b>ALL</b></a></li>
+  {#if selected == "all"}
+     <li class="my-1"><a  on:click={tagSelected} class= "active" href="#/projects">ALL</a></li>
+     {:else}
+     <li class="my-1"><a  on:click={tagSelected} href="#/projects">ALL</a></li>
+     {/if}
   {/if}
 
 </ul>
