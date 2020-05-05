@@ -25,17 +25,12 @@
     <article class="post text-center">
       <header>
         <div class="title">
-          <h1>CONSCIOUS INTERNET ALLIANCE</h1>
-          <p>
-            <strong>
-              A collective and open ecosystem of planet- and human- centric
-              projects
-            </strong>
-          </p>
+          <h1>JOIN US</h1>
+
         </div>
       </header>
       <span class="image featured">
-        <img src="images/pic01.png" alt="" />
+        <img src="images/join.png" alt="" />
       </span>
 
       <p class="home_tf">
