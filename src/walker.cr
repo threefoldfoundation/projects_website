@@ -1,6 +1,7 @@
 require "kemal"
 require "json"
 require "./models/"
+require "./email"
 
 CURR_PATH = Dir.current + "/public/threefold/info"
 
@@ -187,6 +188,24 @@ end
 get "/" do |env|
   env.redirect "/index.html"
 end
+
+post "/join" do |env|
+  params = env.params.json
+  name = params["name"].as(String)
+  company = params["company"].as(String)
+  email= params["email"].as(String)
+  about = params["about"].as(String)
+
+  body = %(
+    Name: #{name}
+    Email: #{email}
+    Company: #{company}\n
+    #{about}
+  )
+  
+  send_email(body)
+end
+
 
 error 404 do |env|
   env.redirect "/index.html#/error"
