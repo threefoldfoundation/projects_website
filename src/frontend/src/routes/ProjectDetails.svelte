@@ -90,7 +90,7 @@
 
       {#if project_data.milestones.length > 0}
         <div class="content">
-          <h1>Milestons:</h1>
+          <h1>Milestones:</h1>
           {#each project_data.milestones as milestone}
             <ul class="card">
               <li>
