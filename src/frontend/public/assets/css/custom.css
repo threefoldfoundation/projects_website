@@ -18,7 +18,7 @@ h2 {
 }
 
 .posts img {
-    height: 75px;
+    height: auto;
     width: 75px;
 }
 
@@ -384,6 +384,11 @@ header p {
 
 .active {
     color: #2ebaae !important;
+}
+
+#header .main {
+    display: inline-flex;
+    float: right;
 }
 
 
