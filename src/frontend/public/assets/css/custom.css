@@ -13,8 +13,7 @@ h2 {
     background-color: #e6e6e6 !important;
 }
 
-.mini-post h2,
-a:visited {
+.mini-post h2 {
     color: #3c3b3b !important;
 }
 
@@ -325,7 +324,7 @@ body.single #footer {
     font-weight: 400;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #3c3b3b !important;
+    color: #3c3b3b;
 }
 
 .show-menu-btn i {
@@ -383,7 +382,7 @@ header p {
     font-size: 1.1em;
 }
 
-#header nav ul li a .active {
+.active {
     color: #2ebaae !important;
 }
 
