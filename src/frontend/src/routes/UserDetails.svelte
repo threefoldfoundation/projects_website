@@ -68,7 +68,7 @@
           <h1>Projects:</h1>
           <ul>
             {#each userProjects as p}
-              <li class="my-2">
+              <li class="my-2 project">
                 <a href="#/projects/{p.name}" class="author">
                   <img src={p.links.logo_path} alt="" />
                   {p.name}

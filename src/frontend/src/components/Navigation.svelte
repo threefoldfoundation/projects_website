@@ -9,7 +9,7 @@
 <!-- Header -->
 <header id="header">
   <div class="brand-logo">
-    <a href="/">
+    <a href="http://threefold.io/">
       <img src="/images/TFN.svg" alt="" />
     </a>
   </div>
@@ -19,7 +19,7 @@
     <i class="fas fa-bars" />
   </label>
 
-  <nav class="">
+  <nav>
     <ul class="navigation">
       <li>
         <a href="#/" on:click={linkClick}>Home</a>
