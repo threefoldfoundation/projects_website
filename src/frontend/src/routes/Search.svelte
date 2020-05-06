@@ -82,7 +82,6 @@
       btn_prev.classList.add("disabled");
   }
 
-    console.log("heyyy")
 </script>
 
 <main>
