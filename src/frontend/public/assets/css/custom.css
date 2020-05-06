@@ -471,7 +471,7 @@ header p {
         margin-bottom: 20px;
     }
     
-    input[type="email"] {
+    .form_wrapper input[type="email"] {
         border: 0;
     }
     

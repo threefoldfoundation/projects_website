@@ -35,7 +35,7 @@
     <i class="fas fa-bars" />
   </label>
 
-  <nav class="">
+  <nav class="d-inline-block">
     <ul class="navigation">
       <li>
         {#if active == 'home'}
@@ -68,6 +68,17 @@
       <label for="toggle-btn" class="hide-menu-btn">
         <i class="fas fa-times" />
       </label>
+    </ul>
+  </nav>
+
+  <nav class="main">
+    <ul>
+      <li class="search">
+        <a class="fa-search" href="#search">Search</a>
+        <form id="search" method="get" action="#">
+          <input type="text" name="query" placeholder="Search" />
+        </form>
+      </li>
     </ul>
   </nav>
 </header>
