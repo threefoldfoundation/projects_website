@@ -214,7 +214,7 @@ get "/webhooks" do |env|
   if secret == ENV["WEBHOOK_SECRET"]
 
     command = "cd " + Dir.current + "/public/threefold" + "&& git pull"
-    io = MemoryIO.new
+    io = IO::Memory.new
     Process.run("sh", {"-c", command}, output: io)
   end
 end
