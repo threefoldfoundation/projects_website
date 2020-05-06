@@ -206,6 +206,18 @@ post "/join" do |env|
   send_email(body)
 end
 
+get "/webhooks" do |env|
+  params = env.params.json
+  secret = params["payload"].as(String)
+  puts secret
+
+  if secret == ENV["WEBHOOK_SECRET"]
+
+    command = "cd " + Dir.current + "/public/threefold" + "&& git pull"
+    io = MemoryIO.new
+    Process.run("sh", {"-c", command}, output: io)
+  end
+end
 
 error 404 do |env|
   env.redirect "/index.html#/error"
