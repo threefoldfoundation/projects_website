@@ -198,6 +198,10 @@ post "/join" do |env|
   email= params["email"].as(String)
   about = params["about"].as(String)
 
+  if name.strip == "" || company.strip == "" || email.strip == "" || about.strip == ""
+    halt env, status_code: 400, response: "Bad request"
+  end
+
   body = %(
     Name: #{name}
     Email: #{email}
