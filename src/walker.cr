@@ -2,6 +2,8 @@ require "kemal"
 require "json"
 require "./models/"
 require "./email"
+require "openssl"
+require "openssl/hmac"
 
 CURR_PATH = Dir.current + "/public/threefold/info"
 
@@ -206,16 +208,16 @@ post "/join" do |env|
   send_email(body)
 end
 
-get "/webhooks" do |env|
-  params = env.params.json
-  secret = params["payload"].as(String)
-  puts secret
-
-  if secret == ENV["WEBHOOK_SECRET"]
-
+post "/webhooks" do |env|
+  body = env.params.json.to_json
+  signature = "sha1=" + OpenSSL::HMAC.hexdigest(:sha1, ENV["WEBHOOK_SECRET"], body)
+  githubsig= env.request.headers["X-Hub-Signature"]
+  if signature == githubsig
     command = "cd " + Dir.current + "/public/threefold" + "&& git pull"
     io = IO::Memory.new
     Process.run("sh", {"-c", command}, output: io)
+    puts "Done updating content"
+    puts io.to_s
   end
 end
 
