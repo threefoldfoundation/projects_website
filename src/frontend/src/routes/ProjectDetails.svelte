@@ -75,12 +75,6 @@
 
       {@html marked(project_data.pages[0].content)}
 
-      {#if project_data.info.description}
-        <div class="content">
-          <p>{project_data.info.description}</p>
-        </div>
-      {/if}
-
       {#if project_data.info.mission}
         <div class="content">
           <h1>Mission:</h1>
