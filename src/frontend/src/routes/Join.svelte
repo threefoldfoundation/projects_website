@@ -21,7 +21,7 @@
   <div id="main">
 
     <!-- Post -->
-    <article class="post text-center">
+    <article class="post_home text-center">
       <header>
         <div class="title">
           <h1>JOIN US</h1>
@@ -53,7 +53,7 @@
         vision use the form below let us know more about you and let’s enable a
         better world together!
       </p>
-      <div class="text-center link_wrapper form_wrapper my-4">
+      <div class="text-center link_wrapper form_wrapper my-5">
         <form on:submit|preventDefault={handleSubmit}>
 
           <div class="firstRow">
