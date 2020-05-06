@@ -94,7 +94,9 @@
               required />
             <label for="freeflownation">
               By continuing you agree to
-              <b>FreeFlow Nation</b>
+              <a href="https://www.freeflownation.org/" target="_blank">
+                <b>FreeFlow Nation</b>
+              </a>
               values and manifesto
             </label>
           </div>
@@ -108,9 +110,17 @@
               required />
             <label for="terms">
               By continuing you agree to our
-              <b>Terms &amp; Conditions</b>
+              <a
+                href="https://docs.google.com/document/u/1/d/e/2PACX-1vQi1xj_YnBd_NaW5BvSWwsfH0JC-1T5WWAL6QhE0SiPmcFT3GtmiiD09Z0gNookT45dHb9iSeyiNchq/pub"
+                target="_blank">
+                <b>Terms &amp; Conditions</b>
+              </a>
               and
-              <b>Privacy Policy</b>
+              <a
+                href="https://docs.google.com/document/d/1SHLKJBdZHtGrb0p8OnfHUYsMtHPOf4sZPawpPWY8FtU/edit?usp=sharing"
+                target="_blank">
+                <b>Privacy Policy</b>
+              </a>
             </label>
           </div>
 
