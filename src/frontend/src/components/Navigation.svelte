@@ -74,10 +74,12 @@
   <nav class="main">
     <ul>
       <li class="search">
-        <a class="fa-search" href="#search">Search</a>
-        <form id="search" method="get" action="#">
-          <input type="text" name="query" placeholder="Search" />
-        </form>
+        <a class="fa-search d-inline-block" href="#search">Search</a>
+        <input
+          type="text"
+          name="query"
+          id="search_input"
+          placeholder="Search" />
       </li>
     </ul>
   </nav>

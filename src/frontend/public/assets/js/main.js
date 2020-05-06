@@ -6,90 +6,92 @@
 
 (function($) {
 
-	var	$window = $(window),
-		$body = $('body'),
-		$menu = $('#menu'),
-		$sidebar = $('#sidebar'),
-		$main = $('#main');
+    var $window = $(window),
+        $body = $('body'),
+        $menu = $('#menu'),
+        $sidebar = $('#sidebar'),
+        $main = $('#main');
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+    // Breakpoints.
+    breakpoints({
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: ['481px', '736px'],
+        xsmall: [null, '480px']
+    });
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    // Play initial animations on page load.
+    $window.on('load', function() {
+        window.setTimeout(function() {
+            $body.removeClass('is-preload');
+        }, 100);
+    });
 
-	// Menu.
-		$menu
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
+    // Menu.
+    $menu
+        .appendTo($body)
+        .panel({
+            delay: 500,
+            hideOnClick: true,
+            hideOnSwipe: true,
+            resetScroll: true,
+            resetForms: true,
+            side: 'right',
+            target: $body,
+            visibleClass: 'is-menu-visible'
+        });
 
-	// Search (header).
-		var $search = $('#search'),
-			$search_input = $search.find('input');
+    // Search (header).
+    $body
+        .on('click', '[href="#search"]', function(event) {
+            var $search_input = $('#search_input');
 
-		$body
-			.on('click', '[href="#search"]', function(event) {
+            event.preventDefault();
 
-				event.preventDefault();
+            // Not visible?
+            if (!$search_input.hasClass('visible')) {
 
-				// Not visible?
-					if (!$search.hasClass('visible')) {
+                // Reset form.
+                // $search_input[0].reset();
 
-						// Reset form.
-							$search[0].reset();
+                // Show.
+                $search_input.addClass('visible');
 
-						// Show.
-							$search.addClass('visible');
+                // Focus input.
+                $search_input.focus();
 
-						// Focus input.
-							$search_input.focus();
+            }
+        });
 
-					}
+    $body
+        .on('keydown', '#search_input', function(event) {
+            if (event.keyCode == 27) {
+                $(this).blur();
+            } else if (event.keyCode == 13) {
+                $(this).blur();
+                window.location.href = '#/search/' + $(this).val()
+                $(this).val('');
+            }
 
-			});
+        })
+        .on('blur', function() {
+            var $search_input = $('#search_input');
+            window.setTimeout(function() {
+                $search_input.removeClass('visible');
+            }, 100);
+        });
 
-		$search_input
-			.on('keydown', function(event) {
+    // Intro.
+    var $intro = $('#intro');
 
-				if (event.keyCode == 27)
-					$search_input.blur();
+    // Move to main on <=large, back to sidebar on >large.
+    breakpoints.on('<=large', function() {
+        $intro.prependTo($main);
+    });
 
-			})
-			.on('blur', function() {
-				window.setTimeout(function() {
-					$search.removeClass('visible');
-				}, 100);
-			});
-
-	// Intro.
-		var $intro = $('#intro');
-
-		// Move to main on <=large, back to sidebar on >large.
-			breakpoints.on('<=large', function() {
-				$intro.prependTo($main);
-			});
-
-			breakpoints.on('>large', function() {
-				$intro.prependTo($sidebar);
-			});
+    breakpoints.on('>large', function() {
+        $intro.prependTo($sidebar);
+    });
 
 })(jQuery);
