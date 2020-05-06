@@ -74,7 +74,8 @@
             type="text"
             id="about"
             name="about"
-            placeholder="Tell us more about your project and how it serves the planet"
+            placeholder="Tell us more about your project and how it serves the
+            planet"
             required />
 
           <input
@@ -89,7 +90,8 @@
               type="checkbox"
               id="freeflownation"
               name="freeflownation"
-              value="freeflownation acceptance" />
+              value="freeflownation acceptance"
+              required />
             <label for="freeflownation">
               By continuing you agree to
               <b>FreeFlow Nation</b>
@@ -102,7 +104,8 @@
               type="checkbox"
               id="terms"
               name="terms"
-              value="terms acceptance" />
+              value="terms acceptance"
+              required />
             <label for="terms">
               By continuing you agree to our
               <b>Terms &amp; Conditions</b>
