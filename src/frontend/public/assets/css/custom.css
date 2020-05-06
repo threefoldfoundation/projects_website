@@ -471,6 +471,10 @@ header p {
         margin-bottom: 20px;
     }
     
+    input[type="email"] {
+        border: 0;
+    }
+    
     .form_wrapper input[type="checkbox"]+label {
         float: left;
     }
