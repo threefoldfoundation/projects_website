@@ -223,13 +223,10 @@
         data-layout="button_count">
       </div>
 
-       <!-- <script src="https://platform.linkedin.com/in.js" type="text/javascript">
-        lang: en_US;
-      </script>
-      <script type="IN/Share" data-url={pageUrl}>
+      <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+      <script type="IN/Share" data-url="{pageUrl}"></script>
 
-      </script>
-      <a
+      <!-- <a
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
         class="twitter-share-button"
         data-size="large"
@@ -239,7 +236,7 @@
       <script
         async
         src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"> -->
+        charset="utf-8"> --> -->
 
     {#if project_data.ecosystem.categories.length > 0}
         <footer>
