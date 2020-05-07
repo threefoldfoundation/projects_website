@@ -455,6 +455,23 @@ input[type="checkbox"]+label {
     height: 2em !important;
 }
 
+.form_wrapper .checkDiv label {
+    margin: 0 !important;
+}
+
+.cta {
+    background-color: #8ed9be !important;
+    color: #fff !important;
+}
+
+.search input {
+    color: #646464 !important;
+}
+
+.stats a:visited {
+    color: #646464;
+}
+
 
 /*-- Responsive CSS --*/
 
@@ -583,7 +600,7 @@ input[type="checkbox"]+label {
         margin-right: 0;
     }
     .form_wrapper .checkDiv {
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .form_wrapper input[type="submit"] {
         margin-top: 50px;
