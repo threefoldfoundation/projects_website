@@ -45,28 +45,29 @@
 
     // projects only
     if (obj.ecosystem.categories){
-      obj.ecosystem.categories.forEach(function(c){
-        if (c.toLowerCase().includes(keyword))
-            return true
-      })
-
-      obj.ecosystem.badges.forEach(function(b){
+      for (const c of obj.ecosystem.categories){
+        if (c.toLowerCase().includes(keyword)){
+          return true
+        }
+      }
+     
+      for (const b of obj.ecosystem.badges){
         if (b.toLowerCase().includes(keyword))
             return true
-      })
+      }
     
-      obj.info.team.forEach(function(p){
+      for (const p of obj.info.team){
         if (p.toLowerCase().includes(keyword))
             return true
-      })    
+      }
 
       if (obj.info.mission.toLowerCase().includes(keyword))
         return true
 
-       if (obj.info.description && obj.info.description.toLowerCase().includes(keyword))
+      if (obj.info.description && obj.info.description.toLowerCase().includes(keyword))
         return true
 
-      obj.info.milestones.forEach(function(ms){
+      for (const ms of obj.milestones){
         if (ms.name.toLowerCase().includes(keyword))
             return true
 
@@ -81,31 +82,31 @@
 
         if (ms.description.toLowerCase().includes(keyword))
             return true
-      })
+      }
     }
 
-    obj.info.countries.forEach(function(c){
-        if (c.toLowerCase().includes(keyword))
+    for (const c of obj.info.countries){
+        if (c.name.toLowerCase().includes(keyword))
             return true
-    })
+    }
 
-    obj.info.cities.forEach(function(c){
-        if (c.toLowerCase().includes(keyword))
+    for (const c of obj.info.cities){
+        if (c.name.toLowerCase().includes(keyword))
             return true
-    })
+    }
 
     // people only
 
     if (obj.ecosystem.memberships){
-        obj.ecosystem.memberships.forEach(function(b){
+        for (const b of obj.ecosystem.memberships){
           if (b.toLowerCase().includes(keyword))
               return true
-        })
+        }
 
-         obj.info.companies.forEach(function(c){
-            if (c.toLowerCase().includes(keyword))
+         for (const c of obj.info.companies){
+            if (c.name.toLowerCase().includes(keyword))
                 return true
-          })
+          }
 
         if (obj.info.bio.toLowerCase().includes(keyword)){
             return true
@@ -115,6 +116,8 @@
             return true
         }
     }
+
+    return false
   }
 
   function filter(){
@@ -132,7 +135,7 @@
             var res = [];
             $users.forEach(function(person) {
                 if (keywordExists(person, keyword)) {
-                    res.push(proj.name);
+                    res.push(person.name);
                 }
             });
             return res;
