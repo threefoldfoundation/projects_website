@@ -5,7 +5,7 @@
   <div id="main">
 
     <!-- Post -->
-    <article class="post text-center">
+    <article class="post_home text-center">
       <header>
         <div class="title">
           <h1>CONSCIOUS INTERNET ALLIANCE</h1>
@@ -59,7 +59,7 @@
       </p>
       <p class="home_tf">Interested to learn more?</p>
       <div class="text-center link_wrapper my-4">
-        <a href="#/projects" class="button large blue">
+        <a href="#/projects" class="button large">
           Explore Conscious Internet Alliance
         </a>
       </div>
