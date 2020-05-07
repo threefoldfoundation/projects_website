@@ -86,7 +86,10 @@ def _walk(path : String = CURR_PATH)
                       ecosystem = data["ecosystem"].as(Hash)
                       
                       item.as(Project).info.mission =  info["mission"].as(String)
-                      item.as(Project).info.description =  info["description"].as(String)
+                      if info.has_key?("description")
+                        item.as(Project).info.description =  info["description"].as(String)
+                      end
+                      
                       info["team"].as(Array).each do |user|
                         item.as(Project).info.team.push user.as(String)
                       end
@@ -188,7 +191,11 @@ get "/data" do |env|
 end
 
 get "/" do |env|
-  File.read("public/index.html")
+  io = IO::Memory.new
+  puts env.request.host_with_port
+  puts io.to_s
+  c = File.read("public/index.html")
+  c.gsub("{location.origin}", env.request.headers["Host"])
 end
 
 post "/join" do |env|
@@ -223,6 +230,41 @@ post "/webhooks" do |env|
     puts "Done updating content"
     puts io.to_s
   end
+end
+
+
+get "/projects/:name" do |env|
+  WEBSITES.projects.clear
+  WEBSITES.people.clear
+  _walk 
+
+  name = env.params.url["name"]
+  host = env.request.headers["Host"]
+  if env.request.headers["User-Agent"].includes?("facebookexternalhit")
+    p = nil
+    WEBSITES.projects.each do |item|
+      if item.name == name.gsub("%20", " ")
+        p = item
+        break
+      end
+    end
+
+    %(
+<html>
+  <head>
+    <title>Concious Internet Alliance</title>
+    <meta property="og:url"           content="https://#{host}/projects/#{name}"/>
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="#{name}" />
+    <meta property="og:description"   content="#{p.not_nil!.info.mission}" />
+    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
+  </head>
+</html>
+)
+  else
+    env.redirect "/#/projects/#{name}"
+  end
+
 end
 
 error 404 do |env|
