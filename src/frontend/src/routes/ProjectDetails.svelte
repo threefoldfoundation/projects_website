@@ -226,17 +226,10 @@
       <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
       <script type="IN/Share" data-url="{pageUrl}"></script>
 
-      <!-- <a
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-        class="twitter-share-button"
-        data-size="large"
-        data-show-count="false">
-        Tweet
-      </a>
-      <script
-        async
-        src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"> -->
+     <a href="http://www.twitter.com/intent/tweet?url={pageUrl}" class="twitter-share-button" 
+      data-show-count="false">Tweet</a>
+      
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     {#if project_data.ecosystem.categories.length > 0}
         <footer>
