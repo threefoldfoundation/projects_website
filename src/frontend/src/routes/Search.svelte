@@ -20,8 +20,12 @@
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
   miniProjects = getRandomSlice($projects, 5);
   miniusersList = getRandomSlice($users, 5);
-  results = filter().slice(0, addWith);
+  
+  $: if (params.keyword) { //watch the params.id for changes
+      results = filter().slice(0, addWith);
+  }
 
+  
   function keywordExists(obj, keyword){
     if (obj.pages[0].content.toLowerCase().includes(keyword))
         return true
