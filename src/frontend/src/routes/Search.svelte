@@ -8,8 +8,7 @@
   import {getRandomSlice} from "../utils.js"
 
   export let params = {};
-  params.keyword
-
+  
   animateScroll.scrollToTop();
 
   let miniProjects = []
@@ -23,28 +22,179 @@
   miniusersList = getRandomSlice($users, 5);
   results = filter().slice(0, addWith);
 
-  function filter() {
-    var res = []
+  function keywordExists(obj, keyword){
+    if (obj.pages[0].content.toLowerCase().includes(keyword))
+        return true
 
-    var users = $users.slice(0, 3)
-    var projects = $projects.slice(0, 3)
+    if (obj.name.toLowerCase().includes(keyword))
+        return true
 
-    users.forEach(function(item){
-        item.isUser = true
-        item.isProject = false
+    if (obj.links.linkedin.toLowerCase().includes(keyword))
+        return true
+
+    if (obj.links.video.toLowerCase().includes(keyword))
+        return true
+
+    if (obj.links.wiki.toLowerCase().includes(keyword))
+        return true
+
+    obj.links.websites.forEach(function(ws){
+      if (ws.toLowerCase().includes(keyword))
+          return true
     })
 
-    projects.forEach(function(item){
-        item.isProject = true
-        item.isUser = false
+    // projects only
+    if (obj.ecosystem.categories){
+      obj.ecosystem.categories.forEach(function(c){
+        if (c.toLowerCase().includes(keyword))
+            return true
+      })
+
+      obj.ecosystem.badges.forEach(function(b){
+        if (b.toLowerCase().includes(keyword))
+            return true
+      })
+    
+      obj.info.team.forEach(function(p){
+        if (p.toLowerCase().includes(keyword))
+            return true
+      })    
+
+      if (obj.info.mission.toLowerCase().includes(keyword))
+        return true
+
+       if (obj.info.description && obj.info.description.toLowerCase().includes(keyword))
+        return true
+
+      obj.info.milestones.forEach(function(ms){
+        if (ms.name.toLowerCase().includes(keyword))
+            return true
+
+        if (ms.date.toLowerCase().includes(keyword))
+            return true
+
+        if (ms.funding_required_tft.toLowerCase().includes(keyword))
+            return true
+
+        if (ms.funding_required_usd.toLowerCase().includes(keyword))
+            return true
+
+        if (ms.description.toLowerCase().includes(keyword))
+            return true
+      })
+    }
+
+    obj.info.countries.forEach(function(c){
+        if (c.toLowerCase().includes(keyword))
+            return true
     })
 
+    obj.info.cities.forEach(function(c){
+        if (c.toLowerCase().includes(keyword))
+            return true
+    })
 
-    res.push(...users)    
-    res.push(...projects)
-    return res
+    // people only
+
+    if (obj.ecosystem.memberships){
+        obj.ecosystem.memberships.forEach(function(b){
+          if (b.toLowerCase().includes(keyword))
+              return true
+        })
+
+         obj.info.companies.forEach(function(c){
+            if (c.toLowerCase().includes(keyword))
+                return true
+          })
+
+        if (obj.info.bio.toLowerCase().includes(keyword)){
+            return true
+        }
+
+        if (obj.info.name.toLowerCase().includes(keyword)){
+            return true
+        }
+    }
   }
 
+  function filter(){
+      function findProjects(keyword) {
+            var res = [];
+            $projects.forEach(function(proj) {
+                if (keywordExists(proj, keyword)) {
+                    res.push(proj.name);
+                }
+            });
+            return res;
+        }
+
+        function findPeople(keyword) {
+            var res = [];
+            $users.forEach(function(person) {
+                if (keywordExists(person, keyword)) {
+                    res.push(proj.name);
+                }
+            });
+            return res;
+        }
+
+        var projects_result = {}
+        var people_result = {}
+
+        var keywords = params.keyword.replace("%20", " ").split(" ")
+        
+        keywords.forEach(
+            function(keyword){
+                keyword = keyword.trim().toLowerCase()
+                var projects = findProjects(keyword)
+                var people = findPeople(keyword)
+                
+                projects.forEach(function(item){
+                    if(item in projects_result){
+                        projects_result[item] = projects_result[item] + 1
+                    }else{
+                        projects_result[item] = 1
+                    }
+                })
+
+                people.forEach(function(item){
+                    if(item in people_result){
+                        people_result[item] = people_result[item] + 1
+                    }else{
+                        people_result[item] = 0
+                    }
+                })
+            }
+        )
+
+        var finalResult = []
+        var count = keywords.length
+
+        for (var property in people_result) {
+            if (people_result.hasOwnProperty(property)) {
+                if(people_result[property] == count){
+                    var item = $users.find(user => user["name"] == property)
+                    item.isUser = true
+                    item.isProject = false
+                    finalResult.push(item)
+                }
+            }
+        }
+
+        for (var property in projects_result) {
+            if (projects_result.hasOwnProperty(property)) {
+                if(projects_result[property] == count){
+                    var item = $projects.find(proj => proj["name"] == property)
+                    item.isUser = false
+                    item.isProject = true
+                    finalResult.push(item)
+                }
+            }
+            
+        }
+        return finalResult
+  }
+ 
   function onNext() {
     page += 1;
     updatePage();
@@ -52,14 +202,13 @@
     animateScroll.scrollToTop();
   }
 
-
-
   function onPrevious() {
     page -= 1;
     updatePage();
     results = filter().slice((page-1)*addWith, ((page-1)*addWith)+addWith);
     animateScroll.scrollToTop();
   }
+
   function updatePage() {
     let btn_prev = document.getElementById("btn_prev");
     let btn_next = document.getElementById("btn_next");
@@ -72,8 +221,7 @@
           btn_prev.classList.remove("disabled");
       }
     }
-      
-      
+
     else if (noPages = page)
       btn_next.classList.add("disabled");
       btn_prev.classList.remove("disabled");
