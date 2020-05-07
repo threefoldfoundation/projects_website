@@ -25,20 +25,9 @@
   }
 
   let team = findTeam(project_data.info.team);
-  let pageUrl = location.href;
+  let pageUrl = location.origin + location.hash.replace("#", "");
   let imageUrl = location.origin + project_data.links.image_path;
 </script>
-
-<svelte:head>
-  <meta property="og:url" content={pageUrl} />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Concious Internet Alliance" />
-  <meta
-    property="og:description"
-    content="A collective and open ecosystem of planet and human centric
-    projects" />
-  <meta property="og:image" content={imageUrl} />
-</svelte:head>
 
 <!-- Wrapper -->
 
@@ -218,6 +207,22 @@
         </a>
       </div>
       {/if}
+
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your share button code -->
+      <div class="fb-share-button" 
+        data-href="{pageUrl}" 
+        data-layout="button_count">
+      </div>
+
 
       <!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js">
 
