@@ -8,7 +8,7 @@
   <header>
     <div class="title">
       {#if item.isUser}
-        <h3>User:</h3>
+        <h3>Person:</h3>
       {:else}
         <h3>Company:</h3>
       {/if}
