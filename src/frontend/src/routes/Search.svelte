@@ -98,6 +98,12 @@
     // people only
 
     if (obj.ecosystem.memberships){
+            
+        if (obj.info.name.toLowerCase().includes(keyword)){
+          return true
+        }
+          
+
         for (const b of obj.ecosystem.memberships){
           if (b.toLowerCase().includes(keyword))
               return true
@@ -164,7 +170,7 @@
                     if(item in people_result){
                         people_result[item] = people_result[item] + 1
                     }else{
-                        people_result[item] = 0
+                        people_result[item] = 1
                     }
                 })
             }
