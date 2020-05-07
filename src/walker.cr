@@ -86,7 +86,10 @@ def _walk(path : String = CURR_PATH)
                       ecosystem = data["ecosystem"].as(Hash)
                       
                       item.as(Project).info.mission =  info["mission"].as(String)
-                      item.as(Project).info.description =  info["description"].as(String)
+                      if info.has_key?("description")
+                        item.as(Project).info.description =  info["description"].as(String)
+                      end
+                      
                       info["team"].as(Array).each do |user|
                         item.as(Project).info.team.push user.as(String)
                       end
