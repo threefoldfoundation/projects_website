@@ -240,7 +240,8 @@ get "/projects/:name" do |env|
 
   name = env.params.url["name"]
   host = env.request.headers["Host"]
-  if env.request.headers["User-Agent"].includes?("facebookexternalhit")
+  useragent = env.request.headers["User-Agent"]
+  if useragent.includes?("facebookexternalhit") || useragent.includes?("LinkedInBot")
     p = nil
     WEBSITES.projects.each do |item|
       if item.name == name.gsub("%20", " ")

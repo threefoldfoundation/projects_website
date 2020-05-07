@@ -236,7 +236,7 @@
       <script
         async
         src="https://platform.twitter.com/widgets.js"
-        charset="utf-8"> --> -->
+        charset="utf-8"> -->
 
     {#if project_data.ecosystem.categories.length > 0}
         <footer>
