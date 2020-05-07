@@ -256,7 +256,7 @@ get "/projects/:name" do |env|
     <title>Concious Internet Alliance</title>
     <meta property="og:url"           content="https://#{host}/projects/#{name}"/>
     <meta property="og:type"          content="article" />
-    <meta property="og:title"         content="#{name}" />
+    <meta property="og:title"         content="#{name.capitalize}" />
     <meta property="og:description"   content="#{p.not_nil!.info.mission}" />
     <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
   </head>
@@ -264,6 +264,42 @@ get "/projects/:name" do |env|
 )
   else
     env.redirect "/#/projects/#{name}"
+  end
+
+end
+
+
+get "/users/:name" do |env|
+  WEBSITES.projects.clear
+  WEBSITES.people.clear
+  _walk 
+
+  name = env.params.url["name"]
+  host = env.request.headers["Host"]
+  useragent = env.request.headers["User-Agent"]
+  if useragent.includes?("facebookexternalhit") || useragent.includes?("LinkedInBot") || useragent.includes?("Twitterbot")
+    p = nil
+    WEBSITES.people.each do |item|
+      if item.name == name.gsub("%20", " ")
+        p = item
+        break
+      end
+    end
+
+    %(
+<html>
+  <head>
+    <title>Concious Internet Alliance</title>
+    <meta property="og:url"           content="https://#{host}/users/#{name}"/>
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="#{item.info.name.capitalize}" />
+    <meta property="og:description"   content="" />
+    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
+  </head>
+</html>
+)
+  else
+    env.redirect "/#/users/#{name}"
   end
 
 end

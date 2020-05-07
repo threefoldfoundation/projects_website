@@ -26,7 +26,6 @@
 
   let team = findTeam(project_data.info.team);
   let pageUrl = location.origin + location.hash.replace("#", "");
-  let imageUrl = location.origin + project_data.links.image_path;
 </script>
 
 <!-- Wrapper -->
