@@ -292,7 +292,7 @@ get "/users/:name" do |env|
     <title>Concious Internet Alliance</title>
     <meta property="og:url"           content="https://#{host}/users/#{name}"/>
     <meta property="og:type"          content="article" />
-    <meta property="og:title"         content="#{item.info.name.capitalize}" />
+    <meta property="og:title"         content="#{p.info.name.capitalize}" />
     <meta property="og:description"   content="" />
     <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
   </head>
