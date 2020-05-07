@@ -123,7 +123,9 @@
             {#each project_data.info.countries.slice(0, -1) as country}
               <li class="d-inline-block">{country.name} ,</li>
             {/each}
-            <li class="d-inline-block">{project_data.info.countries[project_data.info.countries.length-1].name}</li>
+            <li class="d-inline-block">
+              {project_data.info.countries[project_data.info.countries.length - 1].name}
+            </li>
           </ul>
         </div>
       {/if}
@@ -135,7 +137,9 @@
             {#each project_data.info.cities.slice(0, -1) as city}
               <li class="d-inline-block">{city.name} ,</li>
             {/each}
-            <li class="d-inline-block">{project_data.info.cities[project_data.info.cities.length-1].name}</li>
+            <li class="d-inline-block">
+              {project_data.info.cities[project_data.info.cities.length - 1].name}
+            </li>
           </ul>
         </div>
       {/if}
@@ -146,10 +150,15 @@
           <ul class="d-inline-block single">
             {#each project_data.links.websites.slice(0, -1) as link}
               <li class="d-inline-block">
-                <a href={link} target="_blank">{link}</a> ,
+                <a href={link} target="_blank">{link}</a>
+                ,
               </li>
             {/each}
-              <a href={project_data.links.websites[project_data.links.websites.length-1]} target="_blank">{project_data.links.websites[project_data.links.websites.length-1]}</a>
+            <a
+              href={project_data.links.websites[project_data.links.websites.length - 1]}
+              target="_blank">
+              {project_data.links.websites[project_data.links.websites.length - 1]}
+            </a>
 
           </ul>
         </div>
@@ -196,41 +205,64 @@
         </span>
       {/if}
 
-    {#if project_data.ecosystem.badges.includes("tftgranted")}
-      <div class="text-center link_wrapper my-4">
-        <a
-          href="https://wiki.threefold.io/#/tdeoverview"
-          target="_blank"
-          class="button large text-uppercase cta">
-          Support this project
-        </a>
-      </div>
+      {#if project_data.ecosystem.badges.includes('tftgranted')}
+        <div class="text-center link_wrapper my-4">
+          <a
+            href="https://wiki.threefold.io/#/tdeoverview"
+            target="_blank"
+            class="button large text-uppercase cta">
+            Support this project
+          </a>
+        </div>
       {/if}
 
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="social text-center">
+        <div id="fb-root" />
+        <script>
+          (function(d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src =
+              "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          })(document, "script", "facebook-jssdk");
+        </script>
+        <!-- Your share button code -->
+        <div
+          class="fb-share-button"
+          data-href={pageUrl}
+          data-layout="button_count" />
 
-      <!-- Your share button code -->
-      <div class="fb-share-button" 
-        data-href="{pageUrl}" 
-        data-layout="button_count">
+        <script
+          src="https://platform.linkedin.com/in.js"
+          type="text/javascript">
+          lang: en_US;
+        </script>
+        <script
+          class="linkedin-share-button"
+          type="IN/Share"
+          data-url={pageUrl}>
+
+        </script>
+        <a
+          href="http://www.twitter.com/intent/tweet?url={pageUrl}"
+          class="twitter-share-button"
+          data-show-count="false">
+          Tweet
+        </a>
+
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8">
+
+        </script>
       </div>
 
-      <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-      <script type="IN/Share" data-url="{pageUrl}"></script>
-
-     <a href="http://www.twitter.com/intent/tweet?url={pageUrl}" class="twitter-share-button" 
-      data-show-count="false">Tweet</a>
-      
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    {#if project_data.ecosystem.categories.length > 0}
+      {#if project_data.ecosystem.categories.length > 0}
         <footer>
           <ul class="stats">
             {#each project_data.ecosystem.categories as category}
