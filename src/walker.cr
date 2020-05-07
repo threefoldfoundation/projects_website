@@ -188,7 +188,7 @@ get "/data" do |env|
 end
 
 get "/" do |env|
-  env.redirect "/index.html"
+  File.read("public/index.html")
 end
 
 post "/join" do |env|
@@ -226,7 +226,7 @@ post "/webhooks" do |env|
 end
 
 error 404 do |env|
-  env.redirect "/index.html#/error"
+  env.redirect "/#/error"
 end
 
 Kemal.run
