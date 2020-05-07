@@ -125,7 +125,7 @@
 
           <div class="clear-both" />
 
-          <input type="submit" value="Let's connect!" />
+          <input type="submit" class="cta" value="Let's connect!" />
         </form>
       </div>
     </article>

@@ -213,7 +213,7 @@
         <a
           href="https://wiki.threefold.io/#/tdeoverview"
           target="_blank"
-          class="button large text-uppercase">
+          class="button large text-uppercase cta">
           Support this project
         </a>
       </div>

@@ -28,7 +28,8 @@
         <a href="https://threefold.io/capacity.html" target="_blank">
           ThreeFold Grid
         </a>
-         and other experiences on top, the time has come for us to make our world peer-to-peer.
+        and other experiences on top, the time has come for us to make our world
+        peer-to-peer.
       </p>
 
       <p class="home_tf">
@@ -40,15 +41,12 @@
         </a>
         on Stellar, to be followed by partnership and product announcements over
         the coming weeks.
-
-
       </p>
       <p class="home_tf">
-      The time has come to start building our peer-to-peer world together, and
-      it goes without saying that a collective and equal approach is needed.
-      Many beautiful projects have joined the Conscious Internet Alliance,
-      and together we aim to empower a better future for humanity and our planet.
-
+        The time has come to start building our peer-to-peer world together, and
+        it goes without saying that a collective and equal approach is needed.
+        Many beautiful projects have joined the Conscious Internet Alliance, and
+        together we aim to empower a better future for humanity and our planet.
       </p>
       <p class="home_tf">
         If not
@@ -59,8 +57,8 @@
       </p>
       <p class="home_tf">Interested to learn more?</p>
       <div class="text-center link_wrapper my-4">
-        <a href="#/projects" class="button large">
-          Explore Conscious Internet Alliance
+        <a href="#/projects" class="button large text-uppercase cta">
+          learn more
         </a>
       </div>
     </article>
