@@ -499,6 +499,25 @@ input[type="checkbox"]+label {
     width: 10em !important;
 }
 
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.social .fb-share-button,
+.IN-widget {
+    margin-right: 5px !important;
+}
+
+.fb-share-button span {
+    vertical-align: top !important;
+}
+
+.social iframe {
+    margin-bottom: 0 !important;
+}
+
 
 /*-- Responsive CSS --*/
 
