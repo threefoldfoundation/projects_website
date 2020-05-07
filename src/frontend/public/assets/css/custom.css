@@ -473,8 +473,7 @@ input[type="checkbox"]+label {
 }
 
 .search_result {
-    padding: 1em 3em !important;
-    margin: 0 0 1em 0 !important;
+    padding: 3em !important;
 }
 
 .search_result>header {
@@ -485,16 +484,19 @@ input[type="checkbox"]+label {
     padding: 0.3em 3em !important;
 }
 
-.search_result h3 {
-    display: inline-block;
-}
-
 .search_result header {
     border-bottom: none !important;
 }
 
 .search_result header a {
     color: #646464 !important;
+    float: left;
+}
+
+.search_result .author img {
+    border-radius: 5px !important;
+    margin-right: 10px;
+    width: 10em !important;
 }
 
 

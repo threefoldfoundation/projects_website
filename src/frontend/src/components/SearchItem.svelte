@@ -7,13 +7,12 @@
 <article class="post search_result">
   <header>
     <div class="title">
-      {#if item.isUser}
-        <h3>User:</h3>
-      {:else}
-        <h3>Company:</h3>
-      {/if}
-      <a class="text-uppercase" href="#/projects/{item.name}">{item.name}</a>
-
+      <h2>
+        <a class="author text-uppercase" href="#/projects/{item.name}">
+          <img src={item.links.image_path} alt="" />
+          {item.name}
+        </a>
+      </h2>
     </div>
   </header>
 </article>
