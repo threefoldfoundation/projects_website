@@ -4,8 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
-
+$(document).ready(function() {
     var $window = $(window),
         $body = $('body'),
         $menu = $('#menu'),
@@ -43,44 +42,49 @@
         });
 
     // Search (header).
+    var $search = $('#search'),
+        $search_input = $search.find('input');
+
     $body
         .on('click', '[href="#search"]', function(event) {
-            var $search_input = $('#search_input');
 
             event.preventDefault();
 
             // Not visible?
-            if (!$search_input.hasClass('visible')) {
+            if (!$search.hasClass('visible')) {
 
                 // Reset form.
-                // $search_input[0].reset();
+                $search[0].reset();
 
                 // Show.
-                $search_input.addClass('visible');
+                $search.addClass('visible');
 
                 // Focus input.
                 $search_input.focus();
 
             }
+
         });
 
-    $body
-        .on('keydown', '#search_input', function(event) {
-            if (event.keyCode == 27) {
-                $(this).blur();
-            } else if (event.keyCode == 13) {
-                $(this).blur();
-                window.location.href = '#/search/' + $(this).val()
-                $(this).val('');
+    $search_input
+        .on('keydown', function(event) {
+
+            if (event.keyCode == 27)
+                $search_input.blur();
+            else if (event.keyCode == 13) {
+                $search_input.blur();
+                window.location.href = '#/search/' + $search_input.val()
+                $search_input.val('');
             }
+
 
         })
         .on('blur', function() {
-            var $search_input = $('#search_input');
             window.setTimeout(function() {
-                $search_input.removeClass('visible');
+                $search.removeClass('visible');
             }, 100);
         });
+
 
     // Intro.
     var $intro = $('#intro');
@@ -93,5 +97,4 @@
     breakpoints.on('>large', function() {
         $intro.prependTo($sidebar);
     });
-
-})(jQuery);
+});
