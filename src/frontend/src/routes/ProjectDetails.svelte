@@ -100,6 +100,25 @@
         </div>
       {/if}
 
+      <div class="link_wrapper">
+        <a
+          href="https://wiki.threefold.io/#/tdeoverview"
+          target="_blank"
+          class="button large text-uppercase cta">
+          Learn more
+        </a>
+
+        {#if project_data.ecosystem.badges.includes('tftgranted')}
+          <a
+            href="https://wiki.threefold.io/#/how_to_buy_and_sell"
+            target="_blank"
+            class="button large text-uppercase cta">
+            Support this project
+          </a>
+        {/if}
+
+      </div>
+
       {#if team.length > 0}
         <div class="content">
           <h1>Team:</h1>
@@ -203,17 +222,6 @@
         <span class="image featured">
           <img height="auto" src="images/pic01.jpg" alt="" />
         </span>
-      {/if}
-
-      {#if project_data.ecosystem.badges.includes('tftgranted')}
-        <div class="text-center link_wrapper my-4">
-          <a
-            href="https://wiki.threefold.io/#/tdeoverview"
-            target="_blank"
-            class="button large text-uppercase cta">
-            Support this project
-          </a>
-        </div>
       {/if}
 
       <div class="social text-center">
