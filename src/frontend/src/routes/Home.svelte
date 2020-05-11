@@ -29,7 +29,7 @@
         </div>
       </header>
       <span class="image featured">
-        <img src="images/green-header.png" alt="" />
+        <img src="images/green-header2.png" alt="" />
       </span>
       <p class="home_tf">
         We are
