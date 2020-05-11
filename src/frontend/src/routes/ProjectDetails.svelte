@@ -104,7 +104,7 @@
         <a
           href="https://wiki.threefold.io/#/tdeoverview"
           target="_blank"
-          class="button large text-uppercase cta">
+          class="button large text-uppercase">
           Learn more
         </a>
 

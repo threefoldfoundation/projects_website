@@ -92,6 +92,7 @@ h2 {
 
 .link_wrapper {
     margin-bottom: 35px;
+    text-align: center;
 }
 
 .icons li a {
@@ -533,6 +534,9 @@ input[type="checkbox"]+label {
     margin-bottom: 0 !important;
 }
 
+.button.large{
+  margin-right: 1em !important;
+}
 
 /*-- Responsive CSS --*/
 
