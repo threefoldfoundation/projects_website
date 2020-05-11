@@ -97,6 +97,10 @@ body.single #footer {
     text-align: center;
 }
 
+body {
+  background: #e3fff6 !important;
+}
+
 .user a img {
     width: 500px !important;
     height: 500px;
@@ -181,7 +185,7 @@ body.single #footer {
 
 .post_home {
     padding: 3em 14em 1em 14em;
-    background: #ffffff;
+    background: #e3fff6;
     border: solid 1px rgba(160, 160, 160, 0.3);
     margin: 0 0 3em 0;
     position: relative;
@@ -292,7 +296,7 @@ body.single #footer {
     height: 100%;
     width: 100%;
     float: left;
-    background: #fff;
+    background: #e3fff6 !important;
     padding: 0 20px;
     color: #fff;
 }

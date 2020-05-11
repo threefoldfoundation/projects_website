@@ -2,7 +2,7 @@
 <script>
   console.log(location.href)
   console.log(location.origin)
-  
+
   if (location.pathname != "/"){
     location.href = "/"
   }
@@ -29,7 +29,7 @@
         </div>
       </header>
       <span class="image featured">
-        <img src="images/pic01.png" alt="" />
+        <img src="images/green-header.png" alt="" />
       </span>
       <p class="home_tf">
         We are
