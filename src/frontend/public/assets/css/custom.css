@@ -100,6 +100,12 @@ h2 {
 }
 
 
+h1 {
+  font-weight: 500 !important;
+  letter-spacing: 0em !important;
+  margin: 0 0 0.5em 0 !important;
+}
+
 #header {
   border-bottom: solid 0px rgba(160, 160, 160, 0) !important;
 }
@@ -437,7 +443,10 @@ body {
 }
 
 header p {
-    font-size: 0.9em !important;
+    font-size: 1.1em !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    line-height: 1.5 !important;
 }
 
 .home_tf {

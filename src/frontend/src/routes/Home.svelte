@@ -21,10 +21,8 @@
         <div class="title">
           <h1>CONSCIOUS INTERNET ALLIANCE</h1>
           <p>
-            <strong>
               A collective and open ecosystem of planet- and human- centric
               projects
-            </strong>
           </p>
         </div>
       </header>
