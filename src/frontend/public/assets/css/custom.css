@@ -547,6 +547,11 @@ input[type="checkbox"]+label {
 
 .button.large{
   margin-right: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.cta{
+  width: 200px !important;
 }
 
 /*-- Responsive CSS --*/

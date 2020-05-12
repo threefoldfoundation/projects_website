@@ -113,7 +113,7 @@
             href="https://wiki.threefold.io/#/how_to_buy_and_sell"
             target="_blank"
             class="button large text-uppercase cta">
-            Support this project
+            Support
           </a>
         {/if}
 
