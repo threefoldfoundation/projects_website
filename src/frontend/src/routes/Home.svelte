@@ -55,7 +55,7 @@
       <p class="home_tf">
         The time has come to enter the peer-to-peer world together, and it goes without saying
         that a collective and equal approach is needed. Many beautiful projects have joined
-        the <span class="home_span">Conscious Internet Alliance</span>, and together we aim to empower a better future for humanity and our planet.
+        the Conscious Internet Alliance, and together we aim to empower a better future for humanity and our planet.
       </p>
       <p class="home_tf">
         If not
