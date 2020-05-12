@@ -54,6 +54,13 @@ def _walk(path : String = CURR_PATH)
                 else
                   item.as(User).links.logo_path = logo_path
                 end
+              elsif name == "card.png"
+                card_path = p.gsub(Dir.current + "/public", "")
+                if path_parts[0] == "projects"
+                  item.as(Project).links.card_path = card_path
+                else
+                  item.as(User).links.card_path = card_path
+                end
               else
                 if name.ends_with?(".png") || name.ends_with?(".jpeg") || name.ends_with?(".jpg")
                   image_path = p.gsub(Dir.current + "/public", "")
@@ -258,7 +265,7 @@ get "/projects/:name" do |env|
     <meta property="og:type"          content="article" />
     <meta property="og:title"         content="#{name.capitalize}" />
     <meta property="og:description"   content="#{p.not_nil!.info.mission}" />
-    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
+    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.card_path}" />
   </head>
 </html>
 )
@@ -294,7 +301,7 @@ get "/users/:name" do |env|
     <meta property="og:type"          content="article" />
     <meta property="og:title"         content="#{p.not_nil!.info.name.capitalize}" />
     <meta property="og:description"   content="" />
-    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.image_path}" />
+    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.card_path}" />
   </head>
 </html>
 )

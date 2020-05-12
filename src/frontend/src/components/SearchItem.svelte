@@ -8,13 +8,18 @@
     <div class="title">
       {#if item.isUser}
         <h3>Person:</h3>
-      {:else}
-        <h3>Company:</h3>
-      {/if}
-      <a class="author text-uppercase" href="#/projects/{item.name}">
+        <a class="author text-uppercase" href="#/users/{item.name}">
         <img src={item.links.image_path} alt="" />
         {item.name}
       </a>
+      {:else}
+        <h3>Company:</h3>
+        <a class="author text-uppercase" href="#/projects/{item.name}">
+        <img src={item.links.image_path} alt="" />
+        {item.name}
+      </a>
+      {/if}
+      
 
     </div>
   </header>
