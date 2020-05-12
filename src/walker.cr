@@ -306,6 +306,8 @@ get "/users/:name" do |env|
     <meta property="og:title"         content="#{p.not_nil!.info.name.capitalize}" />
     <meta property="og:description"   content="" />
     <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.card_path}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
   </head>
 </html>
 )
