@@ -82,7 +82,7 @@ h2 {
 .home_span {
     text-transform: uppercase;
     font-weight: bold;
-    color: #000;
+    color: #646464;
 }
 
 .home_tf {
@@ -452,6 +452,7 @@ body {
 
 .home_tf {
     font-size: 1.1em;
+    font-family: "Raleway", Helvetica, sans-serif;
 }
 
 .active {
