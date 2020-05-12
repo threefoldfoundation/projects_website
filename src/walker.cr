@@ -248,6 +248,8 @@ get "/projects/:name" do |env|
   name = env.params.url["name"]
   host = env.request.headers["Host"]
   useragent = env.request.headers["User-Agent"]
+  
+  
   if useragent.includes?("facebookexternalhit") || useragent.includes?("LinkedInBot") || useragent.includes?("Twitterbot")
     p = nil
     WEBSITES.projects.each do |item|
@@ -266,6 +268,8 @@ get "/projects/:name" do |env|
     <meta property="og:title"         content="#{name.capitalize}" />
     <meta property="og:description"   content="#{p.not_nil!.info.mission}" />
     <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.card_path}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
   </head>
 </html>
 )
