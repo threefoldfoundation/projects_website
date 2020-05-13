@@ -14,7 +14,8 @@ h2 {
   }
 
 .mini-post {
-    background-color: #e6e6e6 !important;
+    /* background-color: #e6e6e6 !important; */
+    margin: 0 1em 1em 0 !important;
 }
 
 .mini-post h2 {
@@ -103,6 +104,10 @@ h2 {
     color: #3c3b3b !important;
 }
 
+.test_size {
+  width: 45%;
+  display: inline-grid !important;
+}
 
 h1 {
   font-weight: 500 !important;

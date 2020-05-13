@@ -16,7 +16,7 @@
     addWith = 3;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = getRandomSlice($projects, 5);
+  miniProjects = getRandomSlice($projects, 12);
   miniusersList = getRandomSlice($users, 5);
   usersList = getUsers().slice(0, 3);
 
@@ -58,15 +58,15 @@
     let btn_next = document.getElementById("btn_next");
     let len = getUsers().length;
     let noPages = Math.ceil(len/3)
-    
+
     if (noPages > page){
       btn_next.classList.remove("disabled");
       if (page !== 1){
           btn_prev.classList.remove("disabled");
       }
     }
-      
-      
+
+
     else if (noPages = page)
       btn_next.classList.add("disabled");
       btn_prev.classList.remove("disabled");
