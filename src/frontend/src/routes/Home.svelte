@@ -43,7 +43,7 @@
       </p>
 
       <p class="home_tf">
-        sOn the 29th of April 2020, ThreeFold started a rolling launch with many announcements for the world.
+        On the 29th of April 2020, ThreeFold started a rolling launch with many announcements for the world.
         This began with the announcement of our Grid 2.0 upgrade and the availability of the
         <a href="https://threefold.io/token.html" target="_blank">
           ThreeFold Token
