@@ -6,9 +6,7 @@
 <article class="post">
   <header>
     <div class="title">
-      <h2>
-        <a href="#/projects/{project.name}">{project.name}</a>
-      </h2>
+      <h2 class="title2">{project.name}</h2>
     </div>
   </header>
   {#if project.links.image_path != ''}

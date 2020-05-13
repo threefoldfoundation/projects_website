@@ -453,6 +453,10 @@ body {
     font-size: 2.5em !important;
 }
 
+.title2{
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
 
 .home_tf {
     font-size: 1.1em;
