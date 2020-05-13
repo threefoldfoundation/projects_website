@@ -5,7 +5,9 @@
 <article class="post user">
   <header>
     <div class="title">
-      <h2 class="title2">{user.info.name}</h2>
+      <h2 class="title2">
+        <a href="#/users/{user.name}">{user.info.name}</a>
+      </h2>
     </div>
   </header>
   {#if user.links.video !== ''}

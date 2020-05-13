@@ -105,9 +105,13 @@ h2 {
 
 
 h1 {
-  
+  font-weight: 500 !important;
   letter-spacing: 0.1em !important;
   margin: 0 0 0.5em 0 !important;
+}
+
+.content h1{
+  font-weight: 600 !important;
 }
 
 header p {
