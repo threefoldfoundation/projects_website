@@ -20,7 +20,7 @@
 
   let selected_users = getRandomSlice($users, 5);
   projectsList = getProjects().slice(0, 3);
-  miniProjects = getRandomSlice($projects, 12);
+  miniProjects = getRandomSlice($projects, 10);
 
    $: if (params.tagname) { //watch the params.id for changes
       projectsList = getProjects().slice(0, 3);
