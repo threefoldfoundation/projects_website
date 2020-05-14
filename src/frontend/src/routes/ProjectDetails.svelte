@@ -39,7 +39,7 @@
       <header>
         <div class="title">
           <h2>
-            <a href>{project_data['name']}</a>
+            {project_data['name']}
           </h2>
         </div>
         <!-- <div class="meta">

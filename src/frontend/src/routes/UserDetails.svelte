@@ -32,7 +32,7 @@
     <article class="post">
       <header>
         <div class="title">
-          <h2>{user_data.info.name}</h2>
+          <h2 class="title2">{user_data.info.name}</h2>
         </div>
       </header>
 

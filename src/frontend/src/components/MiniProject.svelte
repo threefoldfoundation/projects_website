@@ -3,12 +3,13 @@
 </script>
 
 <!-- Mini Post -->
-<article class="mini-post">
-  <header>
+<article class="mini-post test_size"> 
+  <!-- <header>
     <h3>
       <a href="#/projects/{miniProject.name}">{miniProject.name}</a>
     </h3>
-  </header>
+  </header> -->
+
   {#if miniProject.links.logo_path != ''}
     <a href="#/projects/{miniProject.name}" class="image">
       <img src={miniProject.links.logo_path} alt="" />

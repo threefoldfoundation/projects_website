@@ -6,7 +6,7 @@
 <article class="post">
   <header>
     <div class="title">
-      <h2>
+      <h2 class="title2">
         <a href="#/projects/{project.name}">{project.name}</a>
       </h2>
     </div>

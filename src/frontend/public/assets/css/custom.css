@@ -14,7 +14,8 @@ h2 {
   }
 
 .mini-post {
-    background-color: #e6e6e6 !important;
+    /* background-color: #e6e6e6 !important; */
+    margin: 0 1em 1em 0 !important;
 }
 
 .mini-post h2 {
@@ -103,11 +104,19 @@ h2 {
     color: #3c3b3b !important;
 }
 
+.test_size {
+  width: 45%;
+  display: inline-grid !important;
+}
 
 h1 {
   font-weight: 500 !important;
   letter-spacing: 0.1em !important;
   margin: 0 0 0.5em 0 !important;
+}
+
+.content h1{
+  font-weight: 600 !important;
 }
 
 header p {
@@ -453,6 +462,10 @@ body {
     font-size: 2.5em !important;
 }
 
+.title2{
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
 
 .home_tf {
     font-size: 1.1em;
