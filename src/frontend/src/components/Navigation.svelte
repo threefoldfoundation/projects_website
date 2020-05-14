@@ -8,6 +8,8 @@
       return "projects";
     } else if (t.includes("#/join") || t == "JOIN US") {
       return "join";
+    } else if (t.includes("#/council") || t == "WISDOM COUNCIL") {
+      return "council";
     }
     return "home";
   }
@@ -58,6 +60,14 @@
           <a href="#/users" on:click={linkClick}>People</a>
         {/if}
       </li>
+       <li>
+        {#if active == 'council'}
+          <a class="active" href="#/council" on:click={linkClick}>Wisdom Council</a>
+        {:else}
+          <a href="#/council" on:click={linkClick}>Wisdom Council</a>
+        {/if}
+      </li>
+
       <li>
         {#if active == 'join'}
           <a class="active" href="#/join" on:click={linkClick}>Join us</a>
