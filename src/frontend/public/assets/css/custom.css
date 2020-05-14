@@ -16,6 +16,7 @@ h2 {
 .mini-post {
     /* background-color: #e6e6e6 !important; */
     margin: 0 1em 1em 0 !important;
+    border: solid 1px rgba(160, 160, 160, 0) !important;
 }
 
 .mini-post h2 {
@@ -105,7 +106,7 @@ h2 {
 }
 
 .test_size {
-  width: 45%;
+  width: 40%;
   display: inline-grid !important;
 }
 
