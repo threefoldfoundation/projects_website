@@ -24,110 +24,50 @@
     <article class="post_home text-center">
       <header>
         <div class="title">
-          <h1>JOIN US</h1>
-
+          <h1>WISDOM COUNCIL</h1>
         </div>
       </header>
-      <span class="image featured">
+      <!-- <span class="image featured">
         <img src="images/join.png" alt="" />
-      </span>
+      </span> -->
 
       <p class="home_tf">
-        We are not meant to do anything alone. Creating a harmonic and healthy
-        Planet requires people coming together and joining forces with a single
-        vision of doing conscious business.
+        In order to make balanced, fair and effective decisions regarding Three
+        Fold Foundation funds distribution, ThreeFold Foundation has adopted the
+        Wisdom Council system as a resource model of harmonious communication
       </p>
       <p class="home_tf">
-        Our world needs change! Together we can enable a new global peer-to-peer
-        economy of human and planet centric technologies and solutions guided by
-        universal principles. Everything starts with core values. From ego to
-        love, from pyramids to equality, from marketing to transparency.
+        This process is based upon ancient leadership practices and modern social
+        science techniques as a way to consider all perspectives of the Members
+        in order to make decisions that are in the greatest interest of the Mission
+        and for the good of all.
       </p>
-
+      <h3>MISSION</h3>
       <p class="home_tf">
-        We stand by
-        <a href="https://www.freeflownation.org/" target="_blank">
-          FreeFlow Nation's
-        </a>
-        vision and manifesto. If you find yourself aligning with this collective
-        vision use the form below let us know more about you and let’s enable a
-        better world together!
+        Financially support consciously aligned do-good projects and organizations.
       </p>
-      <div class="text-center link_wrapper form_wrapper my-5">
-        <form on:submit|preventDefault={handleSubmit}>
+      <h3>MEMBERS</h3>
+      <p class="home_tf">
+        Wisdom Council Members are community leaders chosen by Founders Circle due
+        to their honorable integrity and exemplary service related to The Mission.
+        Structure and balance of Member Seats is based on one's personal role, strength,
+        purpose, archetypes and other respectful characteristics.
+      </p>
+      <h3>RESPONSIBILITY</h3>
+      <p class="home_tf">
+        Based upon the ageless principles of the Wisdom Council equation, Members
+        will converge (online or live when possible) to discuss and vote upon the
+        distribution of funds from ThreeFold Foundation to pre-approved and/or pre-selected
+        do-good projects and organizations.
+      </p>
+      <h3>PROCESS</h3>
+      <p class="home_tf">
+        The Wisdom Council members will be notified once per quarter as to the current
+        do-good requests and account financial status to decide when to meet and make
+        distribution decisions of how much, when and to whom the agreed funds go to.
+      </p>
 
-          <div class="firstRow">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Full Name"
-              required />
-            <input
-              type="text"
-              id="company"
-              name="company"
-              placeholder="Company Name"
-              required />
-          </div>
-          <input
-            type="text"
-            id="about"
-            name="about"
-            placeholder = "Tell us more about your project and how it serves the planet"
-            required />
 
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required />
-
-          <div class="checkDiv">
-            <input
-              type="checkbox"
-              id="freeflownation"
-              name="freeflownation"
-              value="freeflownation acceptance"
-              required />
-            <label for="freeflownation">
-              By continuing you agree to
-              <a href="https://www.freeflownation.org/" target="_blank">
-                <b>FreeFlow Nation</b>
-              </a>
-              values and manifesto
-            </label>
-          </div>
-
-          <div class="checkDiv">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              value="terms acceptance"
-              required />
-            <label for="terms">
-              By continuing you agree to our
-              <a
-                href="https://docs.google.com/document/u/1/d/e/2PACX-1vQi1xj_YnBd_NaW5BvSWwsfH0JC-1T5WWAL6QhE0SiPmcFT3GtmiiD09Z0gNookT45dHb9iSeyiNchq/pub"
-                target="_blank">
-                <b>Terms &amp; Conditions</b>
-              </a>
-              and
-              <a
-                href="https://docs.google.com/document/d/1SHLKJBdZHtGrb0p8OnfHUYsMtHPOf4sZPawpPWY8FtU/edit?usp=sharing"
-                target="_blank">
-                <b>Privacy Policy</b>
-              </a>
-            </label>
-          </div>
-
-          <div class="clear-both" />
-
-          <input type="submit" class="cta" value="Let's connect!" />
-        </form>
-      </div>
     </article>
   </div>
 </div>
