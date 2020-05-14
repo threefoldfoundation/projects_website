@@ -23,6 +23,13 @@ h2 {
     color: #3c3b3b !important;
 }
 
+ul.posts li{
+      border-top: dotted 1px rgba(160, 160, 160, 0) !important;
+      padding: 0.5em 0 0 0 !important;
+      margin: 0.5em 0 0 0 !important;
+}
+
+
 .posts img {
     height: auto;
     width: 75px;
