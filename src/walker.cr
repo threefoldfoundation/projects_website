@@ -305,7 +305,6 @@ get "/users/:name" do |env|
     <meta property="og:type"          content="article" />
     <meta property="og:title"         content="#{p.not_nil!.info.name.capitalize}" />
     <meta property="og:description"   content="" />
-    <meta property="og:image"         content="https://#{host}#{p.not_nil!.links.card_path}" />
     <meta property="og:video"         content="https://#{host}#{p.not_nil!.links.video}" />
     <meta property="og:video:width" content="600" />
     <meta property="og:video:height" content="315" />
