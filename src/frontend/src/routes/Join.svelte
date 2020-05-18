@@ -25,7 +25,6 @@
       <header>
         <div class="title">
           <h1>JOIN US</h1>
-
         </div>
       </header>
       <span class="image featured">
@@ -33,26 +32,33 @@
       </span>
 
       <p class="home_tf">
-        We are not meant to do anything alone. Creating a harmonic and healthy
-        Planet requires people coming together and joining forces with a single
-        vision of doing conscious business.
+        We are not meant to do anything alone.
+      </p>
+     <p class="home_tf">
+     Creating a harmonious and healthy Planet requires people coming together and
+     joining forces with a single vision of doing a conscious business.
       </p>
       <p class="home_tf">
-        Our world needs change! Together we can enable a new global peer-to-peer
-        economy of human and planet centric technologies and solutions guided by
-        universal principles. Everything starts with core values. From ego to
-        love, from pyramids to equality, from marketing to transparency.
+        Our world needs change!
+      </p>
+      <p class="home_tf">
+        TTogether we can enable a new global peer-to-peer economy of human and planet
+        centric technologies.
+      </p>
+      <p class="home_tf">
+      Everything starts with core values. From ego to love. From pyramids to equality.
+      From marketing to transparency.
       </p>
 
       <p class="home_tf">
-        We stand by
+        We follow
         <a href="https://www.freeflownation.org/" target="_blank">
           FreeFlow Nation's
         </a>
-        vision and manifesto. If you find yourself aligning with this collective
-        vision use the form below let us know more about you and let’s enable a
-        better world together!
+        vision and manifesto.
+        If you align with our collective vision join us and let’s enable a better world together!
       </p>
+
       <div class="text-center link_wrapper form_wrapper my-5">
         <form on:submit|preventDefault={handleSubmit}>
 
