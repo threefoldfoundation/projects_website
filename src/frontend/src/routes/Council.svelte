@@ -1,4 +1,8 @@
 <script>
+  import MiniUser from "../components/MiniUser.svelte";
+
+  export let users = [];
+  console.log(users);
   async function handleSubmit(event) {
     var body = {
       name: event.target.name.value,
@@ -37,37 +41,59 @@
         Wisdom Council system as a resource model of harmonious communication
       </p>
       <p class="home_tf">
-        This process is based upon ancient leadership practices and modern social
-        science techniques as a way to consider all perspectives of the Members
-        in order to make decisions that are in the greatest interest of the Mission
-        and for the good of all.
+        This process is based upon ancient leadership practices and modern
+        social science techniques as a way to consider all perspectives of the
+        Members in order to make decisions that are in the greatest interest of
+        the Mission and for the good of all.
       </p>
       <h3>MISSION</h3>
       <p class="home_tf">
-        Financially support consciously aligned do-good projects and organizations.
+        Financially support consciously aligned do-good projects and
+        organizations.
       </p>
       <h3>MEMBERS</h3>
       <p class="home_tf">
-        Wisdom Council Members are community leaders chosen by Founders Circle due
-        to their honorable integrity and exemplary service related to The Mission.
-        Structure and balance of Member Seats is based on one's personal role, strength,
-        purpose, archetypes and other respectful characteristics.
+        Wisdom Council Members are community leaders chosen by Founders Circle
+        due to their honorable integrity and exemplary service related to The
+        Mission. Structure and balance of Member Seats is based on one's
+        personal role, strength, purpose, archetypes and other respectful
+        characteristics.
       </p>
       <h3>RESPONSIBILITY</h3>
       <p class="home_tf">
-        Based upon the ageless principles of the Wisdom Council equation, Members
-        will converge (online or live when possible) to discuss and vote upon the
-        distribution of funds from ThreeFold Foundation to pre-approved and/or pre-selected
-        do-good projects and organizations.
+        Based upon the ageless principles of the Wisdom Council equation,
+        Members will converge (online or live when possible) to discuss and vote
+        upon the distribution of funds from ThreeFold Foundation to pre-approved
+        and/or pre-selected do-good projects and organizations.
       </p>
       <h3>PROCESS</h3>
       <p class="home_tf">
-        The Wisdom Council members will be notified once per quarter as to the current
-        do-good requests and account financial status to decide when to meet and make
-        distribution decisions of how much, when and to whom the agreed funds go to.
+        The Wisdom Council members will be notified once per quarter as to the
+        current do-good requests and account financial status to decide when to
+        meet and make distribution decisions of how much, when and to whom the
+        agreed funds go to.
       </p>
-
-
     </article>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="/" class="image d-block">
+            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
+          </a>
+        </div>
+
+        <div class="col-sm-4 ">
+          <a href="/" class="image d-block">
+            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="/" class="image d-block">
+            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
