@@ -123,6 +123,10 @@ h1 {
   margin: 0 0 0.5em 0 !important;
 }
 
+#sidebar h1 {
+  margin: 0 0 1.2em 0 !important;
+}
+
 h3 {
   margin: 0 0 0 0 !important;
   font-weight: 600 !important;
