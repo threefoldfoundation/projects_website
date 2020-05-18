@@ -18,7 +18,7 @@
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
   miniProjects = getRandomSlice($projects, 10);
   miniusersList = getRandomSlice($users, 5);
-  usersList = getUsers().slice(0, 3);
+  usersList = getUsers().slice(0, 5);
 
   $: if (params.tagname) { //watch the params.id for changes
       usersList = getUsers().slice(0, 3);

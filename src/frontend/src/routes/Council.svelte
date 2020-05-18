@@ -77,21 +77,30 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a href="/" class="image d-block">
             <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
           </a>
+          <h5 class="align-center">test</h5>
         </div>
 
-        <div class="col-sm-4 ">
+        <div class="col-sm-3 ">
           <a href="/" class="image d-block">
             <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
           </a>
+          <h5 class="align-center">test</h5>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a href="/" class="image d-block">
             <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
           </a>
+          <h5 class="align-center">test</h5>
+        </div>
+        <div class="col-sm-3">
+          <a href="/" class="image d-block">
+            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
+          </a>
+          <h5 class="align-center">test</h5>
         </div>
       </div>
     </div>
