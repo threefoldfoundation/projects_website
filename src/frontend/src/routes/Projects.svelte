@@ -14,7 +14,7 @@
   let projectsList = [];
   let filteredProjects = [];
   let page = 1,
-    addWith = 3
+    addWith = 5
 
 
 
@@ -23,7 +23,7 @@
   miniProjects = getRandomSlice($projects, 10);
 
    $: if (params.tagname) { //watch the params.id for changes
-      projectsList = getProjects().slice(0, 3);
+      projectsList = getProjects().slice(0, 5);
   }
 
 
@@ -61,7 +61,7 @@
     let btn_next = document.getElementById("btn_next");
     let len = getProjects().length;
 
-    let noPages = Math.ceil(len/3)
+    let noPages = Math.ceil(len/addWith)
 
     if (noPages > page){
       btn_next.classList.remove("disabled");

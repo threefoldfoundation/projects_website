@@ -13,7 +13,7 @@
     miniusersList = [];
   let usersList = [];
   let page = 1,
-    addWith = 3;
+    addWith = 5;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
   miniProjects = getRandomSlice($projects, 10);
@@ -21,7 +21,7 @@
   usersList = getUsers().slice(0, 5);
 
   $: if (params.tagname) { //watch the params.id for changes
-      usersList = getUsers().slice(0, 3);
+      usersList = getUsers().slice(0, 5);
   }
 
   function filterUsers(membership) {
@@ -57,7 +57,7 @@
     let btn_prev = document.getElementById("btn_prev");
     let btn_next = document.getElementById("btn_next");
     let len = getUsers().length;
-    let noPages = Math.ceil(len/3)
+    let noPages = Math.ceil(len/addWith)
 
     if (noPages > page){
       btn_next.classList.remove("disabled");
