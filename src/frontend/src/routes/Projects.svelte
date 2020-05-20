@@ -3,8 +3,8 @@
   import ProjectList from "../components/ProjectList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
-  import {getRandomSlice} from "../utils.js"
-  import { onMount } from 'svelte';
+  import { getRandomSlice } from "../utils.js";
+  import { onMount } from "svelte";
 
   animateScroll.scrollToTop();
 
@@ -14,19 +14,16 @@
   let projectsList = [];
   let filteredProjects = [];
   let page = 1,
-    addWith = 5
-
-
+    addWith = 5;
 
   let selected_users = getRandomSlice($users, 5);
   projectsList = getProjects().slice(0, 5);
-  miniProjects = getRandomSlice($projects, 10);
+  miniProjects = $projects;
 
-   $: if (params.tagname) { //watch the params.id for changes
-      projectsList = getProjects().slice(0, 5);
+  $: if (params.tagname) {
+    //watch the params.id for changes
+    projectsList = getProjects().slice(0, 5);
   }
-
-
 
   function filterProjects(category) {
     return $projects.filter(project =>
@@ -45,14 +42,20 @@
   function onNext() {
     page += 1;
     updatePage();
-    projectsList = getProjects().slice((page-1)*addWith, ((page-1)*addWith)+addWith);
+    projectsList = getProjects().slice(
+      (page - 1) * addWith,
+      (page - 1) * addWith + addWith
+    );
     animateScroll.scrollToTop();
   }
 
   function onPrevious() {
     page -= 1;
     updatePage();
-    projectsList = getProjects().slice((page-1)*addWith, ((page-1)*addWith)+addWith);
+    projectsList = getProjects().slice(
+      (page - 1) * addWith,
+      (page - 1) * addWith + addWith
+    );
     animateScroll.scrollToTop();
   }
 
@@ -61,24 +64,18 @@
     let btn_next = document.getElementById("btn_next");
     let len = getProjects().length;
 
-    let noPages = Math.ceil(len/addWith)
+    let noPages = Math.ceil(len / addWith);
 
-    if (noPages > page){
+    if (noPages > page) {
       btn_next.classList.remove("disabled");
-      if (page !== 1){
-          btn_prev.classList.remove("disabled");
+      if (page !== 1) {
+        btn_prev.classList.remove("disabled");
       }
-    }
+    } else if ((noPages = page)) btn_next.classList.add("disabled");
+    btn_prev.classList.remove("disabled");
 
-
-    else if (noPages = page)
-      btn_next.classList.add("disabled");
-      btn_prev.classList.remove("disabled");
-
-    if (page == 1)
-      btn_prev.classList.add("disabled");
+    if (page == 1) btn_prev.classList.add("disabled");
   }
-
 </script>
 
 <main>
