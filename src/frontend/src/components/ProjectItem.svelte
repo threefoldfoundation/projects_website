@@ -15,12 +15,13 @@
           <h3>{item.name}</h3>
 
           <div>
-            {item.info.description
+            {item.info.mission
               .split(' ')
               .slice(0, 20)
               .join(' ')}
+          <a href="#/projects/{item.name}">Learn more</a>
+
           </div>
-          <!-- <a href="#/projects/{item.name}">Learn more</a> -->
         </div>
       </header>
       <footer class="ml-auto">
