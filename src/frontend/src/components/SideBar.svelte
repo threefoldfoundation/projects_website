@@ -7,7 +7,6 @@
   import { alltags } from "../../store.js";
 
   export let miniProjects = [];
-  export let users = [];
 </script>
 
 <!-- Sidebar -->
