@@ -5,7 +5,7 @@
 </script>
 
 <div>
-  <a href="#/allprojects">ALL projects</a>
+  <a class="mb-2" href="#/allprojects">ALL projects</a>
   {#each projects as project}
     <Project {project} />
   {/each}

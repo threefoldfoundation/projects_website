@@ -3,7 +3,7 @@
   export let project;
 </script>
 
-<article class="post">
+<article class="post" style="top:15px;">
   <header>
     <div class="title">
       <h2 class="title2">
