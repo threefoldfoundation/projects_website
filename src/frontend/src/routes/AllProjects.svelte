@@ -1,0 +1,31 @@
+
+<script>
+  import { users, projects } from "../../store.js";
+  import AllProjectsList from "../components/AllProjectsList.svelte";
+  import SideBar from "../components/SideBar.svelte";
+  import * as animateScroll from "svelte-scrollto";
+  import {getRandomSlice} from "../utils.js"
+
+  let miniProjects = []
+  let miniusersList = []
+  let results = [];
+  let page = 1,
+    addWith = 200;
+
+  // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
+  miniProjects = getRandomSlice($projects, 5);
+  miniusersList = getRandomSlice($users, 5);
+  
+</script>
+
+<main>
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <AllProjectsList projects={$projects} />
+    </div>
+    <SideBar {miniProjects} users={miniusersList} />
+  </div>
+</main>

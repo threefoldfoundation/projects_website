@@ -43,6 +43,11 @@
 <MiniUserList {users} />
 {/if}
 
+{#if location.href.includes("#/allprojects")}
+<MiniUserList {users} />
+{/if}
+
+
   <!-- User List -->
 
   <!-- About -->
