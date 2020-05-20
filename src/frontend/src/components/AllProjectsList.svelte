@@ -4,8 +4,8 @@
   export let projects = [];
 </script>
 
-<div>
+<div class="row">
   {#each projects as item}
-    <ProjectItem item={item} />
+    <ProjectItem {item} />
   {/each}
 </div>

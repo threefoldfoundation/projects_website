@@ -6,6 +6,6 @@
 
 <div>
   {#each searchResults as item}
-    <SearchItem item={item} />
+    <SearchItem {item} />
   {/each}
 </div>

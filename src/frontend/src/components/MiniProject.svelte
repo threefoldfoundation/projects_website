@@ -3,7 +3,7 @@
 </script>
 
 <!-- Mini Post -->
-<article class="mini-post mb-1 col-sm-4">
+<article class="mini-post mb-1 col-sm-6">
   <!-- <header>
     <h3>
       <a href="#/projects/{miniProject.name}">{miniProject.name}</a>

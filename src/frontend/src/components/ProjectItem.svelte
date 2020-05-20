@@ -1,16 +1,42 @@
 <script>
   export let item;
+
+  console.log(item);
 </script>
 
-<article class="post search_result">
-  <header>
-    <div class="title">
-        <h3>{item.name}</h3>
-        <a class="author text-uppercase" href="#/projects/{item.name}">
-        <img src={item.links.image_path} alt="" />       
+<div class="col-sm-12">
+  <article class="post search_result row mb-4">
+    <div class="col-sm-3">
+      <a class="image featured" href="#/projects/{item.name}">
+        <img src={item.links.image_path} alt="" class="img-thumbnail" />
       </a>
-        <div>{item.info.description.split(" ").slice(0, 20).join(" ")}</div>
-        <a href="#/projects/{item.name}">...</a>
     </div>
-  </header>
-</article>
+    <div class="col-sm-9">
+      <header>
+        <div class="title">
+          <h3>{item.name}</h3>
+
+          <div>
+            {item.info.description
+              .split(' ')
+              .slice(0, 20)
+              .join(' ')}
+          </div>
+          <!-- <a href="#/projects/{item.name}">Learn more</a> -->
+        </div>
+      </header>
+      <footer class="ml-auto">
+        <ul class="stats">
+          {#each item.ecosystem.categories as category}
+            <li>
+              <a class="text-uppercase" href="#/projects/tags/{category}">
+                {category}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </footer>
+    </div>
+
+  </article>
+</div>
