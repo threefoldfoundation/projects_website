@@ -30,22 +30,8 @@
   <!-- Mini Projects -->
   
 
-{#if location.href.includes("#/projects")}
 <MiniProjectList {miniProjects} />  
-{/if}
 
-{#if location.href.includes("#/users")}
-  <MiniUserList {users} />
-{/if}
-
-{#if location.href.includes("#/search")}
-<MiniProjectList {miniProjects} />  
-<MiniUserList {users} />
-{/if}
-
-{#if location.href.includes("#/allprojects")}
-<MiniUserList {users} />
-{/if}
 
 
   <!-- User List -->
