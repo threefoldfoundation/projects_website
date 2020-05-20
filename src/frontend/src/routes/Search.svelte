@@ -5,7 +5,6 @@
   import SearchItem from "../components/SearchItem.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
-  import {getRandomSlice} from "../utils.js"
 
   export let params = {};
   
@@ -18,8 +17,8 @@
     addWith = 200;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = getRandomSlice($projects, 5);
-  miniusersList = getRandomSlice($users, 5);
+  miniProjects = $projects;
+  miniusersList = $users;
   
   $: if (params.keyword) { //watch the params.id for changes
       results = filter().slice(0, addWith);

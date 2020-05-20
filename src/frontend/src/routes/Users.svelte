@@ -3,7 +3,6 @@
   import UserList from "../components/UserList.svelte";
   import SideBar from "../components/SideBar.svelte";
   import * as animateScroll from "svelte-scrollto";
-  import {getRandomSlice} from "../utils.js"
 
   export let params = {};
 
@@ -15,9 +14,8 @@
   let page = 1,
     addWith = 5;
 
-  // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = getRandomSlice($projects, 10);
-  miniusersList = getRandomSlice($users, 5);
+  miniProjects = [];
+  miniusersList = $users;
   usersList = getUsers().slice(0, 5);
 
   $: if (params.tagname) { //watch the params.id for changes

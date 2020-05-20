@@ -13,8 +13,8 @@
     addWith = 200;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = getRandomSlice($projects, 5);
-  miniusersList = getRandomSlice($users, 5);
+  miniProjects = [];
+  miniusersList = $users;
   
 </script>
 
