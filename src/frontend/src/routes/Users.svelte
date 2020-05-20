@@ -99,6 +99,6 @@
       </ul>
 
     </div>
-    <SideBar {miniProjects} users={miniusersList} />
+    <SideBar users={miniusersList} />
   </div>
 </main>

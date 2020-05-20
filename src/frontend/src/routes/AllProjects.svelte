@@ -6,15 +6,13 @@
   import * as animateScroll from "svelte-scrollto";
   import {getRandomSlice} from "../utils.js"
 
-  let miniProjects = []
+  let miniProjects = $projects;
   let miniusersList = []
   let results = [];
   let page = 1,
     addWith = 200;
 
   // const shuffled_projects = $projects.sort(() => 0.5 - Math.random());
-  miniProjects = [];
-  miniusersList = $users;
   
 </script>
 
@@ -26,6 +24,6 @@
     <div id="main">
       <AllProjectsList projects={$projects} />
     </div>
-    <SideBar {miniProjects} users={miniusersList} />
+    <SideBar {miniProjects} />
   </div>
 </main>

@@ -7,6 +7,7 @@
   import { alltags } from "../../store.js";
 
   export let miniProjects = [];
+  export let users = [];
 </script>
 
 <!-- Sidebar -->
@@ -29,9 +30,13 @@
   <!-- Mini Projects -->
   
 
+
+{#if location.href.includes("#/users")}
+  <MiniUserList {users} />
+  {:else}
 <MiniProjectList {miniProjects} />  
 
-
+{/if}
 
   <!-- User List -->
 
