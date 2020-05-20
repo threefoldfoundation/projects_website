@@ -19,7 +19,6 @@
               .split(' ')
               .slice(0, 20)
               .join(' ')}
-          <a href="#/projects/{item.name}">Learn more</a>
 
           </div>
         </div>
