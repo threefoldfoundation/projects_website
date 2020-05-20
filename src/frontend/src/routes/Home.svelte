@@ -1,8 +1,5 @@
 
 <script>
-  console.log(location.href)
-  console.log(location.origin)
-
   if (location.pathname != "/"){
     location.href = "/"
   }

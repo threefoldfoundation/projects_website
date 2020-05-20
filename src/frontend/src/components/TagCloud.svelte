@@ -10,8 +10,6 @@ export let tags;
   );
 
   function getSelected(t){
-    console.log( t.indexOf("#/users/tags"))
-    console.log()
     var projectsIdx = t.indexOf("#/projects/tags")
     var peopleIdx = t.indexOf("#/users/tags")
     if (projectsIdx != -1)
