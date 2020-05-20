@@ -63,13 +63,6 @@
 
       {@html marked(project_data.pages[0].content)}
 
-      {#if project_data.info.mission}
-        <div class="content">
-          <h1>Mission:</h1>
-          <p>{project_data.info.mission}</p>
-        </div>
-      {/if}
-
       {#if project_data.milestones.length > 0}
         <div class="content">
           <h1>Milestones:</h1>
