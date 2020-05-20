@@ -23,7 +23,6 @@ export let tags;
   $: selected = getSelected(location.href)
 
   function tagSelected(evt){
-    console.log()
     selected = evt.target.innerText.toLowerCase()
   }
   

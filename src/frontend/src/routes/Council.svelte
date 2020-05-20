@@ -1,21 +1,7 @@
 <script>
-  import MiniUser from "../components/MiniUser.svelte";
+  import { users } from "../../store.js";
 
-  export let users = [];
-  console.log(users);
-  async function handleSubmit(event) {
-    var body = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      company: event.target.company.value,
-      about: event.target.about.value
-    };
-    let response = fetch(`${window.location.origin}/join`, {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: { "Content-Type": "application/json" }
-    }).then(a => alert("success"));
-  }
+  let councillors = $users.filter(user => user.ecosystem.memberships.includes("wisdomcouncil"));
 </script>
 
 <!-- Wrapper -->
@@ -76,32 +62,20 @@
     </article>
 
     <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <a href="/" class="image d-block">
-            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
-          </a>
-          <h5 class="align-center">test</h5>
-        </div>
 
-        <div class="col-sm-3 ">
-          <a href="/" class="image d-block">
-            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
+      <div class="row">
+       {#each councillors as c}
+         <div class="col-sm-3">
+          <a href="#/users/{c.name}" class="image d-block">
+          {#if c.links.image_path != ''}
+            <img class="mx-auto" src="{c.links.image_path}" alt="" />
+            {:else}
+            <img class="mx-auto" src="images/pic01.jpg" alt="" />
+            {/if}
           </a>
-          <h5 class="align-center">test</h5>
+          <h5 class="align-center">{c.name}</h5>
         </div>
-        <div class="col-sm-3">
-          <a href="/" class="image d-block">
-            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
-          </a>
-          <h5 class="align-center">test</h5>
-        </div>
-        <div class="col-sm-3">
-          <a href="/" class="image d-block">
-            <img class="mx-auto" src="https://via.placeholder.com/75" alt="" />
-          </a>
-          <h5 class="align-center">test</h5>
-        </div>
+      {/each}
       </div>
     </div>
   </div>
