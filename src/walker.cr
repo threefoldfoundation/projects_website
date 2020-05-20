@@ -96,6 +96,11 @@ def _walk(path : String = CURR_PATH)
                       if info.has_key?("description")
                         item.as(Project).info.description =  info["description"].as(String)
                       end
+
+                      if info.has_key?("name")
+                        item.as(Project).info.name =  info["name"].as(String)
+                        item.as(Project).name = info["name"].as(String)
+                      end
                       
                       info["team"].as(Array).each do |user|
                         item.as(Project).info.team.push user.as(String)
