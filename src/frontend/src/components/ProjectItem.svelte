@@ -18,7 +18,7 @@
             {item.info.mission
               .split(' ')
               .slice(0, 20)
-              .join(' ')} ...
+              .join(' ')} <a href="#/projects/{item.name}">...</a>
 
           </div>
         </div>
