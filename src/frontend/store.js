@@ -11,7 +11,7 @@ async function fetch_data(){
     let text = await response.text();
     let data = text;
     let obj = JSON.parse(data);
-    for (p of obj.projects) {
+    for (var p of obj.projects) {
         p.name = p.info.name
     }
     return { projects: obj.projects, users: obj.people };
