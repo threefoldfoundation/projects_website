@@ -763,7 +763,7 @@ ul.posts article .image {
 
 @media only screen and (min-width: 1200px) {
     .form_wrapper {
-        width: 75%;
+        width: 100%;
         margin: 0 auto;
     }
     .form_wrapper input[type="text"] {
