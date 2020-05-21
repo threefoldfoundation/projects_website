@@ -21,9 +21,9 @@
   <div id="main">
 
     <!-- Post -->
-    <article class="post_home text-center">
+    <article class="container text-dark">
       <header>
-        <div class="title">
+        <div class="title text-center">
           <h1>JOIN US</h1>
         </div>
       </header>
@@ -31,23 +31,19 @@
         <img src="images/join.png" alt="" />
       </span>
 
+      <p class="home_tf">We are not meant to do anything alone.</p>
       <p class="home_tf">
-        We are not meant to do anything alone.
+        Creating a harmonious and healthy Planet requires people coming together
+        and joining forces with a single vision of doing a conscious business.
       </p>
-     <p class="home_tf">
-     Creating a harmonious and healthy Planet requires people coming together and
-     joining forces with a single vision of doing a conscious business.
-      </p>
+      <p class="home_tf">Our world needs change!</p>
       <p class="home_tf">
-        Our world needs change!
-      </p>
-      <p class="home_tf">
-        TTogether we can enable a new global peer-to-peer economy of human and planet
-        centric technologies.
+        Together we can enable a new global peer-to-peer economy of human and
+        planet centric technologies.
       </p>
       <p class="home_tf">
-      Everything starts with core values. From ego to love. From pyramids to equality.
-      From marketing to transparency.
+        Everything starts with core values. From ego to love. From pyramids to
+        equality. From marketing to transparency.
       </p>
 
       <p class="home_tf">
@@ -55,8 +51,8 @@
         <a href="https://www.freeflownation.org/" target="_blank">
           FreeFlow Nation's
         </a>
-        vision and manifesto.
-        If you align with our collective vision join us and let’s enable a better world together!
+        vision and manifesto. If you align with our collective vision join us
+        and let’s enable a better world together!
       </p>
 
       <div class="text-center link_wrapper form_wrapper my-5">
@@ -80,7 +76,8 @@
             type="text"
             id="about"
             name="about"
-            placeholder = "Tell us more about your project and how it serves the planet"
+            placeholder="Tell us more about your project and how it serves the
+            planet"
             required />
 
           <input

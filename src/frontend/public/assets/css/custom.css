@@ -93,7 +93,6 @@ ul.posts li {
 .home_span {
     text-transform: capitalize;
     font-weight: bold;
-    color: #646464;
 }
 
 .home_tf {
@@ -489,6 +488,10 @@ body {
 .home_tf {
     font-size: 1.1em;
     font-family: "Raleway", Helvetica, sans-serif;
+}
+
+.home_tf a {
+    color: rgb(0, 80, 160);
 }
 
 .active {
