@@ -139,7 +139,7 @@ h3 {
 }
 
 header p {
-    font-size: 1.3em !important;
+    /* font-size: 1.3em !important; */
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
@@ -491,7 +491,8 @@ body {
 }
 
 .home_tf a {
-    color: rgb(0, 80, 160);
+    color: #2b7cbd;
+    font-weight: bold;
 }
 
 .active {
@@ -635,6 +636,10 @@ ul.posts article .image {
     margin: 0 0 0 2em;
     padding: 0 0 0 2em;
     text-transform: uppercase;
+}
+
+.display-4 {
+    font-size: 3rem !important;
 }
 
 
@@ -859,6 +864,9 @@ ul.posts article .image {
     }
     .post_home>header .title h2 {
         font-size: 1.1em;
+    }
+    h1 {
+        letter-spacing: 0 !important;
     }
 }
 
