@@ -17,8 +17,7 @@
           <img src="images/green-header2.png" alt="" />
         </span>
         <div class="col-sm-10 offset-sm-1">
-
-          <header class="text-center mb-5">
+          <header class="text-center mx-auto mb-5">
             <div class="title">
               <h1 class="text-uppercase my-3">conscious internet alliance</h1>
               <p class="font-weight-normal h3">
@@ -27,7 +26,6 @@
               </p>
             </div>
           </header>
-
           <p class="home_tf">
             We are
             <a href="http://threefold.io/" target="_blank">ThreeFold</a>

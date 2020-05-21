@@ -642,6 +642,20 @@ h1 {
     font-size: 2.5em !important;
 }
 
+.people img {
+    -moz-transition: -moz-transform 0.2s ease-out;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    -ms-transition: -ms-transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+}
+
+.people img:hover {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
 
 /*-- Responsive CSS --*/
 

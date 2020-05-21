@@ -1,7 +1,9 @@
 <script>
   import { users } from "../../store.js";
 
-  let councillors = $users.filter(user => user.ecosystem.memberships.includes("wisdomcouncil"));
+  let councillors = $users.filter(user =>
+    user.ecosystem.memberships.includes("wisdomcouncil")
+  );
 </script>
 
 <!-- Wrapper -->
@@ -64,18 +66,18 @@
     <div class="container">
 
       <div class="row">
-       {#each councillors as c}
-         <div class="col-sm-3">
-          <a href="#/users/{c.name}" class="image d-block">
-          {#if c.links.image_path != ''}
-            <img class="mx-auto" src="{c.links.image_path}" alt="" />
-            {:else}
-            <img class="mx-auto" src="images/pic01.jpg" alt="" />
-            {/if}
-          </a>
-          <h5 class="align-center">{c.name}</h5>
-        </div>
-      {/each}
+        {#each councillors as c}
+          <div class="col-sm-3 people">
+            <a href="#/users/{c.name}" class="image">
+              {#if c.links.image_path != ''}
+                <img class="img-thumbnail" src={c.links.image_path} alt="" />
+              {:else}
+                <img class="img-thumbnail" src="images/pic01.jpg" alt="" />
+              {/if}
+            </a>
+            <h5 class="align-center">{c.name}</h5>
+          </div>
+        {/each}
       </div>
     </div>
   </div>
