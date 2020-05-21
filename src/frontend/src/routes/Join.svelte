@@ -24,7 +24,7 @@
     <article class="container text-dark">
       <header>
         <div class="title text-center">
-          <h1>JOIN US</h1>
+          <h1 class="font-weight-bold">JOIN US</h1>
         </div>
       </header>
       <span class="image featured">
