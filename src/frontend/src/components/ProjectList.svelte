@@ -5,8 +5,10 @@
 </script>
 
 <div>
-  <a class="button float-right text-uppercase" href="#/allprojects">view all</a>
-  <div class="clear-both"></div>
+  <a class="button large float-right text-uppercase" href="#/allprojects">
+    view all
+  </a>
+  <div class="clear-both" />
   {#each projects as project}
     <Project {project} />
   {/each}
