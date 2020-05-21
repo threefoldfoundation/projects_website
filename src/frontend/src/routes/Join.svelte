@@ -76,8 +76,7 @@
             type="text"
             id="about"
             name="about"
-            placeholder="Tell us more about your project and how it serves the
-            planet"
+            placeholder="Tell us more about your project and how it serves the planet"
             required />
 
           <input
