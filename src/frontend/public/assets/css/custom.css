@@ -139,7 +139,7 @@ h3 {
 }
 
 header p {
-    /* font-size: 1.3em !important; */
+    font-size: 1.3em !important;
     text-transform: none !important;
     letter-spacing: normal !important;
     line-height: 1.5 !important;
@@ -638,8 +638,8 @@ ul.posts article .image {
     text-transform: uppercase;
 }
 
-.display-4 {
-    font-size: 3rem !important;
+h1 {
+    font-size: 2.5em !important;
 }
 
 
