@@ -13,16 +13,14 @@
     <!-- Post -->
     <article class="container font-weight-normal">
       <div class="row">
-
+        <span class="image featured">
+          <img src="images/green-header2.png" alt="" />
+        </span>
         <div class="col-sm-10 offset-sm-1">
-          <span class="image featured">
-            <img src="images/green-header2.png" alt="" />
-          </span>
-          <header class="text-center my-5">
+
+          <header class="text-center mb-5">
             <div class="title">
-              <h1 class="display-4 text-uppercase my-3">
-                conscious internet alliance
-              </h1>
+              <h1 class="text-uppercase my-3">conscious internet alliance</h1>
               <p class="font-weight-normal h3">
                 A collective and open ecosystem of planet and human centric
                 projects
