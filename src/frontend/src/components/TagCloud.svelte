@@ -2,8 +2,8 @@
 export let tags;
 
   let tags_category = "projects"
-  if(window.location.href.includes("users")){
-      tags_category = "users"
+  if(window.location.href.includes("people")){
+      tags_category = "people"
   }
   tags = tags.filter(t =>
       t.href.includes(tags_category)
@@ -43,9 +43,9 @@ export let tags;
      <li class="my-1"><a  on:click={tagSelected} class= "active" href="#/projects">ALL</a></li>
   {:else if tags_category == "projects"}
      <li class="my-1"><a   on:click={tagSelected} href="#/projects">ALL</a></li>
-  {:else if selected == "all" && tags_category == "users"}
+  {:else if selected == "all" && tags_category == "people"}
   <li class="my-1"><a  on:click={tagSelected}  class= "active" href="#/people">ALL</a></li>
-  {:else if tags_category == "users"}
+  {:else if tags_category == "people"}
   <li class="my-1"><a  on:click={tagSelected} href="#/people">ALL</a></li>
   {/if}
 </ul>
