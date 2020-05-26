@@ -284,7 +284,7 @@ get "/projects/:name" do |env|
 end
 
 
-get "/users/:name" do |env|
+get "/people/:name" do |env|
   WEBSITES.projects.clear
   WEBSITES.people.clear
   _walk 
@@ -305,7 +305,7 @@ get "/users/:name" do |env|
 <html>
   <head>
     <title>Concious Internet Alliance</title>
-    <meta property="og:url"           content="https://#{host}/users/#{name}"/>
+    <meta property="og:url"           content="https://#{host}/people/#{name}"/>
     <meta property="og:type"          content="article" />
     <meta property="og:title"         content="#{p.not_nil!.info.name.capitalize}" />
     <meta property="og:description"   content="" />
@@ -316,7 +316,7 @@ get "/users/:name" do |env|
 </html>
 )
   else
-    env.redirect "/#/users/#{name}"
+    env.redirect "/#/people/#{name}"
   end
 
 end

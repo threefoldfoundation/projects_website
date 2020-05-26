@@ -2,7 +2,7 @@
   import { link } from "svelte-spa-router";
 
   function getActive(t) {
-    if (t.includes("#/users") || t == "PEOPLE") {
+    if (t.includes("#/people") || t == "PEOPLE") {
       return "people";
     } else if (t.includes("#/projects") || t == "PROJECTS") {
       return "projects";
@@ -55,9 +55,9 @@
       </li>
       <li>
         {#if active == 'people'}
-          <a class="active" href="#/users" on:click={linkClick}>People</a>
+          <a class="active" href="#/people" on:click={linkClick}>People</a>
         {:else}
-          <a href="#/users" on:click={linkClick}>People</a>
+          <a href="#/people" on:click={linkClick}>People</a>
         {/if}
       </li>
        <li>

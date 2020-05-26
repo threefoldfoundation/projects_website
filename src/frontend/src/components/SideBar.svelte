@@ -31,7 +31,7 @@
   
 
 
-{#if location.href.includes("#/users")}
+{#if location.href.includes("#/people")}
   <MiniUserList {users} />
   {:else}
 <MiniProjectList {miniProjects} />  

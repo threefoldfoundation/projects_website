@@ -41,7 +41,7 @@ fetch_data().then((data)=>{
     })
 
     user_tags.forEach(function(t){
-        all_tags.push({"href": "#/users/tags/"+t, "name": t})
+        all_tags.push({"href": "#/people/tags/"+t, "name": t})
     })
 
     project_tags.forEach(function(t){

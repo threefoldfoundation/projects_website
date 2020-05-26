@@ -68,7 +68,7 @@
       <div class="row">
         {#each councillors as c}
           <div class="col-sm-3 people">
-            <a href="#/users/{c.name}" class="image">
+            <a href="#/peoople/{c.name}" class="image">
               {#if c.links.image_path != ''}
                 <img class="img-thumbnail" src={c.links.image_path} alt="" />
               {:else}

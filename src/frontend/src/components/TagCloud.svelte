@@ -11,7 +11,7 @@ export let tags;
 
   function getSelected(t){
     var projectsIdx = t.indexOf("#/projects/tags")
-    var peopleIdx = t.indexOf("#/users/tags")
+    var peopleIdx = t.indexOf("#/people/tags")
     if (projectsIdx != -1)
       return t.substring(projectsIdx+16)
     else if (peopleIdx != -1)
@@ -44,8 +44,8 @@ export let tags;
   {:else if tags_category == "projects"}
      <li class="my-1"><a   on:click={tagSelected} href="#/projects">ALL</a></li>
   {:else if selected == "all" && tags_category == "users"}
-  <li class="my-1"><a  on:click={tagSelected}  class= "active" href="#/users">ALL</a></li>
+  <li class="my-1"><a  on:click={tagSelected}  class= "active" href="#/people">ALL</a></li>
   {:else if tags_category == "users"}
-  <li class="my-1"><a  on:click={tagSelected} href="#/users">ALL</a></li>
+  <li class="my-1"><a  on:click={tagSelected} href="#/people">ALL</a></li>
   {/if}
 </ul>

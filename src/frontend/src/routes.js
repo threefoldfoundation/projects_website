@@ -9,7 +9,6 @@ import Join from './routes/Join.svelte'
 import Council from "./routes/Council.svelte"
 import ProjectDetails from './routes/ProjectDetails.svelte'
 import UserDetails from './routes/UserDetails.svelte'
-import AllProjects from './routes/AllProjects.svelte'
 import Error from './routes/Error.svelte'
 import * as animateScroll from "svelte-scrollto";
 animateScroll.scrollToTop()
@@ -23,14 +22,13 @@ if (!urlParams.has('routemap')) {
         '/': Home,
         '/projects': Projects,
         '/projects/tags/:tagname': Projects,
-        '/users': Users,
-        '/users/tags/:tagname': Users,
+        '/people': Users,
+        '/people/tags/:tagname': Users,
         '/projects/:name': ProjectDetails, 
-        '/users/:name': UserDetails,
+        '/people/:name': UserDetails,
         '/search/:keyword': Search,
         '/join': Join,
         '/council': Council,
-        '/allprojects': AllProjects,
         '/error': Error
 
         // // Using named parameters, with last being optional
@@ -48,11 +46,11 @@ if (!urlParams.has('routemap')) {
     // Exact path
     routes.set('/', Home)
     routes.set('/projects', Projects)
-    routes.set('/users', Users)
+    routes.set('/people', Users)
     routes.set( '/projects/tags/:tagname', Projects)
-    routes.set( '/users/tags/:tagname', Users)
+    routes.set( '/people/tags/:tagname', Users)
     routes.set('/projects/:name', ProjectDetails)
-    routes.set('/users/:name', UserDetails)
+    routes.set('/people/:name', UserDetails)
     routes.set('/search/:keyword', Search)
     routes.set('/join', Join)
     routes.set('/council', Council)

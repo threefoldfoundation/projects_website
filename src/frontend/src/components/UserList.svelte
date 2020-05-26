@@ -4,7 +4,7 @@
   export let users = [];
 </script>
 
-<div>
+<div class="row">
   {#each users as user}
     <User {user} />
   {/each}

@@ -206,7 +206,7 @@
           <ul class="stats">
             {#each user_data.ecosystem.memberships as membership}
               <li>
-                <a href="#/users/tags/{membership}">{membership}</a>
+                <a href="#/people/tags/{membership}">{membership}</a>
               </li>
             {/each}
           </ul>
