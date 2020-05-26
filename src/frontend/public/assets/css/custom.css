@@ -539,10 +539,11 @@ input[type="checkbox"]+label {
     color: #646464;
 }
 
-.search_result {
+
+/* .search_result {
     padding: 3em !important;
     padding-bottom: 1em !important;
-}
+} */
 
 .search_result>header {
     margin: 0 !important;

@@ -3,9 +3,9 @@
 </script>
 
 <div class="col-sm-12">
-  <article class="post search_result row mb-4">
+  <article class="post search_result row p-3 mb-4">
     <div class="col-sm-3">
-      <a class="image featured" href="#/projects/{item.name}">
+      <a class="image featured mb-0" href="#/projects/{item.name}">
         <img src={item.links.image_path} alt="" class="img-thumbnail" />
       </a>
     </div>
