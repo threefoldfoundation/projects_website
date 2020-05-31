@@ -2,7 +2,7 @@
   export let user;
 
   function formatUser() {
-    return user.name.replace("_", " ");
+    return user.name.replace(/_/g, " ");
   }
 </script>
 

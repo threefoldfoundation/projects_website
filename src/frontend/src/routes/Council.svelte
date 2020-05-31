@@ -6,7 +6,7 @@
   );
 
   function formatUser(user) {
-    return user.name.replace("_", " ");
+    return user.name.replace(/_/g, " ");
   }
 </script>
 
