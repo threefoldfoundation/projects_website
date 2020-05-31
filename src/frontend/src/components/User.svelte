@@ -1,5 +1,9 @@
 <script>
   export let user;
+
+  function formatUser() {
+    return user.name.replace("_", " ");
+  }
 </script>
 
 <div class="col-sm-12">
@@ -12,14 +16,13 @@
     <div class="col-sm-9">
       <header>
         <div class="title">
-          <h3>{user.name}</h3>
+          <h3>{formatUser()}</h3>
 
           <div>
             {user.info.bio
               .split(' ')
               .slice(0, 20)
               .join(' ')} .....
-
           </div>
         </div>
       </header>
