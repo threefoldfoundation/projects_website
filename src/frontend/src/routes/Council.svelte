@@ -4,6 +4,10 @@
   let councillors = $users.filter(user =>
     user.ecosystem.memberships.includes("wisdomcouncil")
   );
+
+  function formatUser(user) {
+    return user.name.replace("_", " ");
+  }
 </script>
 
 <!-- Wrapper -->
@@ -75,7 +79,7 @@
                 <img class="img-thumbnail" src="images/pic01.jpg" alt="" />
               {/if}
             </a>
-            <h5 class="align-center">{c.name}</h5>
+            <h5 class="align-center">{formatUser(c)}</h5>
           </div>
         {/each}
       </div>
