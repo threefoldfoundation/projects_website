@@ -8,9 +8,9 @@
   const url = window.location.href;
   let current_project = url
     .substring(url.lastIndexOf("/") + 1)
-    .replace("%20", " ");
+    .split("%20").join(" ");
 
-  let project_data = $projects.find(
+let project_data = $projects.find(
     project => project["name"] == current_project
   );
   function findTeam(team) {
