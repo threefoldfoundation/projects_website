@@ -67,7 +67,7 @@
       <img src={user_data.links.image_path} alt="" class="img-thumbnail" />
     </div>
     <div class="offset-sm-1 col-sm-6">
-      <h1 class="h1 font-weight-bold text-capitalize">{user_data.info.name}</h1>
+      <h1 class="h1 font-weight-bold">{user_data.info.name}</h1>
       <p class="lead">{user_data.info.bio}</p>
       <div
         class="button large text-uppercase cta vpop"
