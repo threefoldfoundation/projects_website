@@ -9,6 +9,11 @@ h2 {
     line-height: 1 !important;
 }
 
+
+#wrapper{
+
+  width: 80em !important;
+}
 .button.large a:visited {
     color: rgb(142, 216, 190) !important;
 }
@@ -115,7 +120,7 @@ ul.posts li {
 }
 
 h1 {
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     letter-spacing: 0.1em !important;
     margin: 0 0 0.5em 0 !important;
 }

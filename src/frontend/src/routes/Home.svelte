@@ -13,19 +13,20 @@
     <!-- Post -->
     <article class="container font-weight-normal">
       <div class="row">
+      <header class="text-center mx-auto mb-2">
+        <div class="title">
+          <h1 class="text-uppercase my-3">conscious internet alliance</h1>
+          <p class="font-weight-normal h3">
+            A collective and open ecosystem of planet and human centric
+            projects
+          </p>
+        </div>
+      </header>
         <span class="image featured">
           <img src="images/green-header2.png" alt="" />
         </span>
         <div class="col-sm-10 offset-sm-1">
-          <header class="text-center mx-auto mb-5">
-            <div class="title">
-              <h1 class="text-uppercase my-3">conscious internet alliance</h1>
-              <p class="font-weight-normal h3">
-                A collective and open ecosystem of planet and human centric
-                projects
-              </p>
-            </div>
-          </header>
+
           <p class="home_tf">
             We are
             <a href="http://threefold.io/" target="_blank">ThreeFold</a>
