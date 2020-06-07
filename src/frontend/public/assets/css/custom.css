@@ -8,8 +8,9 @@ h2 {
     letter-spacing: 0.175em !important;
     line-height: 1 !important;
 }
-
-
+h1{
+  color: #307960 !important;
+}
 #wrapper{
 
   width: 80em !important;
@@ -111,7 +112,7 @@ ul.posts li {
 }
 
 .icons li a {
-    color: #3c3b3b !important;
+    color: #227B5C !important;
 }
 
 .test_size {
@@ -217,7 +218,7 @@ body {
 }
 
 #sidebar .stats li a {
-    background-color: #fff;
+    background-color: #eef5f3;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 3px;
@@ -476,6 +477,11 @@ body {
     visibility: hidden;
     z-index: -1111;
 }
+
+.post{
+  background: #eef5f3 !important;
+}
+
 
 .post>header .title h1 {
     font-size: 2.2em !important;

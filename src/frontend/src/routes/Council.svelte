@@ -23,9 +23,9 @@
           <h1>WISDOM COUNCIL</h1>
         </div>
       </header>
-      <!-- <span class="image featured">
-        <img src="images/join.png" alt="" />
-      </span> -->
+      <span class="image featured">
+        <img src="images/wisdom.png" alt="" />
+      </span>
 
       <p class="home_tf">
         In order to make balanced, fair and effective decisions regarding Three
