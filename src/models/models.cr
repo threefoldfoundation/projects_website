@@ -74,10 +74,11 @@ class ProjectInfo
         countries: Array(Country),
         cities: Array(City),
         mission: String,
-        description: String
+        description: String,
+        rank: Int64
     )
 
-    def initialize(@name="", @team=Array(String).new, @cities=Array(City).new, @countries=Array(Country).new, @mission="", @description="");end
+    def initialize(@name="", @team=Array(String).new, @cities=Array(City).new, @countries=Array(Country).new, @mission="", @description="", @rank=1_i64);end
 
 end
 
@@ -179,5 +180,4 @@ class Websites
         people: Array(User) ,
     )
     def initialize (@projects=Array(Project).new, @people=Array(User).new); end
-
 end

@@ -6,6 +6,12 @@ let project_tags = []
 let user_tags = []
 let all_tags = []
 
+function compare(a, b) {
+    if (a.info.rank > b.info.rank) return -1;
+    if (b.info.rank < a.info.rank) return 1;
+    return 0;
+}
+
 async function fetch_data(){
     let response = await fetch(`${window.location.origin}/data`);
     let text = await response.text();
@@ -14,12 +20,13 @@ async function fetch_data(){
     for (var p of obj.projects) {
         p.name = p.info.name
     }
-    return { projects: obj.projects, users: obj.people };
+    return { projects: obj.projects.sort(compare), users: obj.people };
 }
 
 fetch_data().then((data)=>{
     fetched_users = data['users']
     fetched_projects = data['projects']
+    console.log(fetched_projects)
     users.set(fetched_users)
     projects.set(fetched_projects)
     loading.set(false)
