@@ -98,7 +98,16 @@ def _walk(path : String = CURR_PATH)
                       end
 
                       if info.has_key?("rank")
-                        item.as(Project).info.rank =  info["rank"].as(Int64)
+                        rank : Int64 = info["rank"].as(Int64)
+                        if rank > 5_64
+                          rank = 5_64
+                        end
+
+                        if rank < 1_64
+                          rank = 1_64
+                        end
+
+                        item.as(Project).info.rank =  rank
                       end
 
                       if info.has_key?("name")
