@@ -2,6 +2,12 @@
   export let item;
 </script>
 
+<style>
+  h3 {
+    text-transform: none;
+  }
+</style>
+
 <div class="col-sm-12">
   <article class="post search_result row p-3 mb-4">
     <div class="col-sm-3">
@@ -19,7 +25,6 @@
               .split(' ')
               .slice(0, 20)
               .join(' ')} .....
-
           </div>
         </div>
       </header>

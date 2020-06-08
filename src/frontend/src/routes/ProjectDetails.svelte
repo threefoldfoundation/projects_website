@@ -8,9 +8,10 @@
   const url = window.location.href;
   let current_project = url
     .substring(url.lastIndexOf("/") + 1)
-    .split("%20").join(" ");
+    .split("%20")
+    .join(" ");
 
-let project_data = $projects.find(
+  let project_data = $projects.find(
     project => project["name"] == current_project
   );
   function findTeam(team) {
@@ -28,6 +29,13 @@ let project_data = $projects.find(
   let pageUrl = location.origin + location.hash.replace("#", "");
 </script>
 
+<style>
+  /* your styles go here */
+  h2 {
+    text-transform: none;
+  }
+</style>
+
 <!-- Wrapper -->
 
 <div id="wrapper">
@@ -38,9 +46,7 @@ let project_data = $projects.find(
     <article class="post">
       <header>
         <div class="title">
-          <h2>
-            {project_data['name']}
-          </h2>
+          <h2>{project_data['name']}</h2>
         </div>
         <!-- <div class="meta">
           <time class="published" datetime="2015-11-01">November 1, 2015</time>
