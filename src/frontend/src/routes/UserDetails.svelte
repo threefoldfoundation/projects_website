@@ -18,7 +18,7 @@
     });
     return res;
   }
-
+  console.log($users);
   let userProjects = findProjects(user_data.info.name);
   let pageUrl = location.origin + location.hash.replace("#", "");
 
@@ -69,13 +69,15 @@
     <div class="offset-sm-1 col-sm-6">
       <h1 class="h1 font-weight-bold">{user_data.info.name}</h1>
       <p class="lead">{user_data.info.bio}</p>
-      <div
-        class="button large text-uppercase cta vpop"
-        on:click|preventDefault={openVideo}
-        data-autoplay="true">
-        Message from {firstName()}
-        <i class="fas fa-play" />
-      </div>
+      {#if user_data.links.video}
+        <div
+          class="button large text-uppercase cta vpop"
+          on:click|preventDefault={openVideo}
+          data-autoplay="true">
+          Message from {firstName()}
+          <i class="fas fa-play" />
+        </div>
+      {/if}
       <div class="data mt-1">
         {#if user_data.info.companies.length > 0}
           <span class="font-weight-bold text-capitalize">
