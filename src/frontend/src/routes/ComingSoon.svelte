@@ -23,7 +23,7 @@
     letter-spacing: 3px;
   }
   #wrapper h3 span {
-    font-size: 5rem;
+    font-size: 4rem;
     letter-spacing: 1px;
     line-height: 1;
   }
