@@ -9,8 +9,7 @@ targets:
     main: src/walker.cr
 dependencies:
   kemal:
-    git: https://github.com/kemalcr/kemal.git
-    commit: a8c0f09b858162bd13c96663febef5527b322a32
+    github: kemalcr/kemal
   spec-kemal:
     github: kemalcr/spec-kemal
   toml:
