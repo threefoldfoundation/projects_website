@@ -1,7 +1,7 @@
 import Err403 from './routes/Err403.svelte'
 import ComingSoon from './routes/ComingSoon.svelte'
-import Home from './routes/Home.svelte'
 import Projects from './routes/Projects.svelte'
+import Home from './routes/Home.svelte'
 import Users from './routes/Users.svelte'
 import Search from './routes/Search.svelte'
 import Join from './routes/Join.svelte'
@@ -32,9 +32,12 @@ function logged_in(details) {
     previousPage.set(page)
     if (encrypted != 'cc989606b586f33918fe0552dec367c8')
         window.location.href = "#/403"
-    else
+    else{
         return true
+    }
 }
+
+
 
 const urlParams = new URLSearchParams(window.location.search)
 if (!urlParams.has('routemap')) {
@@ -80,4 +83,11 @@ if (!urlParams.has('routemap')) {
     routes.set('/error', Error)
     routes.set('/403', Err403)
 }
+
+$: {
+    if (encrypted == 'cc989606b586f33918fe0552dec367c8'){
+        routes['/'] = Home
+    }
+}
+
 export default routes

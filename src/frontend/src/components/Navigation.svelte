@@ -1,5 +1,6 @@
 <script>
   import { link } from "svelte-spa-router";
+  import { password } from "../../store.js";
 
   function getActive(t) {
     if (t.includes("#/people") || t == "PEOPLE") {
@@ -22,6 +23,8 @@
     var t = evt.target.innerText;
     active = getActive(t);
   }
+
+
 </script>
 
 <!-- Header -->
@@ -36,9 +39,11 @@
   <label for="toggle-btn" class="show-menu-btn">
     <i class="fas fa-bars" />
   </label>
-
+      {#if  $password == 'cc989606b586f33918fe0552dec367c8' }
+  
   <nav class="d-inline-block">
     <ul class="navigation">
+
       <li>
         {#if active == 'home'}
           <a class="active" href="#/" on:click={linkClick}>Home</a>
@@ -91,4 +96,6 @@
       </li>
     </ul>
   </nav>
+      {/if}
+
 </header>

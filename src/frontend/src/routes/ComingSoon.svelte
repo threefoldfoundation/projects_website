@@ -59,7 +59,24 @@
     width: 120px !important;
   }
 </style>
+<script>
+import {Md5} from "md5-typescript";
+import {password} from "../../store.js";
 
+let encrypted;
+
+password.subscribe(value => {encrypted = value;});
+
+$: psswd = ''
+$: {
+  encrypted = Md5.init(psswd)
+
+  if(encrypted == 'cc989606b586f33918fe0552dec367c8'){
+    password.set(encrypted)
+    window.location.href = "/"
+  }
+}
+</script>
 <div id="wrapper">
   <div class="overlay" />
   <!-- Main -->
@@ -92,7 +109,7 @@
             class="form-control"
             id="inputPassword2"
             aria-describedby="passwordHelpBlock"
-            placeholder="Enter secret code" />
+            placeholder="Enter secret code" bind:value={psswd}/>
         </div>
         
       </form>
