@@ -94,7 +94,7 @@
             aria-describedby="passwordHelpBlock"
             placeholder="Enter secret code" />
         </div>
-        <button type="button" class="button text-uppercase cta">Enter</button>
+        
       </form>
       <small id="passwordHelpBlock" class="form-text text-muted">
         If you don't have your secret code yet
