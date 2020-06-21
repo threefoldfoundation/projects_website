@@ -15,9 +15,9 @@
       <div class="row">
       <header class="text-center mx-auto mb-2">
         <div class="title">
-          <h1 class="text-uppercase my-3">conscious internet alliance</h1>
+          <h1 class="text-uppercase my-3">The Alliance for a Conscious Internet</h1>
           <p class="font-weight-normal h3">
-            A collective and open ecosystem of planet and human centric
+            A collective ecosystem of planet and human centric
             projects
           </p>
         </div>

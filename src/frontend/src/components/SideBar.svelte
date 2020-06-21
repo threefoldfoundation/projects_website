@@ -14,15 +14,13 @@
 <section id="sidebar">
   <!-- Intro -->
   <section id="intro">
-    <!-- <a href="/" class="logo">
-      <img src="images/logo.png" alt="" />
-    </a> -->
-    <header>
-      <h1>Conscious Internet Alliance</h1>
-      <p>
-        
-      </p>
-    </header>
+     <a href="/" class="logo">
+      <img src="images/titl_logo-cuts.png" alt="" />
+    </a>
+    <!-- <header>
+    <img src="images/titl_logo.png" alt="" />
+
+    </header> -->
   </section>
 
   <TagCloud tags={$alltags} />

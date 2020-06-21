@@ -30,8 +30,8 @@
 <!-- Header -->
 <header id="header">
   <div class="brand-logo">
-    <a href="https://threefold.io/" target="_blank">
-      <img src="/images/TFN.svg" alt="" />
+    <a href="#">
+      <img src="/images/aci-logo-small.png" alt="" />
     </a>
   </div>
 

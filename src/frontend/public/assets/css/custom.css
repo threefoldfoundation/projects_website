@@ -343,6 +343,7 @@ body {
 
 .text-uppercase {
     text-transform: uppercase !important;
+
 }
 
 * {
@@ -374,7 +375,7 @@ body {
 
 .brand-logo {
     display: inline-block;
-    padding-top: 0.3125rem;
+    padding-top: 0.5rem;
     padding-bottom: 0.3125rem;
     margin-right: 1rem;
     font-size: 1.25rem;
@@ -390,7 +391,7 @@ body {
 }
 
 .brand-logo img {
-    max-width: 100%;
+    max-width: 75%;
 }
 
 .navigation {
@@ -624,6 +625,14 @@ ul.posts article .image {
     transform: scale(1.05);
 }
 
+#intro .logo {
+    display: inline !important;
+}
+
+#intro .logo img{
+    width: 17.5em !important;
+}
+
 .post ul {
     list-style: none;
     margin: 0;
@@ -650,7 +659,7 @@ ul.posts article .image {
 }
 
 .title h1 {
-    font-size: 2.5em !important;
+    font-size: 2.3em !important;
 }
 
 .people img {
