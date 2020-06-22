@@ -31,7 +31,7 @@
 <header id="header">
   <div class="brand-logo">
     <a href="#">
-      <img src="/images/aci-logo-small.png" alt="" />
+      <img src="/images/ACI_ABR-LOGO.svg" alt="" />
     </a>
   </div>
 

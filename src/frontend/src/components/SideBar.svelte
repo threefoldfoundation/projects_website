@@ -15,7 +15,7 @@
   <!-- Intro -->
   <section id="intro">
      <a href="/" class="logo">
-      <img src="images/titl_logo-cuts.png" alt="" />
+      <img src="images/ACI_LOGOTYPE.svg" alt="" />
     </a>
     <!-- <header>
     <img src="images/titl_logo.png" alt="" />

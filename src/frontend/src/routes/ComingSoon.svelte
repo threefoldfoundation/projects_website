@@ -20,7 +20,8 @@
   #wrapper h3 {
     font-size: 1.75rem;
     line-height: 1;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
   }
   #wrapper h3 span {
     font-size: 4rem;
@@ -49,6 +50,7 @@
 
   .form-text {
     display: inline-block;
+    font-size: .9em;
   }
 
   small {
@@ -96,8 +98,7 @@ $: {
       <div class="row">
         <div class="col-sm-4">
           <p class="coming_soon text-capitalize my-5">
-            A collective and open ecosystem of planet and human centric projects
-            forming a new internet
+            A collective ecosystem of planet and human centric projects co-creating a new peer-to-peer internet
           </p>
         </div>
       </div>
@@ -114,10 +115,10 @@ $: {
         
       </form>
       <small id="passwordHelpBlock" class="form-text text-muted">
-        If you don't have your secret code yet
+        If you don't have your secret code yet please
         <br />
-        please contact
-        <a class="mail" href="mailto:info@threefold.io">info@threefold.io</a>
+         contact
+        <a class="mail" href="mailto:contact@consciousinternet.org ">contact@consciousinternet.org </a>
       </small>
     </div>
   </div>
