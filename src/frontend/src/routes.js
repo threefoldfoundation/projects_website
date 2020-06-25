@@ -32,7 +32,7 @@ function logged_in(details) {
     previousPage.set(page)
     if (encrypted != 'cc989606b586f33918fe0552dec367c8')
         window.location.href = "#/403"
-    else{
+    else {
         return true
     }
 }
@@ -43,16 +43,16 @@ const urlParams = new URLSearchParams(window.location.search)
 if (!urlParams.has('routemap')) {
     routes = {
         // Exact path
-        '/': ComingSoon,
-        '/projects': wrap(Projects, logged_in),
-        '/projects/tags/:tagname': wrap(Projects, logged_in),
-        '/people': wrap(Users, logged_in),
-        '/people/tags/:tagname': wrap(Users, logged_in),
-        '/projects/:name': wrap(ProjectDetails, logged_in),
-        '/people/:name': wrap(UserDetails, logged_in),
-        '/search/:keyword': wrap(Search, logged_in),
-        '/join': wrap(Join, logged_in),
-        '/council': wrap(Council, logged_in),
+        '/': Home,
+        '/projects': wrap(Projects),
+        '/projects/tags/:tagname': wrap(Projects),
+        '/people': wrap(Users),
+        '/people/tags/:tagname': wrap(Users),
+        '/projects/:name': wrap(ProjectDetails),
+        '/people/:name': wrap(UserDetails),
+        '/search/:keyword': wrap(Search),
+        '/join': wrap(Join),
+        '/council': wrap(Council),
         '/error': Error,
         '/403': Err403
 
@@ -69,7 +69,7 @@ if (!urlParams.has('routemap')) {
 } else {
     routes = new Map()
         // Exact path
-    routes.set('/', ComingSoon)
+    routes.set('/', Home)
     routes.set('/projects', Projects)
     routes.set('/people', Users)
     routes.set('/projects/tags/:tagname', Projects)
@@ -84,10 +84,10 @@ if (!urlParams.has('routemap')) {
     routes.set('/403', Err403)
 }
 
-$: {
-    if (encrypted == 'cc989606b586f33918fe0552dec367c8'){
-        routes['/'] = Home
-    }
-}
+// $: {
+//     if (encrypted == 'cc989606b586f33918fe0552dec367c8') {
+//         routes['/'] = Home
+//     }
+// }
 
 export default routes
