@@ -15,9 +15,9 @@
       <div class="row">
       <header class="text-center mx-auto mb-2">
         <div class="title">
-          <h1 class="text-uppercase my-3">conscious internet alliance</h1>
+          <h1 class="text-uppercase my-3">The Alliance for a Conscious Internet</h1>
           <p class="font-weight-normal h3">
-            A collective and open ecosystem of planet and human centric
+            A collective ecosystem of planet and human centric
             projects
           </p>
         </div>
@@ -28,43 +28,38 @@
         <div class="col-sm-10 offset-sm-1">
 
           <p class="home_tf">
-            We are
+            It all started with
             <a href="http://threefold.io/" target="_blank">ThreeFold</a>
-            and we have built a bridge to a new peer-to-peer internet. Internet
-            that empowers equality, autonomy and sustainability.
+            a conscious tech company that saw the need for a new peer-to-peer 
+            internet to empower equality (access), autonomy (data ownership), and sustainability (less energy), and acted on it.
           </p>
           <p class="home_tf">
-            As we launch the
+            ThreeFold built an open source technology, a
             <a href="https://threefold.io/capacity.html" target="_blank">
               Grid
             </a>
-            and other experiences on top, the time has come for us to cross over
-            to the decentralized world of peer-to-peer.
+            of decentralized storage and compute capacity. It created a digital currency, a
+            <a href="https://threefold.io/token.html" target="_blank">Token</a>
+            , that represents a unit of reservation of that capacity and serves as a fair and trustworthy medium of exchange on the new peer-to-peer internet..
           </p>
 
           <p class="home_tf">
-            A decentralized peer-to-peer world would be incomplete without
-            <a href="https://threefold.io/token.html" target="_blank">
-              ThreeFold Token
-            </a>
-            - a purpose driven decentralized digital currency serving as a fair
-            and trustworthy medium of exchange.
+            .. and started the Alliance for a Conscious Internet - an open and 
+            collective ecosystem of do-good projects and people that are committed 
+            to build a new peer-to-peer internet that serves the planet and humanity.
           </p>
 
           <p class="home_tf">
-            A decentralized peer-to-peer world would be impossible without the
-            <a
-              href="https://www.consciousinternet.org/#/projects"
-              target="_blank">
-              Conscious Internet Alliance
-            </a>
-            , an ecosystem of beautifully aligned projects co-creating it.
+            We aim to empower +1 Billion people with sustainable access to complementary 
+            education, internet, and currencies (banking) for less than $1 per month.
           </p>
 
           <p class="home_tf">
-            With all the underlying elements, together we are co-creating the
-            new peer-to-peer internet, empowering a better future for humanity
-            and our planet.
+            We replace competition with collaboration, ego with love and marketing with transparency 
+            because we know that only together do we stand a chance to reach our collective goals.
+          </p>
+          <p class="home_tf">
+            We collaborate with one another to improve our solutions, efficiency, reach, visibility and service to the planet and humanity.
           </p>
           <p class="home_tf text-center">
             If not
