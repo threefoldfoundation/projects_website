@@ -5,7 +5,7 @@ let fetched_projects = [];
 let project_tags = []
 let user_tags = []
 let all_tags = []
-let prevPage = ''
+
 
 function compare(a, b) {
     if (a.info.rank > b.info.rank) return -1;
@@ -69,7 +69,3 @@ export let loading = writable(true)
 export const projectags = writable(project_tags)
 export const usertags = writable(user_tags)
 export const alltags = writable(all_tags)
-export const previousPage = writable(prevPage)
-export let  password = writable(localStorage.getItem("password") || '');
-
-password.subscribe(val => localStorage.setItem("password", val));
