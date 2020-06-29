@@ -15,8 +15,8 @@
     text-decoration: none;
   }
   img {
-    height: auto;
-    min-height: 105px;
+    height: 105px;
+    width: 100%;
   }
 </style>
 
