@@ -14,6 +14,10 @@
   a:hover {
     text-decoration: none;
   }
+  img {
+    height: auto;
+    min-height: 105px;
+  }
 </style>
 
 <div class="col-sm-12">
