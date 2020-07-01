@@ -99,15 +99,17 @@ def _walk(path : String = CURR_PATH)
 
                       if info.has_key?("rank")
                         rank : Int64 = info["rank"].as(Int64)
-                        if rank > 5_64
-                          rank = 5_64
+                        if rank > 5_i64
+                          rank = 5_i64
                         end
 
-                        if rank < 1_64
-                          rank = 1_64
+                        if rank < 1_i64
+                          rank = 1_i64
                         end
 
                         item.as(Project).info.rank =  rank
+                      else
+                        item.as(Project).info.rank =  1_i64
                       end
 
                       if info.has_key?("name")
@@ -185,6 +187,21 @@ def _walk(path : String = CURR_PATH)
 
                   ecosystem["memberships"].as(Array).each do |membership|
                     item.as(User).ecosystem.memberships.push membership.as(String)
+                  end
+
+                  if info.has_key?("rank")
+                    rank : Int64 = info["rank"].as(Int64)
+                    if rank > 5_i64
+                      rank = 5_i64
+                    end
+
+                    if rank < 1_i64
+                      rank = 1_i64
+                    end
+
+                    item.as(User).info.rank =  rank 
+                  else
+                    item.as(User).info.rank =  1_i64 
                   end
                 end
               end

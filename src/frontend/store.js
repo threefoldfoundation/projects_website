@@ -21,13 +21,12 @@ async function fetch_data(){
     for (var p of obj.projects) {
         p.name = p.info.name
     }
-    return { projects: obj.projects.sort(compare), users: obj.people };
+    return { projects: obj.projects.sort(compare), users: obj.people.sort(compare) };
 }
 
 fetch_data().then((data)=>{
     fetched_users = data['users']
     fetched_projects = data['projects']
-    console.log(fetched_projects)
     users.set(fetched_users)
     projects.set(fetched_projects)
     loading.set(false)

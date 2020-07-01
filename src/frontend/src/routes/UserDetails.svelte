@@ -18,7 +18,6 @@
     });
     return res;
   }
-  console.log($users);
   let userProjects = findProjects(user_data.info.name);
   let pageUrl = location.origin + location.hash.replace("#", "");
 

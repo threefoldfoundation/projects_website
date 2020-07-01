@@ -131,10 +131,11 @@ class UserInfo
         bio: String,
         companies: Array(Company),
         countries: Array(Country),
-        cities: Array(City)
+        cities: Array(City),
+        rank: Int64
     )
 
-    def initialize(@name="", @bio="", @companies=Array(Company).new, @cities=Array(City).new, @countries=Array(Country).new);end
+    def initialize(@name="", @bio="", @companies=Array(Company).new, @cities=Array(City).new, @countries=Array(Country).new, @rank=1_i64    );end
 
 end
 
