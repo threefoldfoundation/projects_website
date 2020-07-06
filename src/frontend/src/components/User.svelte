@@ -30,7 +30,7 @@
       <div class="col-sm-9">
         <header>
           <div class="title">
-            <h3>{formatUser()}</h3>
+            <h3 class="text-capitalize">{formatUser()}</h3>
 
             <div class="user-box">
               <p>
@@ -42,18 +42,18 @@
             </div>
           </div>
         </header>
-        <footer class="ml-auto">
-          <ul class="stats">
-            {#each user.ecosystem.memberships as membership}
-              <li>
-                <a class="text-uppercase" href="#/people/tags/{membership}">
-                  {membership}
-                </a>
-              </li>
-            {/each}
-          </ul>
-        </footer>
       </div>
+      <footer class="m-auto">
+        <ul class="stats">
+          {#each user.ecosystem.memberships as membership}
+            <li>
+              <a class="text-uppercase" href="#/people/tags/{membership}">
+                {membership}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </footer>
     </article>
   </a>
 </div>
