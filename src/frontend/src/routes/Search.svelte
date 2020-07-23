@@ -80,9 +80,7 @@
         if (ms.funding_required_tft.toLowerCase().includes(keyword))
             return true
 
-        if (ms.funding_required_usd.toLowerCase().includes(keyword))
-            return true
-
+       
         if (ms.description.toLowerCase().includes(keyword))
             return true
       }

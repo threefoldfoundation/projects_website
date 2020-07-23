@@ -87,12 +87,8 @@
                 {milestone.description}
               </li>
               <li>
-                <b>Funding in TFT:</b>
+                <b>Funding required (TFT):</b>
                 {milestone.funding_required_tft}
-              </li>
-              <li>
-                <b>Funding in USD:</b>
-                {milestone.funding_required_usd}
               </li>
             </ul>
           {/each}

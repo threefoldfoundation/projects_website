@@ -147,7 +147,7 @@ def _walk(path : String = CURR_PATH)
                       
                     elsif data.has_key?("milestone")
                       milestone = data["milestone"].as(Hash)
-                      ms = MileStone.new milestone["name"].as(String), milestone["date"].as(String), milestone["funding_required_tft"].as(String), milestone["funding_required_usd"].as(String),  milestone["description"].as(String)
+                      ms = MileStone.new milestone["name"].as(String), milestone["date"].as(String), milestone["funding_required_tft"].as(String),  milestone["description"].as(String)
                       item.as(Project).milestones.push ms
                     end
                   end
