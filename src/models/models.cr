@@ -50,10 +50,11 @@ class MileStone
         name: String,
         date: String,
         funding_required_tft: String,
+        funding_required_usd: String,
         description: String
     )
 
-    def initialize(@name="", @date="", @funding_required_tft="", @description="");end
+    def initialize(@name="", @date="", @funding_required_tft="", @funding_required_usd="", @description="");end
 end
 
 class ProjectEcoSystem

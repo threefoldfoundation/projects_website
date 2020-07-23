@@ -86,10 +86,23 @@
                 <b>Description:</b>
                 {milestone.description}
               </li>
+              {#if milestone.funding_required_tft != ""}
               <li>
+
                 <b>Funding required (TFT):</b>
+                
                 {milestone.funding_required_tft}
               </li>
+                {/if}
+
+              {#if milestone.funding_required_usd != ""}
+               <li>
+                <b>Funding in USD:</b>
+                
+                  {milestone.funding_required_usd}
+              </li>
+                {/if}
+
             </ul>
           {/each}
         </div>
