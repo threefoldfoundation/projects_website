@@ -15,7 +15,6 @@
     text-decoration: none;
   }
   img {
-    height: 105px;
     width: 100%;
   }
 </style>

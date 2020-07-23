@@ -22,14 +22,12 @@
     var t = evt.target.innerText;
     active = getActive(t);
   }
-
-
 </script>
 
 <!-- Header -->
 <header id="header">
   <div class="brand-logo">
-    <a href="#">
+    <a href="/">
       <img src="/images/ACI_icon-01.svg" alt="" />
     </a>
   </div>
@@ -38,7 +36,7 @@
   <label for="toggle-btn" class="show-menu-btn">
     <i class="fas fa-bars" />
   </label>
-  
+
   <nav class="d-inline-block">
     <ul class="navigation">
 
@@ -63,9 +61,11 @@
           <a href="#/people" on:click={linkClick}>People</a>
         {/if}
       </li>
-       <li>
+      <li>
         {#if active == 'council'}
-          <a class="active" href="#/council" on:click={linkClick}>Wisdom Council</a>
+          <a class="active" href="#/council" on:click={linkClick}>
+            Wisdom Council
+          </a>
         {:else}
           <a href="#/council" on:click={linkClick}>Wisdom Council</a>
         {/if}

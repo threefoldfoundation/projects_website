@@ -18,6 +18,9 @@
   a:hover {
     text-decoration: none;
   }
+  .post footer .stats li {
+    margin: 0 0 0 1em;
+  }
 </style>
 
 <div class="col-sm-12">
@@ -37,23 +40,23 @@
                 {user.info.bio
                   .split(' ')
                   .slice(0, 20)
-                  .join(' ')}
+                  .join(' ')}...
               </p>
             </div>
           </div>
         </header>
+        <footer class="m-auto">
+          <ul class="stats">
+            {#each user.ecosystem.memberships as membership}
+              <li>
+                <a class="text-uppercase" href="#/people/tags/{membership}">
+                  {membership}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </footer>
       </div>
-      <footer class="m-auto">
-        <ul class="stats">
-          {#each user.ecosystem.memberships as membership}
-            <li>
-              <a class="text-uppercase" href="#/people/tags/{membership}">
-                {membership}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      </footer>
     </article>
   </a>
 </div>
