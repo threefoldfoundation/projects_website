@@ -118,10 +118,10 @@
 
         {#if project_data.ecosystem.badges.includes('tftgranted')}
           <a
-            href="https://wiki.threefold.io/#/how_to_buy_and_sell"
+            href="https://www.liquid.com/quick-exchange/"
             target="_blank"
             class="button large text-uppercase cta">
-            Support
+            Buy TFT
           </a>
         {/if}
 

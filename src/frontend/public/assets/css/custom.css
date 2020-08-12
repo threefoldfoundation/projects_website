@@ -112,7 +112,6 @@ ul.posts li {
 
 .link_wrapper {
     margin-bottom: 35px;
-    text-align: center;
 }
 
 .icons li a {
@@ -343,7 +342,6 @@ body {
 
 .text-uppercase {
     text-transform: uppercase !important;
-
 }
 
 * {
@@ -629,7 +627,7 @@ ul.posts article .image {
     display: inline !important;
 }
 
-#intro .logo img{
+#intro .logo img {
     width: 17.5em !important;
 }
 
@@ -1082,9 +1080,7 @@ ul.posts article .image {
         margin: 0 0 0 1.25em;
         padding: 0 0 0 1.25em;
     }
-
-    .overlay.svelte-2ltbiw{
-
+    .overlay.svelte-2ltbiw {
         width: 60% !important;
     }
 }
