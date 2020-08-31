@@ -24,7 +24,7 @@
           <div class="col-md-6" />
 
           <div class="col-md-6">
-            <p class="home-desc">
+            <p class="home-desc font-weight-bold">
               a collective ecosystem of
               <br />
               planet and human centric
@@ -44,19 +44,19 @@
           </div>
 
           <div class="col-md-4">
-            <p class="home-desc desc my-2">
+            <p class="home-desc desc mt-5 mb-2">
               We aim to empower +1 Billion people with access to internet,
               complementary education and currencies (banking) for less than $1
               per month.
             </p>
 
-            <p class="home-desc desc my-2">
+            <p class="home-desc desc my-3">
               We replace competition with collaboration and ego with love
               because we know that only together do we stand a chance to reach
               our goal.
             </p>
 
-            <p class="home-desc desc my-2">
+            <p class="home-desc desc my-3">
               We collaborate with one another to improve our solutions,
               efficiency, reach, visibility and service for the planet and
               humanity.
@@ -64,7 +64,7 @@
           </div>
           <div class="col-md-2" />
           <div class="col-md-12">
-            <h1 class="text-center mt-5">If not us, who? If not now, when?</h1>
+            <h1 class="text-center mt-5 intro_desc">If not us, who? If not now, when?</h1>
           </div>
         </div>
       </div>
