@@ -25,9 +25,9 @@
       gap="40" />
   </center>
 {:else}
+  <Navigation />
+
   <Router {routes} />
 {/if}
-
-<Navigation />
 
 <Footer />
