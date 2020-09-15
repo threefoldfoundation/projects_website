@@ -811,13 +811,14 @@ ul.posts article .image {
 }
 
 .home {
-    height: 170vh;
+    height: 155vh;
 }
 
 .home-intro {
     background-image: url("/images/half_earth.png");
     background-position: 100% 0;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #wrapper {
@@ -835,7 +836,8 @@ ul.posts article .image {
     line-height: 0.7;
 }
 
-.home-intro .home-desc {
+.home-intro .home-desc,
+.desc_two .home-desc {
     color: #307960 !important;
     font-size: 1.8em;
     font-weight: 400;
@@ -843,7 +845,8 @@ ul.posts article .image {
     margin-top: 10rem;
 }
 
-.home-intro .desc {
+.home-intro .desc,
+.desc_two .home-desc {
     font-size: 1.3em;
     text-align: justify;
     margin-top: 5rem;
@@ -924,6 +927,9 @@ ul.posts article .image {
         margin-left: 3rem;
         padding-right: 0.5rem;
     }
+    .intro_desc {
+        font-size: 1em !important;
+    }
 }
 
 
@@ -953,12 +959,11 @@ ul.posts article .image {
     }
 }
 
-
-/* @media screen and (max-width: 1280px) {
-    #sidebar {
-        width: 100% !important;
+@media screen and (max-width: 1300px) {
+    .home {
+        height: 140vh;
     }
-} */
+}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1131,11 +1136,14 @@ ul.posts article .image {
     .overlay.svelte-2ltbiw {
         width: 60% !important;
     }
+    .home {
+        height: 200vh;
+    }
 }
 
 @media screen and (max-width: 375px) {
     .home {
-        height: 255vh;
+        height: 225vh;
     }
     .home-intro h1 {
         font-size: 1.5em !important;
@@ -1145,5 +1153,11 @@ ul.posts article .image {
     }
     .desc_two {
         margin-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home {
+        height: 270vh;
     }
 }

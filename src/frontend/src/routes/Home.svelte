@@ -36,37 +36,40 @@
           </div>
           <div class="col-md-6" />
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
 
-        <div class="row desc_two">
+    <div class="row desc_two">
 
-          <div class="col-md-6">
-            <img src="/images/hand.png" class="img-fluid d-block mx-auto" alt="" />
-          </div>
+      <div class="col-md-6">
+        <img src="/images/hand.png" class="img-fluid d-block mx-auto" alt="" />
+      </div>
 
-          <div class="col-md-4">
-            <p class="home-desc desc mt-5 mb-2">
-              We aim to empower +1 Billion people with access to internet,
-              complementary education and currencies (banking) for less than $1
-              per month.
-            </p>
+      <div class="col-md-4">
+        <p class="home-desc desc mt-5 mb-2">
+          We aim to empower 1+ Billion people with access to the internet
+          allowing everyone a chance to exchange value, goods and information
+          for less than $1 per month.
+        </p>
 
-            <p class="home-desc desc my-3">
-              We replace competition with collaboration and ego with love
-              because we know that only together do we stand a chance to reach
-              our goal.
-            </p>
+        <p class="home-desc desc my-3">
+          Independent of location, race, gender, religion we leave no one behind
+          so that everyone can deliver services or products to everyone in all
+          transparency and fairness.
+        </p>
 
-            <p class="home-desc desc my-3">
-              We collaborate with one another to improve our solutions,
-              efficiency, reach, visibility and service for the planet and
-              humanity.
-            </p>
-          </div>
-          <div class="col-md-2" />
-          <div class="col-md-12">
-            <h1 class="text-center mt-5 intro_desc">If not us, who? If not now, when?</h1>
-          </div>
-        </div>
+        <p class="home-desc desc my-3">
+          We collaborate with one another to improve our solutions, efficiency,
+          reach, visibility and our service to the planet and humanity.
+        </p>
+      </div>
+      <div class="col-md-2" />
+      <div class="col-md-12">
+        <h1 class="text-center mt-5 intro_desc">
+          If not us, who? If not now, when?
+        </h1>
       </div>
     </div>
   </div>
