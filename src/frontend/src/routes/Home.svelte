@@ -10,28 +10,20 @@
     <div id="wrapper">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-7">
             <h1>
               The Alliance for a
               <br />
-              <span>
-                Conscious
-                <br />
-                Internet
-              </span>
+              <span>Conscious Internet</span>
             </h1>
           </div>
-          <div class="col-md-6" />
+          <div class="col-md-5" />
 
           <div class="col-md-6">
             <p class="home-desc font-weight-bold">
-              a collective ecosystem of
-              <br />
-              planet and human centric
-              <br />
-              projects co-creating a new
-              <br />
-              peer-to-peer internet
+              A planetary movement of people and organisations that take action
+              now to shape a conscious digital world that empowers everyone
+              equally, across borders.
             </p>
           </div>
           <div class="col-md-6" />
@@ -49,20 +41,21 @@
 
       <div class="col-md-4">
         <p class="home-desc desc mt-5 mb-2">
-          We aim to empower 1+ Billion people with access to the internet
+          We aim to empower 1+ Billion people with access to the Internet
           allowing everyone a chance to exchange value, goods and information
           for less than $1 per month.
         </p>
 
         <p class="home-desc desc my-3">
           Independent of location, race, gender, religion we leave no one behind
-          so that everyone can deliver services or products to everyone in all
+          so that everyone can deliver services and goods to everyone in all
           transparency and fairness.
         </p>
 
         <p class="home-desc desc my-3">
-          We collaborate with one another to improve our solutions, efficiency,
-          reach, visibility and our service to the planet and humanity.
+          Instead of competing we collaborate with one another to improve our
+          solutions, efficiency, reach, visibility and our service to the planet
+          and humanity.
         </p>
       </div>
       <div class="col-md-2" />

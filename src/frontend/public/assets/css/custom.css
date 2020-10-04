@@ -12,7 +12,7 @@ h2 {
 h1,
 h2,
 h3 {
-    color: #307960 !important;
+    color: #12b1a4 !important;
 }
 
 #wrapper {
@@ -430,7 +430,7 @@ body {
 
 #header nav ul li a {
     border-bottom: 0;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.7em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -496,7 +496,7 @@ body {
 
 .home_tf {
     font-size: 1.1em;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .home_tf a {
@@ -646,7 +646,7 @@ ul.posts article .image {
 .post footer .stats li {
     border-left: solid 1px rgba(160, 160, 160, 0.3);
     display: inline-block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -738,7 +738,7 @@ ul.posts article .image {
 .user_profile footer .stats li {
     border-left: solid 1px rgba(160, 160, 160, 0.3);
     display: inline-block;
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.6em;
     font-weight: 400;
     letter-spacing: 0.25em;
@@ -811,7 +811,7 @@ ul.posts article .image {
 }
 
 .home {
-    height: 155vh;
+    height: 175vh;
 }
 
 .home-intro {
@@ -827,19 +827,19 @@ ul.posts article .image {
 }
 
 .home-intro h1 {
-    font-size: 2.5em;
+    font-size: 3.75em;
     text-transform: none;
 }
 
 .home-intro h1 span {
-    font-size: 2em;
+    font-size: 100px;
     line-height: 0.7;
 }
 
 .home-intro .home-desc,
 .desc_two .home-desc {
-    color: #307960 !important;
-    font-size: 1.8em;
+    color: #12b1a4 !important;
+    font-size: 1.875em;
     font-weight: 400;
     line-height: 1.1;
     margin-top: 10rem;
@@ -850,6 +850,10 @@ ul.posts article .image {
     font-size: 1.3em;
     text-align: justify;
     margin-top: 5rem;
+}
+
+.desc_two .home-desc {
+    color: #00a788;
 }
 
 .home-intro .desc_two {
@@ -930,6 +934,12 @@ ul.posts article .image {
     .intro_desc {
         font-size: 1em !important;
     }
+    .home-intro h1 {
+        font-size: 30px;
+    }
+    .home-intro h1 span {
+        font-size: 25px;
+    }
 }
 
 
@@ -961,7 +971,7 @@ ul.posts article .image {
 
 @media screen and (max-width: 1300px) {
     .home {
-        height: 140vh;
+        height: 150vh;
     }
 }
 
