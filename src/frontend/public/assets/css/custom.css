@@ -810,8 +810,12 @@ ul.posts article .image {
     color: #de0023;
 }
 
-.home {
-    height: 175vh;
+/* .home {
+    height: 154vh;
+} */
+
+.home{
+    padding-bottom: 4.5em;
 }
 
 .home-intro {
@@ -827,13 +831,18 @@ ul.posts article .image {
 }
 
 .home-intro h1 {
-    font-size: 3.75em;
+    font-size: 5.75em;
     text-transform: none;
+    letter-spacing: 0.01em !important;
+    line-height: 0.9 !important;
 }
 
-.home-intro h1 span {
-    font-size: 100px;
-    line-height: 0.7;
+.home-intro h2  {
+    font-size: 2.6em;
+    text-transform: none;
+    letter-spacing: 0.0em !important;
+    margin: 0.1em 0 !important;
+    
 }
 
 .home-intro .home-desc,
@@ -970,9 +979,9 @@ ul.posts article .image {
 }
 
 @media screen and (max-width: 1300px) {
-    .home {
+    /* .home {
         height: 150vh;
-    }
+    } */
 }
 
 
@@ -1146,17 +1155,26 @@ ul.posts article .image {
     .overlay.svelte-2ltbiw {
         width: 60% !important;
     }
-    .home {
-        height: 200vh;
+    /* .home {
+        height: 210vh;
+    } */
+    .home-intro{
+        background-image: none;   
+    }
+    .home-intro h1{
+        font-size: 55px;
+    }
+    .home-desc {
+        text-align: left !important;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .home {
-        height: 225vh;
-    }
+    /* .home {
+        height: 235vh;
+    } */
     .home-intro h1 {
-        font-size: 1.5em !important;
+        font-size: 55px !important;
     }
     .home-intro {
         background-position: unset;
@@ -1164,10 +1182,16 @@ ul.posts article .image {
     .desc_two {
         margin-top: 0 !important;
     }
+    .home-desc {
+        text-align: left !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
-    .home {
+    /* .home {
         height: 270vh;
+    } */
+    .home-desc {
+        text-align: left !important;
     }
 }

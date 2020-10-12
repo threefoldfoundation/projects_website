@@ -11,11 +11,9 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-7">
-            <h1>
-              The Alliance for a
-              <br />
-              <span>Conscious Internet</span>
-            </h1>
+            <h2>The Alliance for a</h2>
+              <h1>Conscious <br>
+              Internet</h1>
           </div>
           <div class="col-md-5" />
 
@@ -31,7 +29,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container">
 
     <div class="row desc_two">
 
@@ -39,7 +37,7 @@
         <img src="/images/hand.png" class="img-fluid d-block mx-auto" alt="" />
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <p class="home-desc desc mt-5 mb-2">
           We aim to empower 1+ Billion people with access to the Internet
           allowing everyone a chance to exchange value, goods and information
