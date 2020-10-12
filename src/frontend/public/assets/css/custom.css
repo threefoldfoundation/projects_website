@@ -12,7 +12,7 @@ h2 {
 h1,
 h2,
 h3 {
-    color: #12b1a4 !important;
+    color: #00A788 !important;
 }
 
 #wrapper {
@@ -842,16 +842,18 @@ ul.posts article .image {
     text-transform: none;
     letter-spacing: 0.0em !important;
     margin: 0.1em 0 !important;
+    font-family: ;
     
 }
 
 .home-intro .home-desc,
 .desc_two .home-desc {
-    color: #12b1a4 !important;
+    color: #12B1A4 !important;
     font-size: 1.875em;
     font-weight: 400;
     line-height: 1.1;
     margin-top: 10rem;
+    font-family: Roboto !important;
 }
 
 .home-intro .desc,
