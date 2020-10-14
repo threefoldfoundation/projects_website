@@ -814,6 +814,11 @@ ul.posts article .image {
     height: 154vh;
 } */
 
+.row>* {
+    padding: 0 1em 0 1em !important;
+}
+
+
 .home{
     padding-bottom: 4.5em;
 }
@@ -858,7 +863,7 @@ ul.posts article .image {
 
 .home-intro .desc,
 .desc_two .home-desc {
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: justify;
     margin-top: 5rem;
 }
@@ -1168,6 +1173,9 @@ ul.posts article .image {
     }
     .home-desc {
         text-align: left !important;
+    }
+    .home-intro h2  {
+        font-size: 2.2em;
     }
 }
 

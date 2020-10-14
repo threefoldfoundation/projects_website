@@ -37,7 +37,7 @@
         <img src="/images/hand.png" class="img-fluid d-block mx-auto" alt="" />
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <p class="home-desc desc mt-5 mb-2">
           We aim to empower 1+ Billion people with access to the Internet
           allowing everyone a chance to exchange value, goods and information
